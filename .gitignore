@@ -571,3 +571,6 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Imported Assets
+/[Aa]ssets/[Ii]mports
