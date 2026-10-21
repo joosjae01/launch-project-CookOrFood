@@ -3,12 +3,7 @@ using UnityEngine;
 
 public class PoolManager : SingletonBehaviour<PoolManager>
 {
-    [Header("소환할 프리팹 종류")]
-    [SerializeField] private List<PoolableType> _prefabType = new();
-    [Header("소환할 개수")]
-    [SerializeField] private List<int> _size = new();
-    [Header("소환할 프리팹")]
-    [SerializeField] private List<GameObject> _prefab = new();
+    [SerializeField] List<PoolData> _poolData = new();
     
     public Dictionary<PoolableType, ObjectPool> Pool = new();
 
@@ -17,11 +12,11 @@ public class PoolManager : SingletonBehaviour<PoolManager>
 
     private void CreatePool()
     {
-        for(int i = 0; i < _prefab.Count; i++)
+        for(int i = 0; i < _poolData.Count; i++)
         {
             ObjectPool objectPool = new();
-            objectPool.Init(_size[i], _prefab[i], transform);
-            Pool[_prefabType[i]] = objectPool;
+            objectPool.Init(_poolData[i].Size, _poolData[i].Prefab, transform);
+            Pool[_poolData[i].Type] = objectPool;
         }
     }
 }
