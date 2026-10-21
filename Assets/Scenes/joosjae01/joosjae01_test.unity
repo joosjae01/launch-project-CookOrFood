@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687398440}
-  - component: {fileID: 1687398441}
+  - component: {fileID: 1687398443}
   - component: {fileID: 1687398442}
   m_Layer: 0
   m_Name: ObjectPool
@@ -341,20 +341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1687398441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687398439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25d3955361d1ad143be36bf8b6fc2e7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
-  _poolSize: 5
-  _prefab: {fileID: 8163741608181358528, guid: 90037bb79ab01f946a72147b8d0f9dc6, type: 3}
 --- !u!114 &1687398442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +354,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestPoolController
   _spaceInput: {fileID: -2099379676528639254, guid: bed11bd3d146b674397888890237a394, type: 3}
-  _testPool: {fileID: 1687398441}
+--- !u!114 &1687398443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687398439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0a489c6521b9742802e1f570194fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+  _isDontDestroyOnLoad: 1
+  _prefabType: 000000000100000002000000
+  _size: 05000000040000001e000000
+  _prefab:
+  - {fileID: 8163741608181358528, guid: 90037bb79ab01f946a72147b8d0f9dc6, type: 3}
+  - {fileID: 8163741608181358528, guid: ce87bd8f379b97f4e8fe7fd66bf6d2bf, type: 3}
+  - {fileID: 8163741608181358528, guid: 6727e92d53256a84cb3fb24b7ce7bb3e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
