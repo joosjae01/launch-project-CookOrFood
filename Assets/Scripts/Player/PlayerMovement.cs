@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerMove();
+        // PlayerRotate();
     }
     private void OnDisable()
     {
@@ -45,14 +46,27 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveDirection.x = ctx.ReadValue<Vector2>().x;
         _moveDirection.z = ctx.ReadValue<Vector2>().y;
+        Debug.Log($"{_moveDirection.x}, {_moveDirection.z}");
     }
 
     private void PlayerMove()
     {
-        transform.Translate( new Vector3(
+        transform.Translate(GetMoveDirection() * (Time.deltaTime * _playerData.Speed));
+    }
+
+    private void PlayerRotate()
+    {
+        
+    }
+    
+    private Vector3 GetMoveDirection()
+    {
+        Vector3 moveDirection = new Vector3(
             _moveDirection.x,
             _moveDirection.y,
-            _moveDirection.z).normalized *  Time.deltaTime * _playerData.Speed);
+            _moveDirection.z).normalized;
+        
+        return moveDirection;
     }
 
     private void OnMoveStop(InputAction.CallbackContext ctx)
