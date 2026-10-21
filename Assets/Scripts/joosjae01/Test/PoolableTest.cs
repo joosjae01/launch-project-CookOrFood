@@ -2,9 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PoolableTest : MonoBehaviour, IPoolable
+public class PoolableTest : MonoBehaviour, IPoolable, IDamageable
 {
-    [SerializeField] private InputActionReference _spaceInput;
     public GameObject GameObject { get; set; }
     public ObjectPool Source { get; set; }
 
@@ -16,6 +15,7 @@ public class PoolableTest : MonoBehaviour, IPoolable
     private void OnEnable()
     {
         StartCoroutine(RetrunRoutine());
+        TakeDamage(6.7f);
     }
 
     private IEnumerator RetrunRoutine()
@@ -27,5 +27,10 @@ public class PoolableTest : MonoBehaviour, IPoolable
     public void ReturnToPool()
     {
         Source.Push(this);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("대미지 테스트");
     }
 }
