@@ -1,0 +1,11 @@
+using UnityEngine;
+
+public class MonsterData : MonoBehaviour
+{
+    [field : SerializeField] public string Name { get; private set; }
+    [field : SerializeField] public float Damage { get; private set; }
+    [field : SerializeField] public float Speed { get; private set; }
+    
+
+public ObservableProperty<float> Health;
+}
