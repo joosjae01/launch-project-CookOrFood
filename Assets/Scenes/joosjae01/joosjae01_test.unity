@@ -367,10 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoolManager
   _isDontDestroyOnLoad: 1
-  _prefabName:
-  - sample
-  - map
-  - arrow
+  _prefabType: 000000000100000002000000
   _size: 05000000040000001e000000
   _prefab:
   - {fileID: 8163741608181358528, guid: 90037bb79ab01f946a72147b8d0f9dc6, type: 3}

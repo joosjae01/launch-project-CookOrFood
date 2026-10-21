@@ -13,6 +13,6 @@ public class TestPoolController : MonoBehaviour
 
     private void OnPressed(InputAction.CallbackContext context)
     {
-        PoolManager.Instance.Pool["sample"].Take();
+        PoolManager.Instance.Pool[PoolableType.Arrow].Take();
     }
 }
