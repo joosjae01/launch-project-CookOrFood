@@ -5,8 +5,8 @@ public abstract class StageBase : MonoBehaviour
 {
     public bool IsClear { get; protected set; }
 
-    protected event Action OnClear;
-
+    public event Action OnExitStage;
+    
     public void ResetStage()
     {
         IsClear = false;
