@@ -11,11 +11,14 @@ public class ObjectPool : MonoBehaviour
 
     private void Init()
     {
-        for(int i = 0; i < _poolSize; i++)
+        IPoolable temp;
+
+        for (int i = 0; i < _poolSize; i++)
         {
-            GameObject temp = Instantiate(_prefab.GameObject);
-            temp.SetActive(false);
-            _pool.Push(temp.GetComponent<IPoolable>());
+            if (!Instantiate(_prefab.GameObject).TryGetComponent<IPoolable>(out temp)) return;
+            temp.GameObject.SetActive(false);
+            temp.Source = this;
+            _pool.Push(temp);
         }
     }
 
