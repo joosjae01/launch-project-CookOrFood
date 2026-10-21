@@ -367,12 +367,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoolManager
   _isDontDestroyOnLoad: 1
-  _prefabType: 000000000100000002000000
-  _size: 05000000040000001e000000
-  _prefab:
-  - {fileID: 8163741608181358528, guid: 90037bb79ab01f946a72147b8d0f9dc6, type: 3}
-  - {fileID: 8163741608181358528, guid: ce87bd8f379b97f4e8fe7fd66bf6d2bf, type: 3}
-  - {fileID: 8163741608181358528, guid: 6727e92d53256a84cb3fb24b7ce7bb3e, type: 3}
+  _poolData:
+  - Type: 1
+    Size: 5
+    Prefab: {fileID: 8163741608181358528, guid: 90037bb79ab01f946a72147b8d0f9dc6, type: 3}
+  - Type: 0
+    Size: 30
+    Prefab: {fileID: 8163741608181358528, guid: 6727e92d53256a84cb3fb24b7ce7bb3e, type: 3}
+  - Type: 2
+    Size: 3
+    Prefab: {fileID: 8163741608181358528, guid: ce87bd8f379b97f4e8fe7fd66bf6d2bf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
