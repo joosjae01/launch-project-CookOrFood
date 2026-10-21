@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate( new Vector3(
             _moveDirection.x,
             _moveDirection.y,
-            _moveDirection.z) *  Time.deltaTime * _playerData.Speed);
+            _moveDirection.z).normalized *  Time.deltaTime * _playerData.Speed);
     }
 
     private void OnMoveStop(InputAction.CallbackContext ctx)
