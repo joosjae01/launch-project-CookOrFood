@@ -3,32 +3,47 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    [Header("풀링할 객체 수")]
     [SerializeField] private float _poolSize;
-    [SerializeField] private IPoolable _prefab;
-    private Stack<IPoolable> _pool;
+
+    [Header("풀링 할 프리팹")]
+    [SerializeField] private GameObject _prefab;
+
+    private Stack<IPoolable> _pool = new();
+    private int _currentCount;
 
     private void Start() => Init();
 
     private void Init()
     {
-        for(int i = 0; i < _poolSize; i++)
+        IPoolable temp;
+
+        for (int i = 0; i < _poolSize; i++)
         {
-            GameObject temp = Instantiate(_prefab.GameObject);
-            temp.SetActive(false);
-            _pool.Push(temp.GetComponent<IPoolable>());
+            if (!Instantiate(_prefab, transform).TryGetComponent<IPoolable>(out temp)) return;
+            temp.GameObject.SetActive(false);
+            temp.Source = this;
+            _pool.Push(temp);
+            _currentCount++;
         }
     }
 
     public IPoolable Take()
     {
+        if (_currentCount == 0) return null;
+
         IPoolable temp = _pool.Pop();
         temp.GameObject.SetActive(true);
+        _currentCount--;
+
         return temp;
     }
 
-    public void Push(IPoolable pool)
-    {
+    public void Push(IPoolable pool) {
+        if (_currentCount == _poolSize) return;
+
         pool.GameObject.SetActive(false);
         _pool.Push(pool);
+        _currentCount++;
     }
 }
