@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     
     private PlayerData _playerData;
     private Vector3 _moveDirection;
+    private Rigidbody _rigidbody;
 
     private void Awake() => CacheComponents();
     
@@ -20,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
         BindInputActions();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         PlayerMove();
-        // PlayerRotate();
     }
+    
     private void OnDisable()
     {
         UnbindInputActions();
@@ -33,50 +34,34 @@ public class PlayerMovement : MonoBehaviour
     private void BindInputActions()
     {
         _moveAction.action.performed += OnMove;
-        _moveAction.action.canceled += OnMoveStop;
+        _moveAction.action.canceled += OnMove;
     }
 
     private void UnbindInputActions()
     {
         _moveAction.action.performed -= OnMove;
-        _moveAction.action.canceled -= OnMoveStop;
+        _moveAction.action.canceled -= OnMove;
     }
 
     private void OnMove(InputAction.CallbackContext ctx)
     {
-        _moveDirection.x = ctx.ReadValue<Vector2>().x;
-        _moveDirection.z = ctx.ReadValue<Vector2>().y;
-        Debug.Log($"{_moveDirection.x}, {_moveDirection.z}");
+        PlayerRotate(); // 이 식을 아래로 내리면 버튼을 땠을 때 플레이어가 위를 강제로 처다보게 됩니다.
+        _moveDirection = new Vector3(ctx.ReadValue<Vector2>().x, 0, ctx.ReadValue<Vector2>().y).normalized;
     }
 
     private void PlayerMove()
     {
-        transform.Translate(GetMoveDirection() * (Time.deltaTime * _playerData.Speed));
+        _rigidbody.linearVelocity = (_moveDirection * _playerData.Speed);
     }
 
     private void PlayerRotate()
     {
-        
-    }
-    
-    private Vector3 GetMoveDirection()
-    {
-        Vector3 moveDirection = new Vector3(
-            _moveDirection.x,
-            _moveDirection.y,
-            _moveDirection.z).normalized;
-        
-        return moveDirection;
-    }
-
-    private void OnMoveStop(InputAction.CallbackContext ctx)
-    {
-        _moveDirection.x = 0;
-        _moveDirection.z = 0;
+        transform.forward  = _moveDirection;
     }
     
     private void CacheComponents()
     {
         _playerData = GetComponent<PlayerData>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 }
