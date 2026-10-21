@@ -4,4 +4,5 @@ using UnityEngine;
 public class PoolManager : SingletonBehaviour<PoolManager>
 {
     private void Awake() => SetSingleton();
+
 }
