@@ -809,7 +809,7 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaxHealth>k__BackingField: 1
   <CurrentHealth>k__BackingField: 1
-  <Speed>k__BackingField: 5
+  <Speed>k__BackingField: 0
   <Name>k__BackingField: PlayerA
   <IsDead>k__BackingField: 0
 --- !u!114 &879099756
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9578e61663a32e14bb4384971b6e64a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _playerData: {fileID: 0}
+  _moveAction: {fileID: 4045190225682487738, guid: 3ed82ee23b0f5f749bd1ce02bdc9c716, type: 3}
 --- !u!1001 &956979529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Behaviour: 0
   m_UseIsolatedInputActions: 0
   m_PointerDownAction:
-    m_Name: 
+    m_Name: Pointer Down
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 95832d0f-a158-4a8e-bb8c-424c75b9782e
@@ -1200,7 +1200,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   m_PointerMoveAction:
-    m_Name: 
+    m_Name: Pointer Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: f793d1d2-a7c1-47e4-97cc-195980df45db
