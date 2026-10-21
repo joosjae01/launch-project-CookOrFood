@@ -809,7 +809,7 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaxHealth>k__BackingField: 1
   <CurrentHealth>k__BackingField: 1
-  <Speed>k__BackingField: 0
+  <Speed>k__BackingField: 1
   <Name>k__BackingField: PlayerA
   <IsDead>k__BackingField: 0
 --- !u!114 &879099756

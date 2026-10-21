@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerData _playerData;
     private Vector3 _moveDirection;
 
+    private void Awake() => CacheComponents();
+    
     private void OnEnable()
     {
         _moveAction.action.Enable();
@@ -57,5 +59,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveDirection.x = 0;
         _moveDirection.z = 0;
+    }
+    
+    private void CacheComponents()
+    {
+        _playerData = GetComponent<PlayerData>();
     }
 }
