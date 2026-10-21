@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference _moveAction;
+    [SerializeField] private Transform _cameraTransform;
     
     private PlayerData _playerData;
     private Vector3 _moveDirection;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMove();
+        SetPlayerView();
     }
     
     private void OnDisable()
@@ -57,6 +59,14 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerRotate()
     {
         transform.forward  = _moveDirection;
+    }
+
+    private void SetPlayerView()
+    {
+        _cameraTransform.transform.position = new Vector3(
+            _cameraTransform.position.x,
+            _cameraTransform.position.y,
+            transform.position.z);
     }
     
     private void CacheComponents()
