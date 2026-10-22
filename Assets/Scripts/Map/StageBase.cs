@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class StageBase : MonoBehaviour
 {
+    public Transform PlayerSpawnPoint;
+    
     public bool IsClear { get; protected set; }
 
     public event Action OnExitStage;
