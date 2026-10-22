@@ -15,6 +15,7 @@ EditorBuildSettings:
     path: Assets/Scripts/Core/2.unity
     guid: f78b56d089b6cd541b7a66442751f6b4
   m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: f19df9581ad4cd34a90460e95f91a804, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
