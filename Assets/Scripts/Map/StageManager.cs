@@ -29,9 +29,9 @@ public class StageManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _changeStageAction.action.Enable();
-
-        _changeStageAction.action.performed += ActionExit;
+        // 맵 변경 테스트용 InputSystem
+        // _changeStageAction.action.Enable();
+        // _changeStageAction.action.performed += ActionExit;
     }
 
     // ---------------------------------
@@ -77,6 +77,7 @@ public class StageManager : MonoBehaviour
         else if (_stageIndex % 3 != 0)
         {
             // TODO 여기서 전투맵 피셔 예이츠 셔플해서 리턴
+            
             int index = Random.Range(0, _normalStageList.Count);
             
             _stagePrefab = Instantiate(_normalStageList[index], null);
@@ -109,6 +110,7 @@ public class StageManager : MonoBehaviour
         StartStage();
     }
     
+    // 맵 변경 테스트용 InputSystem 
     private void ActionExit(InputAction.CallbackContext context)
     {
         ExitStage();
