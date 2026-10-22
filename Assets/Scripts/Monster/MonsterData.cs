@@ -1,12 +1,13 @@
 using UnityEngine;
 using System;
 
-public class MonsterData : MonoBehaviour
+[CreateAssetMenu(fileName = "MonsterData", menuName = "ScriptableObjects/MonsterData")]
+public class MonsterData : ScriptableObject
 {
-    [field : SerializeField] public string Name { get; private set; }
-    [field : SerializeField] public float Damage { get; private set; }
-    [field : SerializeField] public float Speed { get; private set; }
-    [field : SerializeField] public float CoolDown { get; private set; }
+    public string Name;
+    public float Damage;
+    public float Speed;
+    public float CoolDown;
     
     public ObservableProperty<float> Health;
     public Action<MonsterData> OnKilled;
