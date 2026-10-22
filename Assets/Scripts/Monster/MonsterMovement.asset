@@ -88,6 +88,36 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 5511892984738611935
+      type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        ID:
+          m_Value0: 9157386124532788517
+          m_Value1: 14990443247343034479
+        Graph:
+          rid: 8656994304551026927
+        m_Parent:
+          rid: -2
+        m_Child:
+          rid: 5511892984738611936
+        Repeat: 1
+        AllowMultipleRepeatsPerTick: 0
+    - rid: 5511892984738611936
+      type: {class: ChaseAction, ns: , asm: Assembly-CSharp}
+      data:
+        ID:
+          m_Value0: 1267758556706976134
+          m_Value1: 13279030331940086900
+        Graph:
+          rid: 8656994304551026927
+        m_Parent:
+          rid: 5511892984738611935
+        Monster:
+          rid: 8656994304551027343
+        Target:
+          rid: 8656994304551027345
+        Agent:
+          rid: 8656994304551027346
     - rid: 8656994304551026927
       type: {class: BehaviorGraphModule, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -99,8 +129,8 @@ MonoBehaviour:
           rid: 8656994304551026928
         BlackboardGroupReferences: []
         Root:
-          rid: 8656994304551027653
-        m_VersionTimestamp: 639282970263560983
+          rid: 5511892984738611935
+        m_VersionTimestamp: 639283127534035742
     - rid: 8656994304551026928
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -147,49 +177,6 @@ MonoBehaviour:
           m_Value1: 16518968132008736583
         Name: Agent
         m_Value: {fileID: 0}
-    - rid: 8656994304551027653
-      type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        ID:
-          m_Value0: 9157386124532788517
-          m_Value1: 14990443247343034479
-        Graph:
-          rid: 8656994304551026927
-        m_Parent:
-          rid: -2
-        m_Child:
-          rid: 8656994304551027654
-        Repeat: 1
-        AllowMultipleRepeatsPerTick: 0
-    - rid: 8656994304551027654
-      type: {class: SelectorComposite, ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        ID:
-          m_Value0: 263087472333971782
-          m_Value1: 11419649019019155535
-        Graph:
-          rid: 8656994304551026927
-        m_Parent:
-          rid: 8656994304551027653
-        m_Children:
-        - rid: 8656994304551027655
-        m_RegisteredObservers: []
-    - rid: 8656994304551027655
-      type: {class: ChaseAction, ns: , asm: Assembly-CSharp}
-      data:
-        ID:
-          m_Value0: 1267758556706976134
-          m_Value1: 13279030331940086900
-        Graph:
-          rid: 8656994304551026927
-        m_Parent:
-          rid: 8656994304551027654
-        Monster:
-          rid: 8656994304551027343
-        Target:
-          rid: 8656994304551027345
-        Agent:
-          rid: 8656994304551027346
 --- !u!114 &-1907885270345107865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +207,7 @@ MonoBehaviour:
   m_Nodes:
   - rid: 8656994304551026932
   - rid: 8656994304551027056
-  - rid: 8656994304551027220
-  m_VersionTimestamp: 639282970263560983
+  m_VersionTimestamp: 639283127534035742
   m_SerializedVersion: 3
   m_DebugInfo: {fileID: -1907885270345107865}
   m_RuntimeGraph: {fileID: -6172895504669506553}
@@ -268,16 +254,6 @@ MonoBehaviour:
       Tooltip: 
     NamedChildren: []
     IsPlaceholder: 0
-  - Name: Try In Order
-    Story: 
-    RuntimeTypeString: Unity.Behavior.SelectorComposite, Unity.Behavior, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    RuntimeTypeID:
-      m_Value0: 11477120919463386923
-      m_Value1: 7730102824742023565
-    Variables: []
-    NamedChildren: []
-    IsPlaceholder: 0
   m_Blackboards: []
   m_MainBlackboardAuthoringAsset: {fileID: -6591240886288063126}
   m_CommandBuffer:
@@ -319,11 +295,11 @@ MonoBehaviour:
         m_NodeModel:
           rid: 8656994304551026932
         m_Connections:
-        - rid: 8656994304551027221
+        - rid: 8656994304551027057
     - rid: 8656994304551027056
       type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
       data:
-        Position: {x: -332.37842, y: 225.48645}
+        Position: {x: -250.77826, y: 233.48592}
         ID:
           m_Value0: 1267758556706976134
           m_Value1: 13279030331940086900
@@ -350,7 +326,7 @@ MonoBehaviour:
         m_NodeModel:
           rid: 8656994304551027056
         m_Connections:
-        - rid: 8656994304551027222
+        - rid: 8656994304551026933
     - rid: 8656994304551027058
       type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
@@ -447,44 +423,6 @@ MonoBehaviour:
         IsExposed: 1
         m_IsShared: 0
         m_Value: {fileID: 0}
-    - rid: 8656994304551027220
-      type: {class: CompositeNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
-      data:
-        Position: {x: 0.02853167, y: 98.86109}
-        ID:
-          m_Value0: 263087472333971782
-          m_Value1: 11419649019019155535
-        Parents: []
-        PortModels:
-        - rid: 8656994304551027221
-        - rid: 8656994304551027222
-        NodeType:
-          m_SerializableType: Unity.Behavior.SelectorComposite, Unity.Behavior, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        NodeTypeID:
-          m_Value0: 11477120919463386923
-          m_Value1: 7730102824742023565
-        m_FieldValues: []
-    - rid: 8656994304551027221
-      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
-      data:
-        m_Name: InputPort
-        m_PortDataFlowType: 0
-        m_IsFloating: 0
-        m_NodeModel:
-          rid: 8656994304551027220
-        m_Connections:
-        - rid: 8656994304551026933
-    - rid: 8656994304551027222
-      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
-      data:
-        m_Name: OutputPort
-        m_PortDataFlowType: 1
-        m_IsFloating: 0
-        m_NodeModel:
-          rid: 8656994304551027220
-        m_Connections:
-        - rid: 8656994304551027057
 --- !u!114 &6934638692285754188
 MonoBehaviour:
   m_ObjectHideFlags: 0

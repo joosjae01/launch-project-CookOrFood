@@ -16,6 +16,6 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
     {
         
     }
-
+    
     protected abstract void Attack();
 }
