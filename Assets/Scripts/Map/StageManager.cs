@@ -8,10 +8,11 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference _changeStageAction;
     [SerializeField] private GameObject _playerTransform;
-    [SerializeField] private GameObject _tutorialStage;
-    [SerializeField] private List<GameObject> _normalStageList;
-    [SerializeField] private List<GameObject> _eventStageList;
+    [SerializeField] private List<GameObject> _stages;
     
+    private GameObject _tutorialStage;
+    private List<StageBase> _normalStageList;
+    private List<StageBase> _eventStageList;
     private int _stageIndex;
     private StageBase _currentStage;
     private GameObject _stagePrefab;
@@ -36,6 +37,11 @@ public class StageManager : MonoBehaviour
 
     // ---------------------------------
 
+    private void InitStages()
+    {
+        
+    }
+    
     private void DeactiveStage()
     {
         _tutorialStage?.SetActive(false);
