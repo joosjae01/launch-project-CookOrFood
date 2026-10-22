@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92eacc358ea4de74699bac98417bce24, type: 3}
   m_Name: CritDamage_S
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStatEnhance
+  Name: "\uCE58\uBA85\uD0C0 \uB300\uBBF8\uC9C0 (S)"
   AttackValueAmount: 0
   AttackSpeedEnhance: 0
   CritRateEnhance: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92eacc358ea4de74699bac98417bce24, type: 3}
   m_Name: AttackSpeed_S
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStatEnhance
+  Name: "\uACF5\uACA9 \uC18D\uB3C4 (S)"
   AttackValueAmount: 0
   AttackSpeedEnhance: 0.5
   CritRateEnhance: 0
