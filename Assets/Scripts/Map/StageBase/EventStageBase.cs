@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class EventStageBase : StageBase
 {
-    public override MapType MapType { get => MapType.Event; }
+    public override StageType StageType { get => StageType.Event; }
     
     protected abstract void EventStageEnter();
     protected abstract void EventStageExit();

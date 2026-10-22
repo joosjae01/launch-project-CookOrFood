@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class StageBase : MonoBehaviour
 {
-    public abstract MapType MapType { get;}
+    public abstract StageType StageType { get;}
     public Transform PlayerSpawnPoint;
     
     public bool IsClear { get; protected set; }

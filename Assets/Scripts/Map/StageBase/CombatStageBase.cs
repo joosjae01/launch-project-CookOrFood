@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class CombatStageBase : StageBase
 {
-    public override MapType MapType { get; }
+    public override StageType StageType { get; }
 
     protected abstract void CombatStageEnter();
     protected abstract void CombatStageExit();

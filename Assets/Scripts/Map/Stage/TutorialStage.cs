@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TutorialStage : CombatStageBase
 {
-    public override MapType MapType { get => MapType.Tutorial; }
+    public override StageType StageType { get => StageType.Tutorial; }
 
     protected override void CombatStageEnter()
     {

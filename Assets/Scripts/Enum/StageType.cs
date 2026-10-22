@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum MapType
+public enum StageType
 {
     Tutorial,
     Combat,

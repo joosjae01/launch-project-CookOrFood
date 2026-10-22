@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 634422860476269780}
   - component: {fileID: 8896160457895079365}
   - component: {fileID: 1368517549865971738}
-  - component: {fileID: 492255522839131820}
+  - component: {fileID: 892559027576110275}
   m_Layer: 0
   m_Name: TutorialStage
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &492255522839131820
+--- !u!114 &892559027576110275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,9 +125,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447098407255374828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d943557154ab49146902022f12fbd5f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0359e74708ef24347a18f59d71f3dd9f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalStage
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialStage
   PlayerSpawnPoint: {fileID: 3645906360639916372}
 --- !u!1 &3103726341968379467
 GameObject:
