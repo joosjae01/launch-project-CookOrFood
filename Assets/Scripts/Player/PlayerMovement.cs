@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetPlayerView()
     {
+        // 러프 없는거
         _cameraTransform.transform.position = new Vector3(
             _cameraTransform.position.x,
             _cameraTransform.position.y,
