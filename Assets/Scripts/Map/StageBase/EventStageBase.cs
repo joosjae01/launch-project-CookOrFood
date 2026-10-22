@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class EventStageBase : MonoBehaviour
+public abstract class EventStageBase : StageBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public override MapType MapType { get => MapType.Event; }
+    
+    protected abstract void EventStageEnter();
+    protected abstract void EventStageExit();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public override void Enter() => EventStageEnter();
+    
+    public override void Exit() => EventStageExit();
 }

@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class AngelEventStage : MonoBehaviour
+public class AngelEventStage : EventStageBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void EventStageEnter()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void EventStageExit()
     {
         
     }
