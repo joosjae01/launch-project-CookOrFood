@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _playerTransform;
     [SerializeField] private StageBase _tutorialStage;
     [SerializeField] private List<StageBase> _normalStageList;
     [SerializeField] private List<StageBase> _eventStageList;
@@ -12,16 +13,19 @@ public class StageManager : MonoBehaviour
 
     private void Awake()
     {
+        for (int i = 0; i < _normalStageList.Count; i++)
+        {
+            _normalStageList[i].gameObject.SetActive(false);
+        }
         _stageIndex = 0;
         StartStage(_stageIndex);
     }
     
     private void StartStage(int index)
     {
+        
         _currentStage = SetStage();
-        
-        // TODO PoolManager에서 Stage 가져오기
-        
+        _currentStage.gameObject.SetActive(true);
         _currentStage.ResetStage();
         _currentStage.Enter();
 
@@ -42,7 +46,6 @@ public class StageManager : MonoBehaviour
         }
         else if (_stageIndex % 3 == 0)
         {
-            // TODO 여기도 셔플해야하나..?
             int index = Random.Range(0, _eventStageList.Count);
             
             return _eventStageList[index];
@@ -57,8 +60,7 @@ public class StageManager : MonoBehaviour
         _currentStage.Exit();
         _currentStage.OnExitStage -= ExitStage;
         
-        // TODO 오브젝트풀에 넣기
-        
+        _currentStage.gameObject.SetActive(false);
         
         // TODO 페이드인
         StartStage(_stageIndex);
