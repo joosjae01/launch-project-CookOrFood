@@ -8,12 +8,14 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference _changeStageAction;
     [SerializeField] private GameObject _playerTransform;
-    [SerializeField] private StageBase _tutorialStage;
-    [SerializeField] private List<StageBase> _normalStageList;
-    [SerializeField] private List<StageBase> _eventStageList;
+    [SerializeField] private GameObject _tutorialStage;
+    [SerializeField] private List<GameObject> _normalStageList;
+    [SerializeField] private List<GameObject> _eventStageList;
     
     private int _stageIndex;
     private StageBase _currentStage;
+    private GameObject _stagePrefab;
+    private Vector3 _mapPosition;
 
     // ---------- Event Method ----------
     
@@ -22,7 +24,7 @@ public class StageManager : MonoBehaviour
         DeactiveStage();
         
         _stageIndex = 0;
-        StartStage(_stageIndex);
+        StartStage();
     }
 
     private void OnEnable()
@@ -36,30 +38,29 @@ public class StageManager : MonoBehaviour
 
     private void DeactiveStage()
     {
-        _tutorialStage?.gameObject.SetActive(false);
+        _tutorialStage?.SetActive(false);
         
         for (int i = 0; i < _normalStageList.Count; i++)
         {
-            _normalStageList[i]?.gameObject.SetActive(false);
+            _normalStageList[i]?.SetActive(false);
         }
 
         for (int i = 0; i < _eventStageList.Count; i++)
         {
-            _eventStageList[i]?.gameObject.SetActive(false);
+            _eventStageList[i]?.SetActive(false);
         }
     }
     
-    private void StartStage(int index)
+    private void StartStage()
     {
-        
         _currentStage = SetStage();
         _currentStage.gameObject.SetActive(true);
-        _currentStage.transform.position = new Vector3(0f, 0f, 4f);
+        _currentStage.transform.position = Vector3.zero;
         
         _currentStage.ResetStage();
         _currentStage.Enter();
 
-        _playerTransform.transform.position = Vector3.zero;
+        _playerTransform.transform.position = _currentStage.PlayerSpawnPoint.position;
 
         _currentStage.OnExitStage += ExitStage;
         
@@ -70,19 +71,25 @@ public class StageManager : MonoBehaviour
     {
         if (_stageIndex == 0)
         {
-            return _tutorialStage;
+            _stagePrefab = Instantiate(_tutorialStage, null);
+            return _stagePrefab.GetComponent<StageBase>();
         }
         else if (_stageIndex % 3 != 0)
         {
             // TODO 여기서 전투맵 피셔 예이츠 셔플해서 리턴
             int index = Random.Range(0, _normalStageList.Count);
-            return _normalStageList[index];
+            
+            _stagePrefab = Instantiate(_normalStageList[index], null);
+            
+            return _stagePrefab.GetComponent<StageBase>();
         }
         else if (_stageIndex % 3 == 0)
         {
             int index = Random.Range(0, _eventStageList.Count);
+         
+            _stagePrefab = Instantiate(_eventStageList[index], null);
             
-            return _eventStageList[index];
+            return _stagePrefab.GetComponent<StageBase>();
         }
 
         return null;
@@ -95,11 +102,11 @@ public class StageManager : MonoBehaviour
         _currentStage.Exit();
         _currentStage.OnExitStage -= ExitStage;
         
-        _currentStage.gameObject.SetActive(false);
+        Destroy(_currentStage.gameObject);
         
         // TODO 페이드인
         
-        StartStage(_stageIndex);
+        StartStage();
     }
     
     private void ActionExit(InputAction.CallbackContext context)
