@@ -1,8 +1,7 @@
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "MonsterData", menuName = "ScriptableObjects/MonsterData")]
-public class MonsterData : ScriptableObject
+public class MonsterData : MonoBehaviour
 {
     public string Name;
     public float Damage;
