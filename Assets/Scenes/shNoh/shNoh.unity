@@ -564,6 +564,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5832289171007872645, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 606376702}
+    - target: {fileID: 5832289171007872645, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 606376702}
     - target: {fileID: 6309407458739467575, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: _monsterData
       value: 
@@ -648,6 +656,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1954119548052175108, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
   m_PrefabInstance: {fileID: 606376700}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &606376702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7063331552006466025, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+  m_PrefabInstance: {fileID: 606376700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606376701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f193c1edf532a604f9581bb5fae50339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
 --- !u!1 &618345481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1874,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5832289171007872645, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 1619404340}
+    - target: {fileID: 5832289171007872645, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 1619404340}
     - target: {fileID: 6309407458739467575, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: _monsterData
       value: 
@@ -1939,6 +1966,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1954119548052175108, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
   m_PrefabInstance: {fileID: 1619404338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1619404340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7063331552006466025, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+  m_PrefabInstance: {fileID: 1619404338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619404339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f193c1edf532a604f9581bb5fae50339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
 --- !u!1 &1681987259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,6 +2580,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_A
       objectReference: {fileID: 0}
+    - target: {fileID: 5832289171007872645, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 598444738141487442}
+    - target: {fileID: 5832289171007872645, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 598444738141487442}
     - target: {fileID: 6309407458739467575, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: _monsterData
       value: 
@@ -2621,6 +2667,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+--- !u!114 &598444738141487442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7063331552006466025, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+  m_PrefabInstance: {fileID: 598444738141487441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870913143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f193c1edf532a604f9581bb5fae50339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
 --- !u!1001 &1657596376872994816
 PrefabInstance:
   m_ObjectHideFlags: 0

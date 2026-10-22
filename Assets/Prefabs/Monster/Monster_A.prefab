@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4638057714733465465}
   - component: {fileID: 9142032222376955372}
   - component: {fileID: 7063331552006466025}
-  - component: {fileID: 5832289171007872645}
   m_Layer: 0
   m_Name: Monster_A
   m_TagString: Untagged
@@ -98,6 +97,7 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 8656994304551026946
   - rid: 8656994304551026973
+  - rid: 8656994304551027054
   m_OriginalGraph: {fileID: 0}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -120,6 +120,14 @@ MonoBehaviour:
           m_Value1: 14194071757257296044
         Name: Monster_A_Data
         m_Value: {fileID: 7063331552006466025}
+    - rid: 8656994304551027054
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14348911930164654889
+          m_Value1: 12707631058746302442
+        Name: Target
+        m_Value: {fileID: 0}
 --- !u!114 &7063331552006466025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,20 +144,6 @@ MonoBehaviour:
   Damage: 50
   Speed: 3
   CoolDown: 0
---- !u!114 &5832289171007872645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954119548052175108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8bef2b44c61c24d8a1fb85f7a4b55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonsterA
-  Data: {fileID: 0}
-  Data: {fileID: 0}
 --- !u!1001 &2633157299416372432
 PrefabInstance:
   m_ObjectHideFlags: 0

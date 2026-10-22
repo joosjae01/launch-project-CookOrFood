@@ -18,7 +18,8 @@ MonoBehaviour:
   m_Variables:
   - rid: 8656994304551026926
   - rid: 8656994304551026965
-  m_VersionTimestamp: 639282857806964624
+  - rid: 8656994304551027044
+  m_VersionTimestamp: 639282863435268118
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: 6934638692285754188}
@@ -42,6 +43,16 @@ MonoBehaviour:
           m_Value0: 1491749963673548057
           m_Value1: 14194071757257296044
         Name: Monster_A_Data
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027044
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 14348911930164654889
+          m_Value1: 12707631058746302442
+        Name: Target
         IsExposed: 1
         m_IsShared: 0
         m_Value: {fileID: 0}
@@ -77,8 +88,8 @@ MonoBehaviour:
           rid: 8656994304551026928
         BlackboardGroupReferences: []
         Root:
-          rid: 8656994304551026970
-        m_VersionTimestamp: 639282857807977624
+          rid: 8656994304551027067
+        m_VersionTimestamp: 639282866448794910
     - rid: 8656994304551026928
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -89,9 +100,34 @@ MonoBehaviour:
       type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Variables:
-        - rid: 8656994304551026971
-        - rid: 8656994304551026972
-    - rid: 8656994304551026970
+        - rid: 8656994304551027051
+        - rid: 8656994304551027052
+        - rid: 8656994304551027053
+    - rid: 8656994304551027051
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027052
+      type: {class: 'BlackboardVariable`1[[MonsterData, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1491749963673548057
+          m_Value1: 14194071757257296044
+        Name: Monster_A_Data
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027053
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14348911930164654889
+          m_Value1: 12707631058746302442
+        Name: Target
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027067
       type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
@@ -102,25 +138,23 @@ MonoBehaviour:
         m_Parent:
           rid: -2
         m_Child:
-          rid: -2
+          rid: 8656994304551027068
         Repeat: 1
         AllowMultipleRepeatsPerTick: 0
-    - rid: 8656994304551026971
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+    - rid: 8656994304551027068
+      type: {class: ChaseAction, ns: , asm: Assembly-CSharp}
       data:
-        GUID:
-          m_Value0: 1
-          m_Value1: 0
-        Name: Self
-        m_Value: {fileID: 0}
-    - rid: 8656994304551026972
-      type: {class: 'BlackboardVariable`1[[MonsterData, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1491749963673548057
-          m_Value1: 14194071757257296044
-        Name: Monster_A_Data
-        m_Value: {fileID: 0}
+        ID:
+          m_Value0: 1267758556706976134
+          m_Value1: 13279030331940086900
+        Graph:
+          rid: 8656994304551026927
+        m_Parent:
+          rid: 8656994304551027067
+        Monster:
+          rid: 8656994304551027051
+        Target:
+          rid: 8656994304551027053
 --- !u!114 &-1907885270345107865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +184,8 @@ MonoBehaviour:
   m_Description: 
   m_Nodes:
   - rid: 8656994304551026932
-  m_VersionTimestamp: 639282857807977624
+  - rid: 8656994304551027056
+  m_VersionTimestamp: 639282866448794910
   m_SerializedVersion: 3
   m_DebugInfo: {fileID: -1907885270345107865}
   m_RuntimeGraph: {fileID: -6172895504669506553}
@@ -170,6 +205,26 @@ MonoBehaviour:
       m_Value0: 3335272451348827663
       m_Value1: 11549843281177505721
     Variables: []
+    NamedChildren: []
+    IsPlaceholder: 0
+  - Name: Chase
+    Story: '[Monster] to [Target]'
+    RuntimeTypeString: ChaseAction, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    RuntimeTypeID:
+      m_Value0: 15903550730512470249
+      m_Value1: 7315399781326850357
+    Variables:
+    - Name: Monster
+      Type:
+        m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      Tooltip: 
+    - Name: Target
+      Type:
+        m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      Tooltip: 
     NamedChildren: []
     IsPlaceholder: 0
   m_Blackboards: []
@@ -212,7 +267,105 @@ MonoBehaviour:
         m_IsFloating: 0
         m_NodeModel:
           rid: 8656994304551026932
+        m_Connections:
+        - rid: 8656994304551027057
+    - rid: 8656994304551027056
+      type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        Position: {x: -3.1430273, y: 175.32219}
+        ID:
+          m_Value0: 1267758556706976134
+          m_Value1: 13279030331940086900
+        Parents: []
+        PortModels:
+        - rid: 8656994304551027057
+        - rid: 8656994304551027058
+        NodeType:
+          m_SerializableType: ChaseAction, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        NodeTypeID:
+          m_Value0: 15903550730512470249
+          m_Value1: 7315399781326850357
+        m_FieldValues:
+        - rid: 8656994304551027059
+        - rid: 8656994304551027060
+    - rid: 8656994304551027057
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: InputPort
+        m_PortDataFlowType: 0
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 8656994304551027056
+        m_Connections:
+        - rid: 8656994304551026933
+    - rid: 8656994304551027058
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: OutputPort
+        m_PortDataFlowType: 1
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 8656994304551027056
         m_Connections: []
+    - rid: 8656994304551027059
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Monster
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 8656994304551027061
+        LinkedVariable:
+          rid: 8656994304551027065
+    - rid: 8656994304551027060
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Target
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 8656994304551027062
+        LinkedVariable:
+          rid: 8656994304551027063
+    - rid: 8656994304551027061
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027062
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027063
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 14348911930164654889
+          m_Value1: 12707631058746302442
+        Name: Target
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027065
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
 --- !u!114 &6934638692285754188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
   m_Name: MonsterMovement Blackboard
   m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.RuntimeBlackboardAsset
-  VersionTimestamp: 639282857806964624
+  VersionTimestamp: 639282863435268118
   AssetID:
     m_Value0: 8415243078412942080
     m_Value1: 17061066568986300122
@@ -233,6 +386,7 @@ MonoBehaviour:
     m_Variables:
     - rid: 8656994304551026934
     - rid: 8656994304551026969
+    - rid: 8656994304551027049
   m_SharedBlackboardVariableGuids: []
   references:
     version: 2
@@ -252,4 +406,12 @@ MonoBehaviour:
           m_Value0: 1491749963673548057
           m_Value1: 14194071757257296044
         Name: Monster_A_Data
+        m_Value: {fileID: 0}
+    - rid: 8656994304551027049
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14348911930164654889
+          m_Value1: 12707631058746302442
+        Name: Target
         m_Value: {fileID: 0}
