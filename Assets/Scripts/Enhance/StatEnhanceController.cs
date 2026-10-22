@@ -9,8 +9,8 @@ public class StatEnhanceController : MonoBehaviour
     [Header("무기 스탯 변동")]
     [SerializeField] private List<WeaponStatEnhance> _weaponEnhanceList = new();
 
-    private PlayerData _playerData;
-    private WeaponData _weaponData;
+    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private WeaponData _weaponData;
 
     //TODO: 플레이어 데이터 변경 후 적용 필요
     //private PlayerContext _playerContext;
