@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class TutorialStage : MonoBehaviour
+public class TutorialStage : CombatStageBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override MapType MapType { get => MapType.Tutorial; }
+
+    protected override void CombatStageEnter()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void CombatStageExit()
     {
         
     }
