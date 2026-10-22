@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: MonsterMovement Blackboard
   m_EditorClassIdentifier: Unity.Behavior.Authoring::Unity.Behavior.BehaviorBlackboardAuthoringAsset
   AssetID:
-    m_Value0: 0
-    m_Value1: 0
+    m_Value0: 8415243078412942080
+    m_Value1: 17061066568986300122
   m_Variables:
   - rid: 8656994304551026926
-  - rid: 8656994304551026936
-  m_VersionTimestamp: 639282824993391592
+  - rid: 8656994304551026965
+  m_VersionTimestamp: 639282857806964624
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: 6934638692285754188}
@@ -35,16 +35,16 @@ MonoBehaviour:
         IsExposed: 1
         m_IsShared: 0
         m_Value: {fileID: 0}
-    - rid: 8656994304551026936
-      type: {class: 'TypedVariableModel`1[[System.Boolean, mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+    - rid: 8656994304551026965
+      type: {class: 'TypedVariableModel`1[[MonsterData, Assembly-CSharp]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
         ID:
-          m_Value0: 10335715905007944773
-          m_Value1: 11917382864054582349
-        Name: IsDead
+          m_Value0: 1491749963673548057
+          m_Value1: 14194071757257296044
+        Name: Monster_A_Data
         IsExposed: 1
         m_IsShared: 0
-        m_Value: 0
+        m_Value: {fileID: 0}
 --- !u!114 &-6172895504669506553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,8 +77,8 @@ MonoBehaviour:
           rid: 8656994304551026928
         BlackboardGroupReferences: []
         Root:
-          rid: 8656994304551026941
-        m_VersionTimestamp: 639282824994470597
+          rid: 8656994304551026970
+        m_VersionTimestamp: 639282857807977624
     - rid: 8656994304551026928
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -89,9 +89,9 @@ MonoBehaviour:
       type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Variables:
-        - rid: 8656994304551026942
-        - rid: 8656994304551026943
-    - rid: 8656994304551026941
+        - rid: 8656994304551026971
+        - rid: 8656994304551026972
+    - rid: 8656994304551026970
       type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
@@ -105,7 +105,7 @@ MonoBehaviour:
           rid: -2
         Repeat: 1
         AllowMultipleRepeatsPerTick: 0
-    - rid: 8656994304551026942
+    - rid: 8656994304551026971
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
@@ -113,14 +113,14 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 0}
-    - rid: 8656994304551026943
-      type: {class: 'BlackboardVariable`1[[System.Boolean, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+    - rid: 8656994304551026972
+      type: {class: 'BlackboardVariable`1[[MonsterData, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 10335715905007944773
-          m_Value1: 11917382864054582349
-        Name: IsDead
-        m_Value: 0
+          m_Value0: 1491749963673548057
+          m_Value1: 14194071757257296044
+        Name: Monster_A_Data
+        m_Value: {fileID: 0}
 --- !u!114 &-1907885270345107865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Description: 
   m_Nodes:
   - rid: 8656994304551026932
-  m_VersionTimestamp: 639282824994470597
+  m_VersionTimestamp: 639282857807977624
   m_SerializedVersion: 3
   m_DebugInfo: {fileID: -1907885270345107865}
   m_RuntimeGraph: {fileID: -6172895504669506553}
@@ -225,14 +225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
   m_Name: MonsterMovement Blackboard
   m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.RuntimeBlackboardAsset
-  VersionTimestamp: 639282824993391592
+  VersionTimestamp: 639282857806964624
   AssetID:
-    m_Value0: 0
-    m_Value1: 0
+    m_Value0: 8415243078412942080
+    m_Value1: 17061066568986300122
   m_Blackboard:
     m_Variables:
     - rid: 8656994304551026934
-    - rid: 8656994304551026940
+    - rid: 8656994304551026969
   m_SharedBlackboardVariableGuids: []
   references:
     version: 2
@@ -245,11 +245,11 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 0}
-    - rid: 8656994304551026940
-      type: {class: 'BlackboardVariable`1[[System.Boolean, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+    - rid: 8656994304551026969
+      type: {class: 'BlackboardVariable`1[[MonsterData, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 10335715905007944773
-          m_Value1: 11917382864054582349
-        Name: IsDead
-        m_Value: 0
+          m_Value0: 1491749963673548057
+          m_Value1: 14194071757257296044
+        Name: Monster_A_Data
+        m_Value: {fileID: 0}
