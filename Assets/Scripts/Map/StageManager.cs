@@ -8,10 +8,12 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference _changeStageAction;
     [SerializeField] private GameObject _playerTransform;
-    [SerializeField] private GameObject _tutorialStage;
-    [SerializeField] private List<GameObject> _normalStageList;
-    [SerializeField] private List<GameObject> _eventStageList;
+    [SerializeField] private List<StageBase> _stages;
     
+    [SerializeField] private StageBase _tutorialStage;
+    [SerializeField] private StageBase _bossStage;
+    [SerializeField] private List<StageBase> _combatStageList;
+    [SerializeField] private List<StageBase> _eventStageList;
     private int _stageIndex;
     private StageBase _currentStage;
     private GameObject _stagePrefab;
@@ -21,7 +23,7 @@ public class StageManager : MonoBehaviour
     
     private void Awake()
     {
-        DeactiveStage();
+        InitStages();
         
         _stageIndex = 0;
         StartStage();
@@ -30,24 +32,37 @@ public class StageManager : MonoBehaviour
     private void OnEnable()
     {
         // 맵 변경 테스트용 InputSystem
-        // _changeStageAction.action.Enable();
-        // _changeStageAction.action.performed += ActionExit;
+        _changeStageAction.action.Enable();
+        _changeStageAction.action.performed += ActionExit;
     }
 
     // ---------------------------------
 
-    private void DeactiveStage()
+    private void InitStages()
     {
-        _tutorialStage?.SetActive(false);
-        
-        for (int i = 0; i < _normalStageList.Count; i++)
+        for (int i = 0; i < _stages.Count; i++)
         {
-            _normalStageList[i]?.SetActive(false);
-        }
-
-        for (int i = 0; i < _eventStageList.Count; i++)
-        {
-            _eventStageList[i]?.SetActive(false);
+            _stagePrefab = Instantiate(_stages[i].gameObject, null);
+            
+            switch (_stages[i].StageType)
+            {
+                case StageType.Tutorial:
+                    _stagePrefab.SetActive(false);
+                    _tutorialStage = _stagePrefab.GetComponent<StageBase>();
+                    break;
+                case StageType.Combat:
+                    _stagePrefab.SetActive(false);
+                    _combatStageList.Add(_stagePrefab.GetComponent<StageBase>());
+                    break;
+                case StageType.Event:
+                    _stagePrefab.SetActive(false);
+                    _eventStageList.Add(_stagePrefab.GetComponent<StageBase>());
+                    break;
+                case StageType.Boss:
+                    _stagePrefab.SetActive(false);
+                    _bossStage = _stagePrefab.GetComponent<StageBase>();
+                    break;
+            }
         }
     }
     
@@ -55,6 +70,7 @@ public class StageManager : MonoBehaviour
     {
         _currentStage = SetStage();
         _currentStage.gameObject.SetActive(true);
+        
         _currentStage.transform.position = Vector3.zero;
         
         _currentStage.ResetStage();
@@ -71,26 +87,28 @@ public class StageManager : MonoBehaviour
     {
         if (_stageIndex == 0)
         {
-            _stagePrefab = Instantiate(_tutorialStage, null);
-            return _stagePrefab.GetComponent<StageBase>();
+            return _tutorialStage;
         }
-        else if (_stageIndex % 3 != 0)
+
+        if (_stageIndex == 18)
+        {
+            return _bossStage;
+        }
+        
+        if (_stageIndex % 3 != 0)
         {
             // TODO 여기서 전투맵 피셔 예이츠 셔플해서 리턴
             
-            int index = Random.Range(0, _normalStageList.Count);
+            int index = Random.Range(0, _combatStageList.Count);
             
-            _stagePrefab = Instantiate(_normalStageList[index], null);
-            
-            return _stagePrefab.GetComponent<StageBase>();
+            return _combatStageList[index];
         }
-        else if (_stageIndex % 3 == 0)
+        
+        if (_stageIndex % 3 == 0)
         {
             int index = Random.Range(0, _eventStageList.Count);
-         
-            _stagePrefab = Instantiate(_eventStageList[index], null);
             
-            return _stagePrefab.GetComponent<StageBase>();
+            return _eventStageList[index];
         }
 
         return null;
@@ -103,7 +121,7 @@ public class StageManager : MonoBehaviour
         _currentStage.Exit();
         _currentStage.OnExitStage -= ExitStage;
         
-        Destroy(_currentStage.gameObject);
+        _currentStage.gameObject.SetActive(false);
         
         // TODO 페이드인
         

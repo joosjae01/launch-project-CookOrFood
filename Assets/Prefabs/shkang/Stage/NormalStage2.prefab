@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 6640764547427610330}
   - component: {fileID: 5832360196817517288}
   - component: {fileID: 4377291623402877497}
-  - component: {fileID: 4474891028883549000}
+  - component: {fileID: -2295864809526256804}
   m_Layer: 0
   m_Name: NormalStage2
   m_TagString: Untagged
@@ -284,7 +284,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &4474891028883549000
+--- !u!114 &-2295864809526256804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,9 +293,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6008560704848438553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d943557154ab49146902022f12fbd5f4, type: 3}
+  m_Script: {fileID: 11500000, guid: c4eb26faae283514abf4f6f73f2dbbcf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalStage
+  m_EditorClassIdentifier: Assembly-CSharp::CombatStage
   PlayerSpawnPoint: {fileID: 1617937727767888865}
 --- !u!1 &8554807154683304909
 GameObject:

@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 2555082984967232075}
   - component: {fileID: 3061178556698448851}
   - component: {fileID: 4189299827008908146}
-  - component: {fileID: -6653484737545181638}
+  - component: {fileID: -7410520432553284462}
   m_Layer: 0
   m_Name: EventStage3
   m_TagString: Untagged
@@ -386,7 +386,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &-6653484737545181638
+--- !u!114 &-7410520432553284462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7119871388573199839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d943557154ab49146902022f12fbd5f4, type: 3}
+  m_Script: {fileID: 11500000, guid: dae79d3d64099b54f95a44c70a77f1e0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalStage
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteEventStage
   PlayerSpawnPoint: {fileID: 2868574392347525701}
