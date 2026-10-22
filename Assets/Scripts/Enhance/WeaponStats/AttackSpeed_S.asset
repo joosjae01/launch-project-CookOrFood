@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AttackSpeed_S
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStatEnhance
   Name: "\uACF5\uACA9 \uC18D\uB3C4 (S)"
-  AttackValueAmount: 0
-  AttackSpeedEnhance: 0.5
-  CritRateEnhance: 0
-  CritDamageEnhance: 0
   Grade: 0
+  AttackValueAmount: 0
+  AttackSpeedAmount: 5
+  CritRateAmount: 0
+  CritDamageAmount: 0

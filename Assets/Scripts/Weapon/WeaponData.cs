@@ -19,7 +19,6 @@ public class WeaponData : MonoBehaviour
 
     public void IncreaseData(WeaponContext context)
     {
-        Name += context.Name;
         AttackValue += context.AttackValue;
         AttackSpeed += context.AttackSpeed;
         CritRate += context.CritRate;
