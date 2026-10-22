@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnhanceManager : SingletonBehaviour<EnhanceManager>
 {
     [Header("현재 적용된 강화 효과")]
-    [SerializeField] private List<Enhance> _currentEnhace = new();
+    [SerializeField] private List<EnhanceBase> _currentEnhace = new();
     private void Awake() => SetSingleton();
 
     [SerializeField] private StatEnhanceController _statEnhanceController;
@@ -17,7 +17,7 @@ public class EnhanceManager : SingletonBehaviour<EnhanceManager>
     public event Action OnProjectileHitMonster;
     public event Action OnProjectileHitWall;
 
-    public void AddEnhance(Enhance enhance)
+    public void AddEnhance(EnhanceBase enhance)
     {
         _currentEnhace.Add(enhance);
     }

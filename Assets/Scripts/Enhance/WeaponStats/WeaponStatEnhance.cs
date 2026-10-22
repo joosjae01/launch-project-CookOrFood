@@ -2,7 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponStatEnhance", menuName = "Scriptable Objects/WeaponStatEnhance")]
 
-public class WeaponStatEnhance : Enhance
+public class WeaponStatEnhance : EnhanceBase
 {
     [Header("공격력 변화량")]
     public float AttackValueAmount;

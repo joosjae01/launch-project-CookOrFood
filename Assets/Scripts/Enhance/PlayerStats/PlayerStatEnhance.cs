@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerStatEnhance", menuName = "Scriptable Objects/PlayerStatEnhance")]
-public class PlayerStatEnhance : Enhance
+public class PlayerStatEnhance : EnhanceBase
 {
     [Header("체력 변화량")]
     public float HealthAmount;

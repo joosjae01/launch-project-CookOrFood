@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Enhance : ScriptableObject
+public abstract class EnhanceBase : ScriptableObject
 {
     [Header("강화 이름")]
     public string Name;
