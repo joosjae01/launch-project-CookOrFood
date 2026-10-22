@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class MonsterBase : IPoolable, IDamageable
+public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
 {
     public MonsterData Data;
     
