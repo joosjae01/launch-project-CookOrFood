@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMove();
+    }
+
+    private void LateUpdate()
+    {
         SetPlayerView();
     }
     
