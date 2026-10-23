@@ -10,11 +10,12 @@ public class StageManager : MonoBehaviour
     [SerializeField] private GameObject _playerTransform;
     [SerializeField] private List<StageBase> _stages;
     
-    [SerializeField] private StageBase _tutorialStage;
-    [SerializeField] private StageBase _bossStage;
-    [SerializeField] private List<StageBase> _combatStageList;
-    [SerializeField] private List<StageBase> _eventStageList;
+    private StageBase _tutorialStage;
+    private StageBase _bossStage;
+    private List<StageBase> _combatStageList;
+    private List<StageBase> _eventStageList;
     private int _stageIndex;
+    private int _shuffleIndex;
     private StageBase _currentStage;
     private GameObject _stagePrefab;
     private Vector3 _mapPosition;
@@ -22,7 +23,7 @@ public class StageManager : MonoBehaviour
     // ---------- Event Method ----------
     
     private void Awake()
-    {
+    { 
         InitStages();
         
         _stageIndex = 0;
@@ -32,8 +33,8 @@ public class StageManager : MonoBehaviour
     private void OnEnable()
     {
         // 맵 변경 테스트용 InputSystem
-        _changeStageAction.action.Enable();
-        _changeStageAction.action.performed += ActionExit;
+        // _changeStageAction.action.Enable();
+        // _changeStageAction.action.performed += ActionExit;
     }
 
     // ---------------------------------
@@ -97,11 +98,12 @@ public class StageManager : MonoBehaviour
         
         if (_stageIndex % 3 != 0)
         {
-            // TODO 여기서 전투맵 피셔 예이츠 셔플해서 리턴
-            
-            int index = Random.Range(0, _combatStageList.Count);
-            
-            return _combatStageList[index];
+            if (_shuffleIndex == 4)
+            {
+                ShuffleStage();
+                _shuffleIndex = 0;
+            }
+            return _combatStageList[_shuffleIndex++];
         }
         
         if (_stageIndex % 3 == 0)
@@ -126,6 +128,17 @@ public class StageManager : MonoBehaviour
         // TODO 페이드인
         
         StartStage();
+    }
+
+    private void ShuffleStage()
+    {
+        for (int i = _combatStageList.Count; i > 0; i--)
+        {
+            int index = Random.Range(0, i);
+            
+            (_combatStageList[i - 1], _combatStageList[index]) =
+                (_combatStageList[index], _combatStageList[i - 1]);
+        }
     }
     
     // 맵 변경 테스트용 InputSystem 
