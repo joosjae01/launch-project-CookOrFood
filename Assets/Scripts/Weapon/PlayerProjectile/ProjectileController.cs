@@ -17,13 +17,12 @@ public class ProjectileController : MonoBehaviour, IPoolable
     [SerializeField] private WeaponData _weaponData;
 
     private IDamageable _target;
-   
 
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
 
-    private void Start() => _projectileData.Fire();
-    private void FixedUpdate() => _projectileData.Move();
+    private void Start() => _projectileData.Fire(gameObject);
+    private void FixedUpdate() => _projectileData.Move(gameObject, _projectileData.MoveSpeed);
     private void OnTriggerEnter(Collider other) => CheckLayerMask(other);
 
     private void CheckEnemy(Collider other)
