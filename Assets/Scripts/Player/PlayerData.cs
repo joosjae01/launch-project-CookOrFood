@@ -8,18 +8,19 @@ public class PlayerData : MonoBehaviour
     
     [field : SerializeField] public float Speed  { get; private set; } // 이동 속도
     [field : SerializeField] public string Name { get; private set; } // 캐릭터 이름
-    
-    public ObservableProperty<float> MaxHealth { get; set; }  // 최대 체력
-    public ObservableProperty<float> CurrentHealth { get; set; }  // 현재 체력
-    public ObservableProperty<float> CurrentExp { get; set; } // 현재 경험치
-    public ObservableProperty<int> CurrentLevel { get; set; }  // 현재 레벨
-    public ObservableProperty<bool> IsDead { get; set; }  // 사망 여부
+
+    public ObservableProperty<float> MaxHealth = new(0); // 최대 체력
+    public ObservableProperty<float> CurrentHealth = new(0); // 현재 체력
+    public ObservableProperty<float> CurrentExp = new(0); // 현재 경험치
+    public ObservableProperty<int> CurrentLevel = new(1); // 현재 레벨
+    public ObservableProperty<bool> IsDead = new(false); // 사망 여부
 
     private void Awake() => InitData();
     
     private void InitData()
-    {
+    { 
         MaxHealth.Value = _maxHealth;
         CurrentHealth.Value = _maxHealth;
+        Debug.Log($"데이터: {CurrentHealth.Value} / {MaxHealth.Value}");
     }
 }
