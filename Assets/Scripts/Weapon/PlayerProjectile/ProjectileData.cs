@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "ProjectileData", menuName = "Scriptable Objects/ProjectileData")]
 public class ProjectileData : ScriptableObject
@@ -10,10 +11,14 @@ public class ProjectileData : ScriptableObject
     [Header("투사체 생존 시간")]
     public float LifeTime;
 
-    public event Action OnFired;
-    public event Action OnMoved;
-    public event Action OnBlocked;
-    public event Action<IDamageable, WeaponData> OnAttacked;
+    [Header("생성")]
+    public UnityEvent OnFired;
+    [Header("이동")]
+    public UnityEvent OnMoved;
+    [Header("벽과 충돌")]
+    public UnityEvent OnBlocked;
+    [Header("적과 충돌")]
+    public UnityEvent<IDamageable, WeaponData> OnAttacked;
 
     public void Fire() => OnFired?.Invoke();
     public void Move() => OnMoved?.Invoke();

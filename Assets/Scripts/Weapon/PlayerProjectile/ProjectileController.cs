@@ -13,8 +13,11 @@ public class ProjectileController : MonoBehaviour, IPoolable
     [Header("스크립터블 데이터")]
     [SerializeField] private ProjectileData _projectileData;
 
+    [Header("테스트용 무기 데이터")]
+    [SerializeField] private WeaponData _weaponData;
+
     private IDamageable _target;
-    private WeaponData _weaponData;
+   
 
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
