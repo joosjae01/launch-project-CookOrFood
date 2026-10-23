@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5654343507423482594}
   - component: {fileID: 107465049105590762}
   - component: {fileID: 1505739296540964791}
+  - component: {fileID: 9013631152497922016}
   m_Layer: 0
   m_Name: PoolTestArrow
   m_TagString: Untagged
@@ -125,3 +126,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b65d87528d9f3d49957cbe96da8613e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoolableTest
+--- !u!114 &9013631152497922016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163741608181358528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad621748badff024da512b2614591706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileController
+  _enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _wallMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _projectileData: {fileID: 11400000, guid: 4d2baf9761697ff4698d039560bede31, type: 2}
+  _weaponData: {fileID: 8247211778276695133, guid: cc6e0177329956e47804b487df35bca3, type: 3}

@@ -4,13 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PoolableTest : MonoBehaviour, IPoolable, IDamageable
 {
-    public GameObject GameObject { get; set; }
+    public GameObject GameObject { get => gameObject; }
     public ObjectPool Source { get; set; }
-
-    private void Awake()
-    {
-        GameObject = gameObject;
-    }
 
     private void OnEnable()
     {

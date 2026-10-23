@@ -1,0 +1,24 @@
+using UnityEngine;
+
+public class BasicLogic : MonoBehaviour
+{
+    public void BasicFire(GameObject projectile)
+    {
+        projectile.transform.SetPositionAndRotation(projectile.transform.position, projectile.transform.rotation);
+    }
+
+    public void BasicMove(GameObject projectile, float moveSpeed)
+    {
+        projectile.transform.Translate(projectile.transform.forward * moveSpeed * Time.deltaTime);
+    }
+
+    public void BasicAttack(IDamageable damageable, WeaponData weaponData)
+    {
+        damageable.TakeDamage(weaponData.AttackValue);
+    }
+
+    public void BasicBlock()
+    {
+
+    }
+}
