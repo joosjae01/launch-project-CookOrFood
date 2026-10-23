@@ -21,6 +21,5 @@ public class PlayerData : MonoBehaviour
     { 
         MaxHealth.Value = _maxHealth;
         CurrentHealth.Value = _maxHealth;
-        Debug.Log($"데이터: {CurrentHealth.Value} / {MaxHealth.Value}");
     }
 }
