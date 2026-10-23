@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-public class StageManager : MonoBehaviour
+public class StageManager : SingletonBehaviour<StageManager>
 {
     [SerializeField] private InputActionReference _changeStageAction;
     [SerializeField] private GameObject _playerTransform;
@@ -12,20 +12,24 @@ public class StageManager : MonoBehaviour
     
     private StageBase _tutorialStage;
     private StageBase _bossStage;
-    private List<StageBase> _combatStageList;
-    private List<StageBase> _eventStageList;
+    private List<StageBase> _combatStageList = new();
+    private List<StageBase> _eventStageList = new();
     private int _stageIndex;
     private int _shuffleIndex;
     private StageBase _currentStage;
     private GameObject _stagePrefab;
     private Vector3 _mapPosition;
 
+    private int currentHealth;
+    private int maxHealth;
+
     // ---------- Event Method ----------
     
     private void Awake()
     { 
-        InitStages();
+        SetSingleton();
         
+        InitStages();
         _stageIndex = 0;
         StartStage();
     }
@@ -40,7 +44,7 @@ public class StageManager : MonoBehaviour
     // ---------------------------------
 
     private void InitStages()
-    {
+    { 
         for (int i = 0; i < _stages.Count; i++)
         {
             _stagePrefab = Instantiate(_stages[i].gameObject, null);
@@ -56,8 +60,8 @@ public class StageManager : MonoBehaviour
                     _combatStageList.Add(_stagePrefab.GetComponent<StageBase>());
                     break;
                 case StageType.Event:
-                    _stagePrefab.SetActive(false);
                     _eventStageList.Add(_stagePrefab.GetComponent<StageBase>());
+                    _stagePrefab.SetActive(false);
                     break;
                 case StageType.Boss:
                     _stagePrefab.SetActive(false);
@@ -78,8 +82,6 @@ public class StageManager : MonoBehaviour
         _currentStage.Enter();
 
         _playerTransform.transform.position = _currentStage.PlayerSpawnPoint.position;
-
-        _currentStage.OnExitStage += ExitStage;
         
         _stageIndex++;
     }
@@ -116,20 +118,6 @@ public class StageManager : MonoBehaviour
         return null;
     }
 
-    private void ExitStage()
-    {
-        // TODO 페이드아웃
-        
-        _currentStage.Exit();
-        _currentStage.OnExitStage -= ExitStage;
-        
-        _currentStage.gameObject.SetActive(false);
-        
-        // TODO 페이드인
-        
-        StartStage();
-    }
-
     private void ShuffleStage()
     {
         for (int i = _combatStageList.Count; i > 0; i--)
@@ -145,5 +133,18 @@ public class StageManager : MonoBehaviour
     private void ActionExit(InputAction.CallbackContext context)
     {
         ExitStage();
+    }
+    
+    public void ExitStage()
+    {
+        // TODO 페이드아웃
+        
+        _currentStage.Exit();
+        
+        _currentStage.gameObject.SetActive(false);
+        
+        // TODO 페이드인
+        
+        StartStage();
     }
 }
