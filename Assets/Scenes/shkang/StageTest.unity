@@ -165,10 +165,6 @@ MonoBehaviour:
   - {fileID: -9199236633790138149, guid: c491d93339d156c48968a84a84a475a7, type: 3}
   - {fileID: 892559027576110275, guid: 7aeec957d8003e64c9ab0dd47c972bc7, type: 3}
   - {fileID: 363761365846086956, guid: d2f63347cc66b3e4e81005935b460c15, type: 3}
-  _tutorialStage: {fileID: 892559027576110275, guid: 7aeec957d8003e64c9ab0dd47c972bc7, type: 3}
-  _bossStage: {fileID: 0}
-  _combatStageList: []
-  _eventStageList: []
 --- !u!4 &883849380
 Transform:
   m_ObjectHideFlags: 0
