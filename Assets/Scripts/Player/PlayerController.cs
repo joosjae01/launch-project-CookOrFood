@@ -1,11 +1,44 @@
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
     private PlayerData _playerData;
+    private Action _playerDataChange;
     
     // TODO: 플레이어가 해야되는 기능들
-   
+
+    private void OnEnable() => InitData();
+    
+    private void Start()
+    {
+        BindDataChange();
+    }
+
+    private void OnDisable()
+    {
+        UnBindDataChange();
+    }
+    
+    private void BindDataChange()
+    {
+        _playerDataChange += ClampLevel;
+        _playerDataChange += LevelUp;
+        _playerDataChange += ClampLevel;
+    }
+
+    private void UnBindDataChange()
+    {
+        _playerDataChange -= ClampLevel;
+        _playerDataChange -= LevelUp;
+        _playerDataChange -= ClampLevel;
+    }
+
+    private void InitData()
+    {
+        _playerData = new PlayerData();
+    }
+    
     private void ClampHealth() // 최대체력 이상, 0 이하(사망)을 검사
     {
         // 최대 체력 이상 검사
