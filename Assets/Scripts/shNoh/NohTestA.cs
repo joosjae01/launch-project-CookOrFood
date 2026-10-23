@@ -18,7 +18,14 @@ public class NohTestA : MonoBehaviour
 
     private void TestFooA(InputAction.CallbackContext ctx)
     {
-        _playerData.CurrentHealth.Value -= 20f;
+        if (_playerData.CurrentHealth.Value > 20.0f)
+        {
+            _playerData.CurrentHealth.Value -= 20f;    
+        }
+        else
+        {
+            _playerData.CurrentHealth.Value = 0.0f;
+        }
         Debug.Log(_playerData.CurrentHealth.Value);
     }
 }

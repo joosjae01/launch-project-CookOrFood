@@ -30,9 +30,8 @@ public class PlayerController : MonoBehaviour, IDamageable
             _playerData.CurrentHealth.Value = _playerData.MaxHealth.Value;
         }
         // 사망 검사
-        else if (health <= 0)
+        else if (health <= 0.0f )
         {
-            _playerData.CurrentHealth.Value = 0;
             _playerData.IsDead.Value = true;
         }
     }
