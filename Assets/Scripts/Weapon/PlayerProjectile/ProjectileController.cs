@@ -23,7 +23,11 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
     private void Start() => _projectileData.Fire(gameObject);
     private void FixedUpdate() => _projectileData.Move(gameObject, _projectileData.MoveSpeed);
-    private void OnTriggerEnter(Collider other) => CheckLayerMask(other);
+    private void OnTriggerEnter(Collider other)
+    {
+        CheckEnemy(other);
+        CheckWall(other);
+    }
 
     private void CheckEnemy(Collider other)
     {
@@ -31,6 +35,7 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
         other.TryGetComponent<IDamageable>(out _target);
         _projectileData.Attack(_target, _weaponData);
+        ReturnToPool();
     }
 
     private void CheckWall(Collider other)
@@ -38,12 +43,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
         if (!_wallMask.Contains(other)) return;
 
         _projectileData.Block();
-    }
-
-    private void CheckLayerMask(Collider other)
-    {
-        CheckEnemy(other);
-        CheckWall(other);
         ReturnToPool();
     }
 
