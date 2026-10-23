@@ -88,36 +88,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 5511892984738611935
-      type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        ID:
-          m_Value0: 9157386124532788517
-          m_Value1: 14990443247343034479
-        Graph:
-          rid: 8656994304551026927
-        m_Parent:
-          rid: -2
-        m_Child:
-          rid: 5511892984738611936
-        Repeat: 1
-        AllowMultipleRepeatsPerTick: 0
-    - rid: 5511892984738611936
-      type: {class: ChaseAction, ns: , asm: Assembly-CSharp}
-      data:
-        ID:
-          m_Value0: 1267758556706976134
-          m_Value1: 13279030331940086900
-        Graph:
-          rid: 8656994304551026927
-        m_Parent:
-          rid: 5511892984738611935
-        Monster:
-          rid: 8656994304551027343
-        Target:
-          rid: 8656994304551027345
-        Agent:
-          rid: 8656994304551027346
     - rid: 8656994304551026927
       type: {class: BehaviorGraphModule, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -129,8 +99,8 @@ MonoBehaviour:
           rid: 8656994304551026928
         BlackboardGroupReferences: []
         Root:
-          rid: 5511892984738611935
-        m_VersionTimestamp: 639283127534035742
+          rid: 8656994327632281673
+        m_VersionTimestamp: 639283648270255074
     - rid: 8656994304551026928
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -177,6 +147,36 @@ MonoBehaviour:
           m_Value1: 16518968132008736583
         Name: Agent
         m_Value: {fileID: 0}
+    - rid: 8656994327632281673
+      type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        ID:
+          m_Value0: 9157386124532788517
+          m_Value1: 14990443247343034479
+        Graph:
+          rid: 8656994304551026927
+        m_Parent:
+          rid: -2
+        m_Child:
+          rid: 8656994327632281674
+        Repeat: 1
+        AllowMultipleRepeatsPerTick: 0
+    - rid: 8656994327632281674
+      type: {class: ChaseAction, ns: , asm: Assembly-CSharp}
+      data:
+        ID:
+          m_Value0: 1267758556706976134
+          m_Value1: 13279030331940086900
+        Graph:
+          rid: 8656994304551026927
+        m_Parent:
+          rid: 8656994327632281673
+        Monster:
+          rid: 8656994304551027343
+        Target:
+          rid: 8656994304551027345
+        Agent:
+          rid: 8656994304551027346
 --- !u!114 &-1907885270345107865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Nodes:
   - rid: 8656994304551026932
   - rid: 8656994304551027056
-  m_VersionTimestamp: 639283127534035742
+  m_VersionTimestamp: 639283648270255074
   m_SerializedVersion: 3
   m_DebugInfo: {fileID: -1907885270345107865}
   m_RuntimeGraph: {fileID: -6172895504669506553}

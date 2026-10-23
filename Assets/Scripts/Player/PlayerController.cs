@@ -1,66 +1,61 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     [SerializeField] private PlayerData _playerData;
-    private Action _playerDataChange;
     
-    private void Start()
+    public GameObject GameObject { get; set; }
+    
+    private void OnEnable()
     {
-        BindDataChange();
+        _playerData.CurrentExp.AddListener(LevelUp);
+        _playerData.CurrentLevel.AddListener(ClampLevel);
+        _playerData.CurrentHealth.AddListener(ClampHealth);
     }
 
     private void OnDisable()
     {
-        UnBindDataChange();
-    }
-    
-    private void BindDataChange()
-    {
-        _playerDataChange += ClampHealth;
-        _playerDataChange += LevelUp;
-        _playerDataChange += ClampLevel;
+        _playerData.CurrentExp.RemoveListener(LevelUp);
+        _playerData.CurrentLevel.RemoveListener(ClampLevel);
+        _playerData.CurrentHealth.RemoveListener(ClampHealth);
     }
 
-    private void UnBindDataChange()
-    {
-        _playerDataChange -= ClampHealth;
-        _playerDataChange -= LevelUp;
-        _playerDataChange -= ClampLevel;
-    }
-    
-    private void ClampHealth() // 최대체력 이상, 0 이하(사망)을 검사
+    private void ClampHealth(float health) // 최대체력 이상, 0 이하(사망)을 검사
     {
         // 최대 체력 이상 검사
-        if (_playerData.CurrentHealth.Value >= _playerData.MaxHealth.Value)
+        if (health > _playerData.MaxHealth.Value)
         {
             _playerData.CurrentHealth.Value = _playerData.MaxHealth.Value;
         }
         // 사망 검사
-        else if (_playerData.CurrentHealth.Value <= 0)
+        else if (health <= 0)
         {
+            _playerData.CurrentHealth.Value = 0;
             _playerData.IsDead.Value = true;
         }
     }
 
-    private void LevelUp()
+    private void LevelUp(float currentExp)
     {
-        float remainExp;
-        
-        if (_playerData.CurrentExp.Value >= _playerData.MAX_EXP) // 레벨업 과 잔류 경험치 처리
+        if (currentExp >= _playerData.MAX_EXP) // 레벨업 과 잔류 경험치 처리
         {
-            remainExp = (_playerData.CurrentExp.Value -  _playerData.MAX_EXP);
             _playerData.CurrentLevel.Value++;
-            _playerData.CurrentExp.Value = remainExp;
+            _playerData.CurrentExp.Value = currentExp - _playerData.MAX_EXP;
         }
     }
     
-    private void ClampLevel() // 최대 레벨 검사
+    private void ClampLevel(int level) // 최대 레벨 검사
     {
-        if (_playerData.CurrentLevel.Value >= _playerData.MAX_LEVEL)
+        if (level >= _playerData.MAX_LEVEL)
         {
             _playerData.CurrentLevel.Value = _playerData.MAX_LEVEL;
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        
     }
 }
