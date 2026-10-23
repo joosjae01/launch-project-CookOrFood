@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3449524913133369028}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _moveAction: {fileID: 4045190225682487738, guid: 3ed82ee23b0f5f749bd1ce02bdc9c716, type: 3}
-  _cameraTransform: {fileID: 0}
 --- !u!114 &3449524913133369028
 MonoBehaviour:
   m_ObjectHideFlags: 0
