@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "name": "shNohTestAction",
+    "maps": [
+        {
+            "name": "NohTest",
+            "id": "a1ddd114-1356-4b4e-8b89-90bc7044eb01",
+            "actions": [
+                {
+                    "name": "TestA",
+                    "type": "Button",
+                    "id": "69e0a1bb-4f61-4add-926c-18baddf54c15",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "70add688-fdb9-4016-810c-fcdd4d9bce00",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";NohTest",
+                    "action": "TestA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "NohTest",
+            "bindingGroup": "NohTest",
+            "devices": []
+        }
+    ]
+}

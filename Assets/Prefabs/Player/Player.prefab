@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2628568492551486720}
   - component: {fileID: 5947981734619388202}
   - component: {fileID: 1382602436585262178}
+  - component: {fileID: 3449524913133369028}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -98,13 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23feb4990e9a31345906afc00fdbae56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  <CurrentExp>k__BackingField: 1
-  <CurrentLevel>k__BackingField: 1
-  <MaxHealth>k__BackingField: 1
-  <CurrentHealth>k__BackingField: 1
+  _maxHealth: 250
   <Speed>k__BackingField: 5
   <Name>k__BackingField: PlayerA
-  <IsDead>k__BackingField: 0
 --- !u!114 &1382602436585262178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +116,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _moveAction: {fileID: 4045190225682487738, guid: 3ed82ee23b0f5f749bd1ce02bdc9c716, type: 3}
   _cameraTransform: {fileID: 0}
+--- !u!114 &3449524913133369028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107472511923916714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69504d7463901b64c92a9d32565d317f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  _playerData: {fileID: 5947981734619388202}
 --- !u!1001 &8682422402796699640
 PrefabInstance:
   m_ObjectHideFlags: 0
