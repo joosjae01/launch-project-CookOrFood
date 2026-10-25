@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatStage
   PlayerSpawnPoint: {fileID: 7450878468742625838}
-  PortalTransform: {fileID: 4732386202528702696}
+  ExitPortal: {fileID: 756754863938122033}
 --- !u!1001 &1797964061139079966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -458,6 +458,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
+--- !u!1 &756754863938122033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329457182718665263, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
+  m_PrefabInstance: {fileID: 1797964061139079966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4732386202528702696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6439996714101502966, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
