@@ -16,12 +16,4 @@ public class WeaponData : MonoBehaviour
 
     [Header("치명 배율")]
     [field:SerializeField] public float CritDamage { get; set; }
-
-    public void IncreaseData(WeaponContext context)
-    {
-        AttackValue += context.AttackValue;
-        AttackSpeed += context.AttackSpeed;
-        CritRate += context.CritRate;
-        CritDamage += context.CritDamage;
-    }
 }

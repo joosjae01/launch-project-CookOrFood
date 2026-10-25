@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
 
+[Serializable]
 public class ObservableProperty<T>
 {
     private Action<T> _onValueChanged;
 
-    private T _value;
+    [SerializeField] private T _value;
 
     public T Value
     {

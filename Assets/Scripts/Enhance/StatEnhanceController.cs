@@ -12,10 +12,6 @@ public class StatEnhanceController : MonoBehaviour
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private WeaponData _weaponData;
 
-    //TODO: 플레이어 데이터 변경 후 적용 필요
-    //private PlayerContext _playerContext;
-    private WeaponContext _weaponContext;
-
     public void Init()
     {
         //TODO: 플레이어 데이터 가져오는 로직 구현 필요
@@ -25,16 +21,19 @@ public class StatEnhanceController : MonoBehaviour
     public void AddPlayerEnhance(int index)
     {
         //TODO: 플레이어 데이터 변경 후 적용 필요
+        _playerData.MaxHealth.Value += _playerEnhanceList[index].HealthAmount;
+        _playerData.Speed += _playerEnhanceList[index].SpeedAmount;
+
+        EnhanceManager.Instance.AddEnhance(_playerEnhanceList[index]);
     }
 
     public void AddWeaponEnhance(int index)
     {
-        _weaponContext.AttackValue = _weaponEnhanceList[index].AttackValueAmount;
-        _weaponContext.AttackSpeed = _weaponEnhanceList[index].AttackSpeedAmount;
-        _weaponContext.CritRate = _weaponEnhanceList[index].CritRateAmount;
-        _weaponContext.CritDamage = _weaponEnhanceList[index].CritDamageAmount;
+        _weaponData.AttackValue += _weaponEnhanceList[index].AttackValueAmount;
+        _weaponData.AttackSpeed += _weaponEnhanceList[index].AttackSpeedAmount;
+        _weaponData.CritRate += _weaponEnhanceList[index].CritRateAmount;
+        _weaponData.CritDamage += _weaponEnhanceList[index].CritDamageAmount;
 
-        _weaponData.IncreaseData(_weaponContext);
         EnhanceManager.Instance.AddEnhance(_weaponEnhanceList[index]);
     }
 }
