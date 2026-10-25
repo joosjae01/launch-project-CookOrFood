@@ -1,34 +1,92 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.AppUI.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
+    [SerializeField] private InputActionReference _backAction;
     public PlayerController _playerController;
+    public Panel _pausePanel; // 일시정지 판넬
+    public Panel _quitPanel; // 게임 종료 판넬
 
     private void Awake() => SetSingleton();
+
+    private void Start()
+    {
+        Screen.fullScreenMode = FullScreenMode.Windowed;
+    }
+
+    private void OnEnable()
+    {
+        _backAction.action.Enable();
+    }
+
+    private void OnNavigationButtons(InputAction.CallbackContext ctx)
+    {
+        _backAction.action.performed += QuitGame;
+    }
     
     // TODO : 게임 매니저가 해야되는 일들
     
-    // 씬 이동 기능
-    // pulbic Load 로비 씬 (타이틀, 메인게임 씬에서)
-    // public Load 메인게임 씬 (로비 씬에서)
+    // [씬 이동] -----------------------------------------
+    public void LoadLobbyScene() // 로비
+    {
+        // SceneManager.LoadScene("Lobby");
+    }
     
-    // public 게임 정지 (일시정지 누르면, 게임 오버 되면)
-    // Time.timeScale = 0
+    public void LoadMainGameScene() // 메인게임
+    {
+        // SceneManager.LoadScene("MainGame");
+    }
     
-    // public 게임 재생 (일시정지에서, 게임 오버에서)
-    // Time.timeScale = 1
+    // [게임 정지/재생] ---------------------------------
+    public void PauseGame() // 게임 정지
+    {
+        Time.timeScale = 0;
+    }
     
-    // TODO(제안사항) : 핸드폰에서 게임 외적으로 생기는 일들
+    public void ResumeGame() // 게임 재생
+    {
+        Time.timeScale = 1;
+    }
     
-    // 게임 중 홈화면으로 나가거나, 다른 앱으로 전환했을 때 게임 일시정지
-    // OnApplicationPause(bool pauseStatus)가 실행된다고 한다.
-    // 게임 정지 > 일시정지 창 Active(true)
+    // [게임 종료] -------------------------------------------
+    public void QuitGame(InputAction.CallbackContext ctx) // 게임 종료
+    {
+        // _quitPanel 활성화
+        Debug.Log("Quit : 활성화 시도");
+    }
     
-    // 게임 중 전화가 와 팝업이 뜨거나, 상단 알림창 등을 내렸을 때처럼
-    // 게임 바깥으로 '포커스'가 벗어났을 때 게임 일시 정지
-    // OnApplicationFocus(bool focusStatus)가 실행된다고 한다.
-    // 게임 정지 > 일시정지 창 Active(true)
+    // [게임이 백그라운드로 내려갔을 때] ----------------------------------
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            if (_pausePanel != null)
+            {
+                PauseGame();
+                // _pausePanel 활성화
+            }
+        }
+    }
+    
+    // [게임이 포커스를 잃었을 때] -----------------------------------------
+    private void OnApplicationFocus(bool focusStatus)
+    {
+        if (focusStatus)
+        {
+            Debug.Log("Focus : 게임에 들어옴");
+        }
+        else
+        {
+            if (_pausePanel != null)
+            {
+                // _pausePanel 활성화
+            }
+        }
+    }
 }

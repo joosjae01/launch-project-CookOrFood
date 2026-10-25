@@ -1537,6 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _isDontDestroyOnLoad: 0
+  _backAction: {fileID: -7828081496601172540, guid: 3e55acb1ea2077648aaaf6f30951d748, type: 3}
   _playerController: {fileID: 0}
 --- !u!4 &1441881648
 Transform:
