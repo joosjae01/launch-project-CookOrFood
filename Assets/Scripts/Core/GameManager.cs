@@ -17,7 +17,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void Start()
     {
-        Screen.fullScreenMode = FullScreenMode.Windowed;
+        Screen.fullScreen = false;
     }
 
     private void OnEnable()
@@ -25,12 +25,10 @@ public class GameManager : SingletonBehaviour<GameManager>
         _backAction.action.Enable();
     }
 
-    private void OnNavigationButtons(InputAction.CallbackContext ctx)
+    private void OnNavigationButton(InputAction.CallbackContext ctx)
     {
         _backAction.action.performed += QuitGame;
     }
-    
-    // TODO : 게임 매니저가 해야되는 일들
     
     // [씬 이동] -----------------------------------------
     public void LoadLobbyScene() // 로비
@@ -57,8 +55,11 @@ public class GameManager : SingletonBehaviour<GameManager>
     // [게임 종료] -------------------------------------------
     public void QuitGame(InputAction.CallbackContext ctx) // 게임 종료
     {
-        // _quitPanel 활성화
-        Debug.Log("Quit : 활성화 시도");
+        if (_quitPanel != null)
+        {
+            // _quitPanel 활성화
+            Debug.Log("Quit : 활성화 시도");
+        }
     }
     
     // [게임이 백그라운드로 내려갔을 때] ----------------------------------
@@ -85,6 +86,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         {
             if (_pausePanel != null)
             {
+                PauseGame();
                 // _pausePanel 활성화
             }
         }
