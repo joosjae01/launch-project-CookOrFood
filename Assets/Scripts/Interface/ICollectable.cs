@@ -6,6 +6,6 @@ public interface ICollectable
     public bool CanCollect {  get; set; }
     public float DropRate {  get; set; }
 
-    public void Collect(ICollectable collectable);
+    public void Collect();
     public void CheckCanCollect();
 }
