@@ -7,9 +7,4 @@ public class GameManager : SingletonBehaviour<GameManager>
     public PlayerController _playerController;
 
     private void Awake() => SetSingleton();
-
-    private void InitPlayer()
-    {
-        _playerController = FindObjectOfType<PlayerController>();
-    }
 }
