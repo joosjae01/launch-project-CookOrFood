@@ -20,9 +20,6 @@ public class StageManager : SingletonBehaviour<StageManager>
     private GameObject _stagePrefab;
     private Vector3 _mapPosition;
 
-    private int currentHealth;
-    private int maxHealth;
-
     // ---------- Event Method ----------
     
     private void Awake()
@@ -37,8 +34,8 @@ public class StageManager : SingletonBehaviour<StageManager>
     private void OnEnable()
     {
         // 맵 변경 테스트용 InputSystem
-        // _changeStageAction.action.Enable();
-        // _changeStageAction.action.performed += ActionExit;
+        _changeStageAction.action.Enable();
+        _changeStageAction.action.performed += ActionExit;
     }
 
     // ---------------------------------
@@ -132,7 +129,7 @@ public class StageManager : SingletonBehaviour<StageManager>
     // 맵 변경 테스트용 InputSystem 
     private void ActionExit(InputAction.CallbackContext context)
     {
-        ExitStage();
+        _currentStage.ClearStage();
     }
     
     public void ExitStage()
