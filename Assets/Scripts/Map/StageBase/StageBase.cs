@@ -5,14 +5,21 @@ public abstract class StageBase : MonoBehaviour
 {
     public abstract StageType StageType { get;}
     public Transform PlayerSpawnPoint;
+    public GameObject ExitPortal;
     
     public bool IsClear { get; protected set; }
-
-    public event Action OnExitStage;
     
     public void ResetStage()
     {
         IsClear = false;
+    }
+
+    public void ClearStage()
+    {
+        if (IsClear) return;
+
+        IsClear = true;
+        ExitPortal.SetActive(true);
     }
 
     public abstract void Enter();
