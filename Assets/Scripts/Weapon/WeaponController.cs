@@ -44,12 +44,14 @@ public class WeaponController : MonoBehaviour
 
     private void StartFire()
     {
+        Debug.Log("발사 시작");
         if (_fireRoutine != null) return;
         _fireRoutine = StartCoroutine(FireRoutine());
     }
 
     private void StopFire()
     {
+        Debug.Log("발사 종료");
         if (_fireRoutine == null) return;
         StopCoroutine(_fireRoutine);
         _fireRoutine = null;
@@ -60,6 +62,8 @@ public class WeaponController : MonoBehaviour
         while (true)
         {
             yield return _coolDown;
+            Debug.Log("발사");
+            _projectilePool = PoolManager.Instance.Pool[PoolableType.Arrow];
             _projectilePool.Take().GameObject.transform.SetPositionAndRotation(_muzzlePoint.position, _muzzlePoint.rotation);
         }
     }
@@ -67,6 +71,5 @@ public class WeaponController : MonoBehaviour
     private void CacheComponenet()
     {
         _coolDown = new WaitForSeconds(1 / _weaponData.AttackSpeed);
-        _projectilePool = PoolManager.Instance.Pool[PoolableType.Arrow];
     }
 }

@@ -140,9 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileController
   _enemyMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   _wallMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   _projectileData: {fileID: 11400000, guid: 4d2baf9761697ff4698d039560bede31, type: 2}
   _weaponData: {fileID: 8247211778276695133, guid: cc6e0177329956e47804b487df35bca3, type: 3}
