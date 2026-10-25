@@ -6,8 +6,8 @@ public class PlayerData : MonoBehaviour
     public readonly int MAX_LEVEL = 20; // 최대 레벨
     [SerializeField] private float _maxHealth;
     
-    [field : SerializeField] public float Speed  { get; private set; } // 이동 속도
-    [field : SerializeField] public string Name { get; private set; } // 캐릭터 이름
+    [field : SerializeField] public float Speed  { get; set; } // 이동 속도
+    [field : SerializeField] public string Name { get; set; } // 캐릭터 이름
 
     public ObservableProperty<float> MaxHealth = new(0); // 최대 체력
     public ObservableProperty<float> CurrentHealth = new(0); // 현재 체력
