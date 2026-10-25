@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class TestPoolController : MonoBehaviour
 {
     [SerializeField] private InputActionReference _spaceInput;
+    [SerializeField] private PlayerData _playerData;
 
     private void Awake()
     {
@@ -13,6 +14,12 @@ public class TestPoolController : MonoBehaviour
 
     private void OnPressed(InputAction.CallbackContext context)
     {
-        PoolManager.Instance.Pool[PoolableType.Arrow].Take();
+        IPoolable poolable = PoolManager.Instance.Pool[PoolableType.ExpShard].Take();
+
+        if (poolable == null) return;
+
+        poolable.GameObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
+        ExpShard expShard = poolable.GameObject.GetComponent<ExpShard>();
+        expShard.SetPlayerData(_playerData);
     }
 }
