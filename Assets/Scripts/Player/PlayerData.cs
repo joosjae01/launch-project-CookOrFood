@@ -22,4 +22,9 @@ public class PlayerData : MonoBehaviour
         MaxHealth.Value = _maxHealth;
         CurrentHealth.Value = _maxHealth;
     }
+
+    private void Start()
+    {
+        GameManager.Instance.MainPlayerData = this;
+    }
 }
