@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DevilEventStage
   PlayerSpawnPoint: {fileID: 7875747101960946663}
-  PortalTransform: {fileID: 503828343392795513}
+  ExitPortal: {fileID: 5607453857807936160}
 --- !u!1 &4265139286781039195
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,5 +461,10 @@ PrefabInstance:
 --- !u!4 &503828343392795513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6439996714101502966, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
+  m_PrefabInstance: {fileID: 6891215315263326351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5607453857807936160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329457182718665263, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
   m_PrefabInstance: {fileID: 6891215315263326351}
   m_PrefabAsset: {fileID: 0}

@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class ExitPortal : MonoBehaviour
 {
-    private Collider _collider;
+    [SerializeField] private LayerMask _layerMask;
+    
+    private BoxCollider _collider;
     
     // ---------- Event Method ----------
 
@@ -11,15 +13,16 @@ public class ExitPortal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ExitPortal: 트리거 엔터");
-        StageManager.Instance.ExitStage();
-        _collider.enabled = false;
+        if (LayerMaskExtensions.Contains(_layerMask.value, other.gameObject.layer))
+        {
+            StageManager.Instance.ExitStage();
+        }
     }
 
     // ---------------------------------
 
     private void CacheComponents()
     {
-        _collider = GetComponent<Collider>();
+        _collider = GetComponent<BoxCollider>();
     }
 }

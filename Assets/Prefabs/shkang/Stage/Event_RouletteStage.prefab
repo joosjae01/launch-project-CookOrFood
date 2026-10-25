@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RouletteEventStage
   PlayerSpawnPoint: {fileID: 2868574392347525701}
-  PortalTransform: {fileID: 0}
+  ExitPortal: {fileID: 5290567997486333152}
 --- !u!1001 &6564262348489580239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -461,5 +461,10 @@ PrefabInstance:
 --- !u!4 &164248584475290937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6439996714101502966, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
+  m_PrefabInstance: {fileID: 6564262348489580239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5290567997486333152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329457182718665263, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
   m_PrefabInstance: {fileID: 6564262348489580239}
   m_PrefabAsset: {fileID: 0}

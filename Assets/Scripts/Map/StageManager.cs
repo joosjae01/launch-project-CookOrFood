@@ -77,7 +77,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         
         _currentStage.ResetStage();
         _currentStage.Enter();
-
+        
         _playerTransform.transform.position = _currentStage.PlayerSpawnPoint.position;
         
         _stageIndex++;

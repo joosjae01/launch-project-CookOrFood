@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AngelEventStage
   PlayerSpawnPoint: {fileID: 9217244222025422896}
-  PortalTransform: {fileID: 194492458007168856}
+  ExitPortal: {fileID: 5304854963656644225}
 --- !u!1 &6477746102893752289
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,5 +493,10 @@ PrefabInstance:
 --- !u!4 &194492458007168856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6439996714101502966, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
+  m_PrefabInstance: {fileID: 6624108098647848110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5304854963656644225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329457182718665263, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
   m_PrefabInstance: {fileID: 6624108098647848110}
   m_PrefabAsset: {fileID: 0}
