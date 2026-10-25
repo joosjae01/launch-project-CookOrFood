@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919cc4fac9049946bcdb61e5345b4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnhanceTester
-  _seController: {fileID: 0}
-  _testInput: {fileID: 0}
+  _statEnhanceController: {fileID: 1790612069}
+  _testInput: {fileID: -2099379676528639254, guid: bed11bd3d146b674397888890237a394, type: 3}
 --- !u!4 &241274558
 Transform:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1073282202
 Transform:
   m_ObjectHideFlags: 0
