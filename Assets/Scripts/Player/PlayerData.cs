@@ -4,8 +4,9 @@ public class PlayerData : MonoBehaviour
 {
     public readonly float MAX_EXP = 100f; // 레벨 업 하기 위한 최대 경험치
     public readonly int MAX_LEVEL = 20; // 최대 레벨
+
+    [Header("초기 최대 체력 설정 값")]
     [SerializeField] private float _maxHealth;
-    
     [field : SerializeField] public float Speed  { get; set; } // 이동 속도
     [field : SerializeField] public string Name { get; set; } // 캐릭터 이름
 
