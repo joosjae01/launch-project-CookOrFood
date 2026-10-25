@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   <Name>k__BackingField: Weapon
   <AttackValue>k__BackingField: 0
-  <AttackSpeed>k__BackingField: 0
+  <AttackSpeed>k__BackingField: 2
   <CritRate>k__BackingField: 0
   <CritDamage>k__BackingField: 0
