@@ -9,9 +9,6 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private WeaponData _weaponData;
     [SerializeField] private Transform _muzzlePoint;
 
-
-    private ObjectPool _projectilePool;
-
     //TODO : 나중에 타겟 몬스터가 있을 때에만 공격하도록 해야 함.
     private Coroutine _fireRoutine;
     private WaitForSeconds _coolDown;
@@ -63,8 +60,8 @@ public class WeaponController : MonoBehaviour
         {
             yield return _coolDown;
             Debug.Log("발사");
-            _projectilePool = PoolManager.Instance.Pool[PoolableType.Arrow];
-            _projectilePool.Take().GameObject.transform.SetPositionAndRotation(_muzzlePoint.position, _muzzlePoint.rotation);
+            
+            PoolManager.Instance.Pool[PoolableType.Arrow].Take().GameObject.transform.SetPositionAndRotation(_muzzlePoint.position, _muzzlePoint.rotation);
         }
     }
 
