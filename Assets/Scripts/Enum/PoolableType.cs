@@ -2,5 +2,7 @@ public enum PoolableType
 {
     Arrow,
     Monster,
-    Map
+    Map,
+
+    ExpShard
 }
