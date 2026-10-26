@@ -1107,6 +1107,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: 'managedReferences[8656994405431115994]'
+      value: 'Unity.Behavior Unity.Behavior.BlackboardVariable`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115994].Name
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: m_BlackboardVariableOverridesList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115994].m_Value
+      value: 
+      objectReference: {fileID: 1287850292}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: 'm_BlackboardVariableOverridesList.Array.data[4]'
+      value: 8656994405431115994
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115994].GUID.m_Value0
+      value: 2482892032554290612
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115994].GUID.m_Value1
+      value: 9269367724407021636
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1232,6 +1261,35 @@ PrefabInstance:
     - target: {fileID: 6786910406202346259, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: 'managedReferences[8656994405431115993]'
+      value: 'Unity.Behavior Unity.Behavior.BlackboardVariable`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115993].Name
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: m_BlackboardVariableOverridesList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115993].m_Value
+      value: 
+      objectReference: {fileID: 1287850292}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: 'm_BlackboardVariableOverridesList.Array.data[4]'
+      value: 8656994405431115993
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115993].GUID.m_Value0
+      value: 2482892032554290612
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994405431115993].GUID.m_Value1
+      value: 9269367724407021636
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1414,6 +1472,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NohTestA
   _playerData: {fileID: 1287850283}
   _testAAction: {fileID: -7962046033624909815, guid: 492e65a18d5d1884b8015eb57bcd280a, type: 3}
+--- !u!4 &1287850292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9153765659262836727, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
+  m_PrefabInstance: {fileID: 640023693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1441881646
 GameObject:
   m_ObjectHideFlags: 0
