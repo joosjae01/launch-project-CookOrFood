@@ -14,7 +14,7 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
 
     public void TakeDamage(float damage)
     {
-        
+        Data.Health.Value -= damage;
     }
     
     protected abstract void Attack();
