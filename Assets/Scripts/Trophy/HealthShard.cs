@@ -5,9 +5,9 @@ public class HealthShard : MonoBehaviour, ICollectable, IPoolable
     [SerializeField] private float _healthAmount;
     [SerializeField] private LayerMask _playerLayer;
 
-    public string Name { get; set; }
-    public bool CanCollect { get; set; }
-    public float DropRate { get; set; }
+    [field: SerializeField] public string Name { get; set; }
+    [field: SerializeField] public bool CanCollect { get; set; }
+    [field: SerializeField] public float DropRate { get; set; }
 
     public GameObject GameObject { get => gameObject; }
 
