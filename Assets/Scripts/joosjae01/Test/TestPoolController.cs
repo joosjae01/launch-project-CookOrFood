@@ -14,12 +14,11 @@ public class TestPoolController : MonoBehaviour
 
     private void OnPressed(InputAction.CallbackContext context)
     {
-        IPoolable poolable = PoolManager.Instance.Pool[PoolableType.ExpShard].Take();
+        IPoolable poolable = PoolManager.Instance.Pool[PoolableType.HealthShard].Take();
 
         if (poolable == null) return;
 
         poolable.GameObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
-        ExpShard expShard = poolable.GameObject.GetComponent<ExpShard>();
-        expShard.SetPlayerData(_playerData);
+        HealthShard healthShard = poolable.GameObject.GetComponent<HealthShard>();
     }
 }
