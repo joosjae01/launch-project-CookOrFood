@@ -11,8 +11,8 @@ public class HealthShard : MonoBehaviour, ICollectable, IPoolable
     [field: SerializeField] public float DropRate { get; set; }
 
     public GameObject GameObject { get => gameObject; }
-
     public ObjectPool Source { get; set; }
+    [field: SerializeField] public PoolableType Type { get; set; }
 
     private void Awake()
     {

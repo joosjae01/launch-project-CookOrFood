@@ -11,15 +11,19 @@ public class ExpShard : MonoBehaviour, ICollectable, IPoolable
     [field: SerializeField] public float DropRate {  get; set; }
 
     public GameObject GameObject {get => gameObject;}
-
     public ObjectPool Source { get; set; }
+    [field: SerializeField] public PoolableType Type { get; set; }
 
     [SerializeField] private PlayerData _targetData;
     private Vector3 _moveTo;
 
+    private void Awake()
+    {
+        _targetData = GameManager.Instance.MainPlayerData;
+    }
+
     private void OnEnable()
     {
-        //TODO : 나중에 GameManager에서 PlayerData의 참조를 받아, Heating 시켜두도록
         CanCollect = false;
     }
 
@@ -68,11 +72,5 @@ public class ExpShard : MonoBehaviour, ICollectable, IPoolable
             Debug.Log("경험치 조각 획득");
             Collect();
         }
-    }
-
-    //TODO : GameManager 도입 후 삭제
-    public void SetPlayerData(PlayerData playerData)
-    {
-        _targetData = playerData;
     }
 }
