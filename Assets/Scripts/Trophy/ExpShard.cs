@@ -11,11 +11,16 @@ public class ExpShard : MonoBehaviour, ICollectable, IPoolable
     [field: SerializeField] public float DropRate {  get; set; }
 
     public GameObject GameObject {get => gameObject;}
-
     public ObjectPool Source { get; set; }
+    public PoolableType Type { get; set; }
 
     [SerializeField] private PlayerData _targetData;
     private Vector3 _moveTo;
+
+    private void Awake()
+    {
+        Type = PoolableType.ExpShard;
+    }
 
     private void OnEnable()
     {
