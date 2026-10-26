@@ -129,6 +129,8 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  _playerData: {fileID: 0}
   <Name>k__BackingField: "\uCCB4\uB825 \uC870\uAC01"
   <CanCollect>k__BackingField: 0
   <DropRate>k__BackingField: 0.5
+  <Type>k__BackingField: 4

@@ -133,4 +133,5 @@ MonoBehaviour:
   <Name>k__BackingField: ExpShard
   <CanCollect>k__BackingField: 0
   <DropRate>k__BackingField: 1
+  <Type>k__BackingField: 3
   _targetData: {fileID: 0}
