@@ -4,5 +4,6 @@ public enum PoolableType
     Monster,
     Map,
 
-    ExpShard
+    ExpShard,
+    HealthShard
 }
