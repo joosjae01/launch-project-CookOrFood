@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 {
     [SerializeField] private PlayerData _playerData;
     
-    public GameObject GameObject { get; set; }
+    public GameObject GameObject { get; }
 
     private void Awake()
     {
