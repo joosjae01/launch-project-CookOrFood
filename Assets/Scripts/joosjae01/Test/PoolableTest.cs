@@ -10,7 +10,6 @@ public class PoolableTest : MonoBehaviour, IPoolable, IDamageable
     private void OnEnable()
     {
         StartCoroutine(RetrunRoutine());
-        TakeDamage(6.7f);
     }
 
     private IEnumerator RetrunRoutine()
@@ -26,6 +25,6 @@ public class PoolableTest : MonoBehaviour, IPoolable, IDamageable
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("대미지 테스트");
+
     }
 }
