@@ -14,6 +14,7 @@ public class TestPoolController : MonoBehaviour
 
     private void OnPressed(InputAction.CallbackContext context)
     {
+        _playerData.CurrentHealth.Value -= 10;
         IPoolable poolable = PoolManager.Instance.Pool[PoolableType.HealthShard].Take();
 
         if (poolable == null) return;

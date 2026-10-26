@@ -4,6 +4,7 @@ public class HealthShard : MonoBehaviour, ICollectable, IPoolable
 {
     [SerializeField] private float _healthAmount;
     [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] private PlayerData _playerData;
 
     [field: SerializeField] public string Name { get; set; }
     [field: SerializeField] public bool CanCollect { get; set; }
@@ -13,9 +14,7 @@ public class HealthShard : MonoBehaviour, ICollectable, IPoolable
 
     public ObjectPool Source { get; set; }
 
-    private PlayerData _playerData;
-
-    private void Start()
+    private void Awake()
     {
         _playerData = GameManager.Instance.MainPlayerData;
     }
@@ -24,6 +23,7 @@ public class HealthShard : MonoBehaviour, ICollectable, IPoolable
     {
         CanCollect = false;
         _playerData.CurrentHealth.AddListener(CheckPlayerHealth);
+        CheckPlayerHealth(_playerData.CurrentHealth.Value);
     }
 
     private void OnDisable()
