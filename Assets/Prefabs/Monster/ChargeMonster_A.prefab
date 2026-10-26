@@ -138,7 +138,7 @@ MonoBehaviour:
           m_Value0: 11971856509429441382
           m_Value1: 7721298046843179263
         Name: MoveSpeed
-        m_Value: 13.48
+        m_Value: 3
 --- !u!114 &7063331552006466025
 MonoBehaviour:
   m_ObjectHideFlags: 0
