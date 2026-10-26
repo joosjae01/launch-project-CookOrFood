@@ -132,5 +132,5 @@ MonoBehaviour:
   _moveSpeed: 2
   <Name>k__BackingField: ExpShard
   <CanCollect>k__BackingField: 0
-  <DropRate>k__BackingField: 0
+  <DropRate>k__BackingField: 1
   _targetData: {fileID: 0}

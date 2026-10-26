@@ -22,9 +22,13 @@ public class ExpShard : MonoBehaviour, ICollectable, IPoolable
         Type = PoolableType.ExpShard;
     }
 
+    private void Start()
+    {
+        _targetData = GameManager.Instance.MainPlayerData;
+    }
+
     private void OnEnable()
     {
-        //TODO : 나중에 GameManager에서 PlayerData의 참조를 받아, Heating 시켜두도록
         CanCollect = false;
     }
 
@@ -73,11 +77,5 @@ public class ExpShard : MonoBehaviour, ICollectable, IPoolable
             Debug.Log("경험치 조각 획득");
             Collect();
         }
-    }
-
-    //TODO : GameManager 도입 후 삭제
-    public void SetPlayerData(PlayerData playerData)
-    {
-        _targetData = playerData;
     }
 }
