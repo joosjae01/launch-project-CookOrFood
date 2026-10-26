@@ -9,11 +9,8 @@ public class EnhanceManager : SingletonBehaviour<EnhanceManager>
     private void Awake() => SetSingleton();
 
     [SerializeField] private StatEnhanceController _statEnhanceController;
-    //TODO: 투사체 강화 컨트롤러 구현 후 연동 필요
-    //[SerializeField] private ProjectileEnhanceController _projectileEnhanceController;
+    [SerializeField] private ProjectileEnhanceController _projectileEnhanceController;
 
-    public void AddEnhance(EnhanceBase enhance)
-    {
-        _currentEnhace.Add(enhance);
-    }
+    public void AddEnhance(EnhanceBase enhance) => _currentEnhace.Add(enhance);
+    public void ResetEnhance() => _currentEnhace.Clear();
 }

@@ -12,16 +12,16 @@ public class ProjectileData : ScriptableObject
     public float LifeTime;
 
     [Header("생성")]
-    public UnityEvent<GameObject> OnFired;
+    public UnityEvent<ProjectileController> OnFired;
     [Header("이동")]
-    public UnityEvent<GameObject, float> OnMoved;
+    public UnityEvent<ProjectileController, float> OnMoved;
     [Header("벽과 충돌")]
     public UnityEvent OnBlocked;
     [Header("적과 충돌")]
     public UnityEvent<IDamageable, WeaponData> OnAttacked;
 
-    public void Fire(GameObject projectile) => OnFired?.Invoke(projectile);
-    public void Move(GameObject projectile, float speed) => OnMoved?.Invoke(projectile, speed);
+    public void Fire(ProjectileController projectile) => OnFired?.Invoke(projectile);
+    public void Move(ProjectileController projectile, float speed) => OnMoved?.Invoke(projectile, speed);
     public void Block() => OnBlocked?.Invoke();
     public void Attack(IDamageable damageable, WeaponData weaponData) => OnAttacked?.Invoke(damageable, weaponData);
     

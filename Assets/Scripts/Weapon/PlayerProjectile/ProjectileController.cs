@@ -16,13 +16,18 @@ public class ProjectileController : MonoBehaviour, IPoolable
     [Header("테스트용 무기 데이터")]
     [SerializeField] private WeaponData _weaponData;
 
+
+    // TODO : 추후, 가장 근처의 적을 받을 필요 있음.
+    [Header("테스트용 적 참조")]
+    public MonsterBase TargetMonster;
+
     private IDamageable _target;
 
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
 
-    private void Start() => _projectileData.Fire(gameObject);
-    private void FixedUpdate() => _projectileData.Move(gameObject, _projectileData.MoveSpeed);
+    private void Start() => _projectileData.Fire(this);
+    private void FixedUpdate() => _projectileData.Move(this, _projectileData.MoveSpeed);
     private void OnTriggerEnter(Collider other)
     {
         CheckEnemy(other);
