@@ -7,7 +7,7 @@ public class BasicLogic : MonoBehaviour
         projectile.transform.SetPositionAndRotation(projectile.transform.position, projectile.transform.rotation);
     }
 
-    public void BasicMove(GameObject projectile, float moveSpeed)
+    public void BasicMove(ProjectileController projectile, float moveSpeed)
     {
         projectile.transform.Translate(projectile.transform.forward * moveSpeed * Time.deltaTime);
     }
