@@ -14,4 +14,7 @@ public abstract class EnhanceBase : ScriptableObject
 
     [Header("강화 등급")]
     public EnhanceGrade Grade;
+
+    [Header("중첩 가능 여부")]
+    public bool CanOverlap;
 }

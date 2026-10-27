@@ -14,6 +14,6 @@ public class EnhanceTester : MonoBehaviour
 
     private void OnPressed(InputAction.CallbackContext context)
     {
-
+        EnhanceManager.Instance.ApplyEnhance(EnhanceManager.Instance.GetRandom());
     }
 }

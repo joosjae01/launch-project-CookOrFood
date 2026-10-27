@@ -308,8 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919cc4fac9049946bcdb61e5345b4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnhanceTester
-  _statEnhanceController: {fileID: 1790612069}
-  _projectileEnhanceController: {fileID: 1790612071}
+  _enhanceController: {fileID: 1790612071}
   _testInput: {fileID: -2099379676528639254, guid: bed11bd3d146b674397888890237a394, type: 3}
 --- !u!4 &241274558
 Transform:
@@ -431,17 +430,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9f8af86bde97e478404e49db53a4da, type: 3}
---- !u!114 &406064562 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9051905132155218606, guid: c7d3163234bee2f49ad12329b80d5fc9, type: 3}
-  m_PrefabInstance: {fileID: 5131493130591405988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23feb4990e9a31345906afc00fdbae56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
 --- !u!1 &919034376
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +811,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1790612068}
   - component: {fileID: 1790612070}
-  - component: {fileID: 1790612069}
   - component: {fileID: 1790612071}
   m_Layer: 0
   m_Name: EnhanceManager
@@ -847,32 +834,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1790612069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790612067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c1185f1be24974a8cd6aff65846bbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatEnhanceController
-  _playerEnhanceList:
-  - {fileID: 11400000, guid: 1c820e707a5495c459e7a2c6d4bac93d, type: 2}
-  - {fileID: 11400000, guid: c04568d68169ef44e9c92949ea3d65d6, type: 2}
-  - {fileID: 11400000, guid: fc030dd7a70f1de45890da1bf1514df7, type: 2}
-  - {fileID: 11400000, guid: d41f4a3ec6c1e4040b4b6b07bf457289, type: 2}
-  - {fileID: 11400000, guid: 1b1305301b3884b4ba1e5d5efe58558f, type: 2}
-  - {fileID: 11400000, guid: afe593f0ab1ada94aa18492f779db610, type: 2}
-  _weaponEnhanceList:
-  - {fileID: 11400000, guid: c3e52df9190444e48b07fe9715a603fb, type: 2}
-  - {fileID: 11400000, guid: 570a07934d220de49969b5e835bcddeb, type: 2}
-  - {fileID: 11400000, guid: 371aef005c57e5c4393604cc0bc602a0, type: 2}
-  - {fileID: 11400000, guid: f258d0632d1f9a24c88816ef90f98404, type: 2}
-  _playerData: {fileID: 406064562}
-  _weaponData: {fileID: 53839707}
 --- !u!114 &1790612070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,8 +848,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhanceManager
   _isDontDestroyOnLoad: 0
   _currentEnhace: []
-  _statEnhanceController: {fileID: 1790612069}
-  _projectileEnhanceController: {fileID: 1790612071}
+  _totalEnhance:
+  - {fileID: 11400000, guid: 1c820e707a5495c459e7a2c6d4bac93d, type: 2}
+  - {fileID: 11400000, guid: c04568d68169ef44e9c92949ea3d65d6, type: 2}
+  - {fileID: 11400000, guid: fc030dd7a70f1de45890da1bf1514df7, type: 2}
+  - {fileID: 11400000, guid: d41f4a3ec6c1e4040b4b6b07bf457289, type: 2}
+  - {fileID: 11400000, guid: 1b1305301b3884b4ba1e5d5efe58558f, type: 2}
+  - {fileID: 11400000, guid: afe593f0ab1ada94aa18492f779db610, type: 2}
+  - {fileID: 11400000, guid: 9bf1dbd8d52f05942a6a1eacbe1822fb, type: 2}
+  - {fileID: 11400000, guid: 570a07934d220de49969b5e835bcddeb, type: 2}
+  - {fileID: 11400000, guid: c3e52df9190444e48b07fe9715a603fb, type: 2}
+  - {fileID: 11400000, guid: f258d0632d1f9a24c88816ef90f98404, type: 2}
+  - {fileID: 11400000, guid: 371aef005c57e5c4393604cc0bc602a0, type: 2}
+  _enhanceController: {fileID: 1790612071}
 --- !u!114 &1790612071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,11 +873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62955195379e86147af0f634de2ac61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileEnhanceController
-  _fireEnhanceList: []
-  _moveEnhanceList:
-  - {fileID: 11400000, guid: 9bf1dbd8d52f05942a6a1eacbe1822fb, type: 2}
-  _attackEnhanceList: []
-  _blockEnhanceList: []
+  _playerData: {fileID: 1248575445}
+  _weaponData: {fileID: 53839707}
   _projectileData: {fileID: 11400000, guid: 4d2baf9761697ff4698d039560bede31, type: 2}
 --- !u!1 &2060133116
 GameObject:
