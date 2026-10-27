@@ -19,6 +19,7 @@ public partial class ChargeAttackAction : Action
 
     protected override Status OnStart()
     {
+        Player.Value = GameManager.Instance.MainPlayer.transform;
         agentSpeed = Monster.Value.speed;
         agentAngularSpeed = Monster.Value.acceleration;
         Debug.Log(Monster.Value.angularSpeed);
@@ -32,10 +33,12 @@ public partial class ChargeAttackAction : Action
         elapsedTime += Time.deltaTime;
         Monster.Value.speed = 6f;
         Monster.Value.acceleration = 15f;
+        Monster.Value.angularSpeed = 1f;
         if (elapsedTime >= 1.0f)
         {
         return Status.Success;
         }
+        Monster.Value.SetDestination(Player.Value.position);
         return Status.Running;
     }
 
@@ -43,6 +46,7 @@ public partial class ChargeAttackAction : Action
     {
         Monster.Value.speed =  agentSpeed;
         Monster.Value.acceleration = agentAcceleration;
+        Monster.Value.angularSpeed = agentAngularSpeed;
     }
 }
 
