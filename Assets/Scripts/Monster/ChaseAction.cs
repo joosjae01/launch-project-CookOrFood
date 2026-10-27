@@ -13,8 +13,10 @@ public partial class ChaseAction : Action
     [SerializeReference] public BlackboardVariable<Transform> Target;
     [SerializeReference] public BlackboardVariable<float> MoveSpeed;
     [SerializeReference] public BlackboardVariable<NavMeshAgent> Agent;
+    public bool IsPlayerInRange;
     protected override Status OnStart()
     {
+        Agent.Value.enabled = true;
         Agent.Value.speed = MoveSpeed.Value;
         Agent.Value.GetComponent<NavMeshAgent>();
         Target.Value = GameManager.Instance.MainPlayer.transform;
@@ -26,7 +28,7 @@ public partial class ChaseAction : Action
         Agent.Value.SetDestination(Target.Value.transform.position);
         return Status.Success;
     }
-
+    
     protected override void OnEnd()
     {
     }

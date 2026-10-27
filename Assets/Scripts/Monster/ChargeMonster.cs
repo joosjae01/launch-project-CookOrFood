@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ChargeMonster : MonsterBase
 {
-    [SerializeField] private float _attackSpeed; // 돌격 시 이동 속도 증가량
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private PlayerController _player;
 
@@ -10,10 +9,10 @@ public class ChargeMonster : MonsterBase
     {
         if (_playerLayer.Contains(other))
         {
-            _player.TakeDamage(Data.Damage);
+            Debug.Log("Monster 플레이어와 충돌!");
+            // _player.TakeDamage(Data.Damage);
         }
         Debug.Log("아잉 충돌!");
-        
     }
     
     public override void Attack(Transform target)
