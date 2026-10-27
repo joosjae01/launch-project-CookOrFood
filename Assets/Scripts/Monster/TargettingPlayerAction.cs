@@ -11,7 +11,7 @@ public partial class TargettingPlayerAction : Action
     [SerializeReference] public BlackboardVariable<GameObject> Monster;
     [SerializeReference] public BlackboardVariable<GameObject> Player;
     [SerializeReference] public BlackboardVariable<float> Seconds;
-    private float elapsedSeconds;
+    private float _elapsedSeconds;
 
     protected override Status OnStart()
     {
@@ -22,8 +22,8 @@ public partial class TargettingPlayerAction : Action
     protected override Status OnUpdate()
     {
         Monster.Value.transform.LookAt(Player.Value.transform);
-        elapsedSeconds += Time.deltaTime;
-        if (elapsedSeconds >= Seconds.Value)
+        _elapsedSeconds += Time.deltaTime;
+        if (_elapsedSeconds >= Seconds.Value)
         {
             return Status.Success;
         }
@@ -32,7 +32,7 @@ public partial class TargettingPlayerAction : Action
 
     protected override void OnEnd()
     {
-        elapsedSeconds = 0;
+        _elapsedSeconds = 0.0f;
     }
 }
 

@@ -12,16 +12,19 @@ public partial class ChargeAttackAction : Action
     [SerializeReference] public BlackboardVariable<NavMeshAgent> Monster;
     [SerializeReference] public BlackboardVariable<Vector3> Charge;
     [SerializeReference] public BlackboardVariable<Transform> Player;
-    private float agentSpeed;
-    private float agentAngularSpeed;
-    private float agentAcceleration;
-    private float elapsedTime;
+    private Vector3 _target;
+    private float _agentSpeed;
+    private float _agentAngularSpeed;
+    private float _agentAcceleration;
+    private float _elapsedTime;
 
     protected override Status OnStart()
     {
         Player.Value = GameManager.Instance.MainPlayer.transform;
-        agentSpeed = Monster.Value.speed;
-        agentAngularSpeed = Monster.Value.acceleration;
+        _target = Player.Value.position;
+        _agentSpeed = Monster.Value.speed;
+        _agentAngularSpeed = Monster.Value.angularSpeed;
+        _agentAcceleration = Monster.Value.acceleration;
         Debug.Log(Monster.Value.angularSpeed);
         Debug.Log(Monster.Value.acceleration);
         Debug.Log(Monster.Value.speed);
@@ -30,23 +33,24 @@ public partial class ChargeAttackAction : Action
 
     protected override Status OnUpdate()
     {
-        elapsedTime += Time.deltaTime;
-        Monster.Value.speed = 6f;
-        Monster.Value.acceleration = 15f;
-        Monster.Value.angularSpeed = 1f;
-        if (elapsedTime >= 1.0f)
+        _elapsedTime += Time.deltaTime;
+        Monster.Value.speed = 15.0f;
+        Monster.Value.acceleration = 15.0f;
+        Monster.Value.angularSpeed = 0.0f;
+        if (_elapsedTime >= 1.0f)
         {
         return Status.Success;
         }
-        Monster.Value.SetDestination(Player.Value.position);
+        Monster.Value.SetDestination(_target);
         return Status.Running;
     }
 
     protected override void OnEnd()
     {
-        Monster.Value.speed =  agentSpeed;
-        Monster.Value.acceleration = agentAcceleration;
-        Monster.Value.angularSpeed = agentAngularSpeed;
+        Monster.Value.speed = _agentSpeed;
+        Monster.Value.acceleration = _agentAcceleration;
+        Monster.Value.angularSpeed = _agentAngularSpeed;
+        _elapsedTime = 0.0f;
     }
 }
 

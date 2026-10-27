@@ -13,10 +13,8 @@ public partial class ChaseAction : Action
     [SerializeReference] public BlackboardVariable<Transform> Target;
     [SerializeReference] public BlackboardVariable<float> MoveSpeed;
     [SerializeReference] public BlackboardVariable<NavMeshAgent> Agent;
-    public bool IsPlayerInRange;
     protected override Status OnStart()
     {
-        Agent.Value.enabled = true;
         Agent.Value.speed = MoveSpeed.Value;
         Agent.Value.GetComponent<NavMeshAgent>();
         Target.Value = GameManager.Instance.MainPlayer.transform;
@@ -25,6 +23,9 @@ public partial class ChaseAction : Action
 
     protected override Status OnUpdate()
     {
+        Debug.Log($"ChaseAction: {Agent.Value.speed}");
+        Debug.Log($"ChaseAction: {Agent.Value.angularSpeed}");
+        Debug.Log($"ChaseAction: {Agent.Value.acceleration}");
         Agent.Value.SetDestination(Target.Value.transform.position);
         return Status.Success;
     }
