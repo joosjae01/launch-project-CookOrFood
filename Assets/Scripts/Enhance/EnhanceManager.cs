@@ -6,6 +6,7 @@ public class EnhanceManager : SingletonBehaviour<EnhanceManager>
 {
     [Header("현재 적용된 강화 효과")]
     [SerializeField] private List<EnhanceBase> _currentEnhace = new();
+    private Dictionary<EnhanceType, List<EnhanceBase>> _totalEnhance = new();
     private void Awake() => SetSingleton();
 
     [SerializeField] private StatEnhanceController _statEnhanceController;
