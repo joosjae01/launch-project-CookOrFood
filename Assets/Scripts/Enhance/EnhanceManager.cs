@@ -17,6 +17,8 @@ public class EnhanceManager : SingletonBehaviour<EnhanceManager>
         else if (enhance is AttackLogicEnhance) _enhanceController.AddEnhance(enhance as AttackLogicEnhance);
         else if (enhance is BlockLogicEnhance) _enhanceController.AddEnhance(enhance as BlockLogicEnhance);
 
+        if (!enhance.CanOverlap) _totalEnhance.Remove(enhance);
+
         _currentEnhace.Add(enhance);
     }
 
