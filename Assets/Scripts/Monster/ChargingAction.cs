@@ -3,6 +3,7 @@ using Unity.Behavior;
 using UnityEngine;
 using Action = Unity.Behavior.Action;
 using Unity.Properties;
+using UnityEngine.AI;
 
 [Serializable, GeneratePropertyBag]
 [NodeDescription(
@@ -15,7 +16,7 @@ public partial class ChargingAction : Action
     [SerializeReference] public BlackboardVariable<GameObject> Monster;
     [SerializeReference] public BlackboardVariable<GameObject> Player;
     [SerializeReference] public BlackboardVariable<ChargeMonster> Seconds;
-    [SerializeReference] public BlackboardVariable<UnityEngine.AI.NavMeshAgent> Agent;
+    [SerializeReference] public BlackboardVariable<NavMeshAgent> Agent;
     private float _elapsedSeconds;
 
     protected override Status OnStart()
