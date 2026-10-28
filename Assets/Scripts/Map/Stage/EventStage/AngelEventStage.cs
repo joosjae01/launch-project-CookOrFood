@@ -6,12 +6,19 @@ public class AngelEventStage : EventStageBase
     
     protected override void EventStageEnter()
     {
-        ExitPortal.SetActive(false); 
-        _angel.GetPortal(ExitPortal);
+        ExitPortal.gameObject.SetActive(false); 
+        _angel.gameObject.SetActive(true);
+        _angel.OnClear += SpawnPortal;
     }
 
     protected override void EventStageExit()
     {
-        
+        _angel.OnClear -= SpawnPortal;
+    }
+
+    protected override void SpawnPortal()
+    {
+        _angel.gameObject.SetActive(false);
+        ExitPortal.gameObject.SetActive(true); 
     }
 }

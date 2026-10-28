@@ -5,9 +5,9 @@ public class Angel : MonoBehaviour, IInteractable
 {
     [SerializeField] private LayerMask _playerLayer; 
     
-    private GameObject _portal;
-    
     public GameObject GameObject { get; }
+
+    public event Action OnClear;
     
     // ---------- Event Method ----------
     
@@ -18,7 +18,7 @@ public class Angel : MonoBehaviour, IInteractable
             StartEvent();
         }
     }
-
+ 
     // TODO 추후 특성 고르는 기능이 생기면 없어질 함수
     private void OnTriggerExit(Collider other)
     {
@@ -29,11 +29,6 @@ public class Angel : MonoBehaviour, IInteractable
     }
 
     // ----------------------------------
-
-    public void GetPortal(GameObject portal)
-    {
-        _portal = portal;
-    }
     
     public void StartEvent()
     {
@@ -42,7 +37,7 @@ public class Angel : MonoBehaviour, IInteractable
     }
 
     public void EndEvent()
-    {
-        _portal.SetActive(true);
+    { 
+        OnClear?.Invoke();
     }
 }
