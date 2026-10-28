@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: AttackSpeed_S
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStatEnhance
   Name: "\uACF5\uACA9 \uC18D\uB3C4 (S)"
+  Desc: 
+  EnhanceImage: {fileID: 0}
   Grade: 0
+  CanOverlap: 1
   AttackValueAmount: 0
   AttackSpeedAmount: 5
   CritRateAmount: 0

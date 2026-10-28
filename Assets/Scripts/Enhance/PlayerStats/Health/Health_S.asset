@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36e5f1d45df9c34fa39486ae9e92d4f, type: 3}
   m_Name: Health_S
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatEnhance
+  Name: 
+  Desc: 
+  EnhanceImage: {fileID: 0}
+  Grade: 0
+  CanOverlap: 1
   HealthAmount: 50
   SpeedAmount: 0
