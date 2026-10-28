@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WeaponStatEnhance", menuName = "Scriptable Objects/WeaponStatEnhance")]
+[CreateAssetMenu(fileName = "WeaponStatEnhance", menuName = "Scriptable Objects/Enhance/Stat/Weapon")]
 
 public class WeaponStatEnhance : EnhanceBase
 {

@@ -38,7 +38,7 @@ public class WeaponController : MonoBehaviour
         while (true)
         {
             yield return _coolDown;
-            PoolManager.Instance.Pool[PoolableType.Arrow].Take().GameObject.transform.SetPositionAndRotation(_muzzlePoint.position, _muzzlePoint.rotation);
+            _weaponData.OnFired?.Invoke(_muzzlePoint);
         }
     }
 
