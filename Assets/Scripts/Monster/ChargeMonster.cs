@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChargeMonster : MonsterBase
 {
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private PlayerController _player;
+    
     [field : SerializeField] public float _chargeTime { get; private set; }
 
-    public Rigidbody _rigidbody;
+    private NavMeshAgent _agent;
+    private Rigidbody _rigidbody;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _agent = GetComponent<NavMeshAgent>();
     }
     
     private void OnTriggerEnter(Collider other)
@@ -20,7 +24,8 @@ public class ChargeMonster : MonsterBase
             Debug.Log("Monster 플레이어와 충돌!");
             // _player.TakeDamage(Data.Damage);
         }
-        Debug.Log("아잉 충돌!");
+        _rigidbody.linearVelocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
     }
     
     public override void Attack(Transform target)

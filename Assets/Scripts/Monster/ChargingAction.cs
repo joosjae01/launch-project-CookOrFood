@@ -32,7 +32,7 @@ public partial class ChargingAction : Action
         _elapsedSeconds += Time.deltaTime;
         if (_elapsedSeconds > Seconds.Value._chargeTime)
         {
-                return Status.Success;
+            return Status.Success;
         }
         return Status.Running;
     }

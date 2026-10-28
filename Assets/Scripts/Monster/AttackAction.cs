@@ -23,32 +23,25 @@ public partial class AttackAction : Action
     protected override Status OnStart()
     {
         Player.Value.position = GameManager.Instance.MainPlayer.transform.position;
-    _originSpeed = Agent.Value.speed;
-    _originAngularSpeed = Agent.Value.angularSpeed;
-    _originAcceleration = Agent.Value.acceleration;
-    _originVelocity = Agent.Value.velocity;
-    _direction =  Player.Value.position - Agent.Value.transform.position;
+        _originSpeed = Agent.Value.speed;
+        _originAngularSpeed = Agent.Value.angularSpeed;
+        _originAcceleration = Agent.Value.acceleration;
+        _originVelocity = Agent.Value.velocity;
+        _direction =  Player.Value.position - Agent.Value.transform.position;
+        Monster.Value.AddForce(_direction * 5, ForceMode.Impulse);
     
         return Status.Running;
     }
 
     protected override Status OnUpdate()
     {
-        Monster.Value.AddForce(_direction * 5, ForceMode.Impulse);
+        
         _elapsedSeconds += Time.deltaTime;
         if (_elapsedSeconds > 2.0f)
         {
-            Agent.Value.speed = 0.0f;
-            Agent.Value.angularSpeed  = 0.0f;
-            Agent.Value.acceleration = 0.0f;
-            
-            
-            Debug.Log(Agent.Value.velocity);
-            Agent.Value.velocity = _originVelocity;
-            Agent.Value.angularSpeed  = _originAngularSpeed;
-            Agent.Value.acceleration = _originAcceleration;
-            
+            Debug.Log("_elapsedSeconds > 2.0f");
             Monster.Value.linearVelocity = Vector3.zero;
+            Debug.Log(Monster.Value.linearVelocity);
             Monster.Value.angularVelocity = Vector3.zero;
             return Status.Success;
         }
@@ -61,7 +54,6 @@ public partial class AttackAction : Action
         Agent.Value.velocity = _originVelocity;
         Agent.Value.angularSpeed  = _originAngularSpeed;
         Agent.Value.acceleration = _originAcceleration;
-        
     }
 }
 
