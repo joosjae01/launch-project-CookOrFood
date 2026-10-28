@@ -1177,6 +1177,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: _rigidbody
+      value: 
+      objectReference: {fileID: 5554050774092287875, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+    - target: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: _playerLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -1230,17 +1234,30 @@ PrefabInstance:
         Assembly-CSharp]]'
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: 'managedReferences[8656994449204183263]'
+      value: 'Unity.Behavior Unity.Behavior.BlackboardVariable`1[[UnityEngine.Rigidbody,
+        UnityEngine.PhysicsModule]]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: managedReferences[8656994446136049828].Name
       value: Status
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994449204183263].Name
+      value: MonsterRigidbody
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: m_BlackboardVariableOverridesList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: managedReferences[8656994446136049828].m_Value
       value: 
       objectReference: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994449204183263].m_Value
+      value: 
+      objectReference: {fileID: 1786120451}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: 'm_BlackboardVariableOverridesList.Array.data[1]'
       value: 8656994304551027159
@@ -1250,12 +1267,24 @@ PrefabInstance:
       value: 8656994446136049828
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: 'm_BlackboardVariableOverridesList.Array.data[3]'
+      value: 8656994449204183263
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: managedReferences[8656994446136049828].GUID.m_Value0
       value: 6190501482051438635
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: managedReferences[8656994446136049828].GUID.m_Value1
       value: 7146734164432458469
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994449204183263].GUID.m_Value0
+      value: 15661180951858097762
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: managedReferences[8656994449204183263].GUID.m_Value1
+      value: 12385122824241974234
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2488,6 +2517,11 @@ Transform:
   - {fileID: 867353844}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!54 &1786120451 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5554050774092287875, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+  m_PrefabInstance: {fileID: 1249219456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1835068537
 PrefabInstance:
   m_ObjectHideFlags: 0
