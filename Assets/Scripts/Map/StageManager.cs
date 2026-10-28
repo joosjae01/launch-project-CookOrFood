@@ -109,7 +109,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         {
             int index = Random.Range(0, _eventStageList.Count);
             
-            return _eventStageList[1];
+            return _eventStageList[index];
         }
 
         return null;
