@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a25d9c3f9493747a7e240954c6c74f, type: 3}
   m_Name: GuidedLogicEnhance
   m_EditorClassIdentifier: Assembly-CSharp::GuidedLogic
-  Name: 
+  Name: "\uC720\uB3C4"
+  Desc: 
+  EnhanceImage: {fileID: 0}
   Grade: 0
-  _muzzlePoint: {fileID: 0}
+  CanOverlap: 0

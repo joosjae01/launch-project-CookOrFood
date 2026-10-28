@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: CritDamage_S
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStatEnhance
   Name: "\uCE58\uBA85\uD0C0 \uB300\uBBF8\uC9C0 (S)"
+  Desc: 
+  EnhanceImage: {fileID: 0}
   Grade: 0
+  CanOverlap: 1
   AttackValueAmount: 0
   AttackSpeedAmount: 0
   CritRateAmount: 0
