@@ -38,7 +38,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         _changeStageAction.action.performed += ActionExit;
     }
 
-    // ---------------------------------
+    // ----------------------------------
 
     private void InitStages()
     { 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ExitPortal : MonoBehaviour
 {
-    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private LayerMask _playerLayer;
     
     private BoxCollider _collider;
     
@@ -13,7 +13,7 @@ public class ExitPortal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (LayerMaskExtensions.Contains(_layerMask.value, other.gameObject.layer))
+        if (_playerLayer.Contains(other))
         {
             StageManager.Instance.ExitStage();
         }
