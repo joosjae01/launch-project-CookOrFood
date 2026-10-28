@@ -192,7 +192,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _player: {fileID: 0}
-  _chargeTime: 2
+  <_chargeTime>k__BackingField: 2
+  _rigidbody: {fileID: 0}
 --- !u!1001 &616125544245109102
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class ChargeMonster : MonsterBase
     [SerializeField] private PlayerController _player;
     [field : SerializeField] public float _chargeTime { get; private set; }
 
-    public Rigidbody _rigidbody { get; private set; }
+    public Rigidbody _rigidbody;
 
     private void Awake()
     {
@@ -32,5 +32,15 @@ public class ChargeMonster : MonsterBase
     {
         damage *= 1.50f;
         return damage;
+    }
+
+    public void Dash()
+    {
+        _rigidbody.AddForce(Vector3.forward * 10.0f, ForceMode.Impulse);
+    }
+
+    public void StopDash()
+    {
+        _rigidbody.linearVelocity = Vector3.zero;
     }
 }

@@ -22,7 +22,7 @@ public partial class ChargingAction : Action
     protected override Status OnStart()
     {
         Player.Value = GameManager.Instance.MainPlayer.gameObject;
-        Agent.Value.speed = 0.0f;
+        Agent.Value.speed = 1.0f;
         return Status.Running;
     }
 
@@ -30,15 +30,16 @@ public partial class ChargingAction : Action
     {
         Monster.Value.transform.LookAt(Player.Value.transform);
         _elapsedSeconds += Time.deltaTime;
-        if (_elapsedSeconds >= Seconds.Value._chargeTime)
+        if (_elapsedSeconds > Seconds.Value._chargeTime)
         {
-            return Status.Success;
+                return Status.Success;
         }
         return Status.Running;
     }
 
     protected override void OnEnd()
     {
+        Agent.Value.speed = Seconds.Value.Data.Speed;
         _elapsedSeconds = 0.0f;
     }
 }
