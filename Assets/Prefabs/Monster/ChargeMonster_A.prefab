@@ -98,9 +98,8 @@ MonoBehaviour:
   m_Graph: {fileID: -6172895504669506553, guid: 003b5e73fef2c874da8eb8ada615c5ec, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 8656994304551026946
-  - rid: 8656994400593511381
   - rid: 8656994304551027159
-  - rid: 8656994400593511382
+  - rid: 8656994446136049775
   m_OriginalGraph: {fileID: 0}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -123,22 +122,14 @@ MonoBehaviour:
           m_Value1: 16518968132008736583
         Name: Agent
         m_Value: {fileID: 7921009865044781226}
-    - rid: 8656994400593511381
-      type: {class: 'BlackboardVariable`1[[PlayerController, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+    - rid: 8656994446136049775
+      type: {class: 'BlackboardVariable`1[[ChargeMonster, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 183341001546172973
-          m_Value1: 2315218636252490970
-        Name: Player
-        m_Value: {fileID: 3449524913133369028, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
-    - rid: 8656994400593511382
-      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 11971856509429441382
-          m_Value1: 7721298046843179263
-        Name: MoveSpeed
-        m_Value: 3
+          m_Value0: 6190501482051438635
+          m_Value1: 7146734164432458469
+        Name: Status
+        m_Value: {fileID: -6118733991790286218}
 --- !u!114 &7063331552006466025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +188,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterA
   Data: {fileID: 7063331552006466025}
-  _attackSpeed: 0
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _player: {fileID: 0}
+  _chargeTime: 2
 --- !u!1001 &616125544245109102
 PrefabInstance:
   m_ObjectHideFlags: 0

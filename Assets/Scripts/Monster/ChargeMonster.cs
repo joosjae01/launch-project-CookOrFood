@@ -4,7 +4,15 @@ public class ChargeMonster : MonsterBase
 {
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private PlayerController _player;
+    [field : SerializeField] public float _chargeTime { get; private set; }
 
+    public Rigidbody _rigidbody { get; private set; }
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (_playerLayer.Contains(other))
