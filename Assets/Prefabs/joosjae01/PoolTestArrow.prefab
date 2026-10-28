@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 8163741608181358528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31686, y: 0.2218, z: 0.31686}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,7 +108,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -146,3 +146,4 @@ MonoBehaviour:
     m_Bits: 0
   _projectileData: {fileID: 11400000, guid: 4d2baf9761697ff4698d039560bede31, type: 2}
   _weaponData: {fileID: 8247211778276695133, guid: cc6e0177329956e47804b487df35bca3, type: 3}
+  TargetMonster: {fileID: 0}
