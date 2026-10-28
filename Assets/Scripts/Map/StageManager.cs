@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class StageManager : SingletonBehaviour<StageManager>
 {
     [SerializeField] private InputActionReference _changeStageAction;
-    [SerializeField] private GameObject _playerTransform;
+    [SerializeField] private GameObject _player;
     [SerializeField] private List<StageBase> _stages;
     
     private StageBase _tutorialStage;
@@ -78,7 +78,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         _currentStage.ResetStage();
         _currentStage.Enter();
         
-        _playerTransform.transform.position = _currentStage.PlayerSpawnPoint.position;
+        _player.transform.position = _currentStage.PlayerSpawnPoint.position;
         
         _stageIndex++;
     }
@@ -107,9 +107,9 @@ public class StageManager : SingletonBehaviour<StageManager>
         
         if (_stageIndex % 3 == 0)
         {
-            //int index = Random.Range(0, _eventStageList.Count);
+            int index = Random.Range(0, _eventStageList.Count);
             
-            return _eventStageList[0];
+            return _eventStageList[index];
         }
 
         return null;

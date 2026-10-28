@@ -11,8 +11,11 @@ public class GameManager : SingletonBehaviour<GameManager>
     public PlayerController MainPlayer;
     public PlayerData MainPlayerData;
 
-    private void Awake() => SetSingleton();
-    
+    private void Awake()
+    {
+        SetSingleton();
+    }
+
     // [씬 이동] -----------------------------------------
     public void LoadLobbyScene() // 로비
     {
