@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
   _isDontDestroyOnLoad: 0
   _changeStageAction: {fileID: 1120369429361536294, guid: bed11bd3d146b674397888890237a394, type: 3}
-  _playerTransform: {fileID: 1972146383}
+  _player: {fileID: 1972146383}
   _stages:
   - {fileID: 363761365846086956, guid: d2f63347cc66b3e4e81005935b460c15, type: 3}
   - {fileID: 4504791284232071317, guid: e8ef18cbddd599a49b8326d0ee3d78d4, type: 3}
@@ -854,7 +854,7 @@ Transform:
   m_GameObject: {fileID: 2032127758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 562.75183, y: 0, z: 1373.5142}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -973,10 +973,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 884942781}
   - {fileID: 1537977670}
+  - {fileID: 2032127760}
   - {fileID: 883849380}
   - {fileID: 1389284029}
   - {fileID: 2063659039}
   - {fileID: 1872884066}
   - {fileID: 286749177}
   - {fileID: 941812735}
-  - {fileID: 2032127760}

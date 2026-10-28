@@ -169,6 +169,7 @@ Transform:
   - {fileID: 7875747101960946663}
   - {fileID: 7354571105084505042}
   - {fileID: 503828343392795513}
+  - {fileID: 2836996114407497769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5588526530364957507
@@ -264,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DevilEventStage
   PlayerSpawnPoint: {fileID: 7875747101960946663}
   ExitPortal: {fileID: 4112950821163326150}
+  _devil: {fileID: 3635880715894034537}
 --- !u!1 &4265139286781039195
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +403,92 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &1536704933599564162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2439943423199187012}
+    m_Modifications:
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590759898627015370, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      propertyPath: m_Name
+      value: Devil
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8508371622608523817, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4590759898627015370, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3635880715894034537}
+  m_SourcePrefab: {fileID: 100100000, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+--- !u!4 &2836996114407497769 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3606380622477980075, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+  m_PrefabInstance: {fileID: 1536704933599564162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3091403594793964360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4590759898627015370, guid: fe9af0eb1f80dc14cb3d9ec1e6e7e9ad, type: 3}
+  m_PrefabInstance: {fileID: 1536704933599564162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3635880715894034537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091403594793964360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c88fd0178fd05d4ab1452b6d8b09783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Devil
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &6891215315263326351
 PrefabInstance:
   m_ObjectHideFlags: 0
