@@ -6,7 +6,7 @@ public class CombatStage : CombatStageBase
     
     protected override void CombatStageEnter()
     {
-        ExitPortal.SetActive(false); 
+        ExitPortal.gameObject.SetActive(false); 
     }
 
     protected override void CombatStageExit()

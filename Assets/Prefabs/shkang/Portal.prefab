@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f64a8d3de7e5d4eaf3c1fe31d81bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitPortal
-  _layerMask:
+  _playerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!1 &8540298495316805117

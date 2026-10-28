@@ -5,7 +5,7 @@ public abstract class StageBase : MonoBehaviour
 {
     public abstract StageType StageType { get;}
     public Transform PlayerSpawnPoint;
-    public GameObject ExitPortal;
+    public ExitPortal ExitPortal;
     
     public bool IsClear { get; protected set; }
     
@@ -19,7 +19,7 @@ public abstract class StageBase : MonoBehaviour
         if (IsClear) return;
 
         IsClear = true;
-        ExitPortal.SetActive(true);
+        ExitPortal.gameObject.SetActive(true);
     }
 
     public abstract void Enter();

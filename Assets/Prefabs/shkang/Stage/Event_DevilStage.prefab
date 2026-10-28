@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DevilEventStage
   PlayerSpawnPoint: {fileID: 7875747101960946663}
-  ExitPortal: {fileID: 5607453857807936160}
+  ExitPortal: {fileID: 4112950821163326150}
 --- !u!1 &4265139286781039195
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,8 +463,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6439996714101502966, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
   m_PrefabInstance: {fileID: 6891215315263326351}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5607453857807936160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1329457182718665263, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
+--- !u!114 &4112950821163326150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7401280241187410505, guid: 4dd5a556b048b0d42805e3e7813be132, type: 3}
   m_PrefabInstance: {fileID: 6891215315263326351}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f64a8d3de7e5d4eaf3c1fe31d81bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExitPortal

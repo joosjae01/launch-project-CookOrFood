@@ -38,7 +38,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         _changeStageAction.action.performed += ActionExit;
     }
 
-    // ---------------------------------
+    // ----------------------------------
 
     private void InitStages()
     { 
@@ -107,9 +107,9 @@ public class StageManager : SingletonBehaviour<StageManager>
         
         if (_stageIndex % 3 == 0)
         {
-            int index = Random.Range(0, _eventStageList.Count);
+            //int index = Random.Range(0, _eventStageList.Count);
             
-            return _eventStageList[index];
+            return _eventStageList[0];
         }
 
         return null;

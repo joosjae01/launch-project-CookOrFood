@@ -4,10 +4,15 @@ public class RouletteEventStage : EventStageBase
 {
     protected override void EventStageEnter()
     {
-        ExitPortal.SetActive(false); 
+        ExitPortal.gameObject.SetActive(false); 
     }
 
     protected override void EventStageExit()
+    {
+        
+    }
+
+    protected override void SpawnPortal()
     {
         
     }
