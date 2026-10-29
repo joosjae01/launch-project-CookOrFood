@@ -11,7 +11,7 @@ public partial class ChaseAction : Action
 {
     [SerializeReference] public BlackboardVariable<GameObject> Monster;
     [SerializeReference] public BlackboardVariable<Transform> Target;
-    [SerializeReference] public BlackboardVariable<ChargeMonster> MoveSpeed;
+    [SerializeReference] public BlackboardVariable<MonsterController> MoveSpeed;
     [SerializeReference] public BlackboardVariable<NavMeshAgent> Agent;
     protected override Status OnStart()
     {

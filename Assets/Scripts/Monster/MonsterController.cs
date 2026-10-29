@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChargeMonster : MonsterBase
+public class MonsterController : MonsterBase
 {
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private PlayerController _player;
@@ -34,20 +34,9 @@ public class ChargeMonster : MonsterBase
     {
         
     }
-    
-    private float InforceDamage(float damage) // 1.5배 된 공격력 반환
-    {
-        damage *= 1.50f;
-        return damage;
-    }
 
-    public void Dash()
+    public override void Move(Transform target)
     {
-        _rigidbody.AddForce(Vector3.forward * 10.0f, ForceMode.Impulse);
-    }
-
-    public void StopDash()
-    {
-        _rigidbody.linearVelocity = Vector3.zero;
+        
     }
 }

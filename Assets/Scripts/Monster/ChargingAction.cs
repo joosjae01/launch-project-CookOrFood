@@ -15,7 +15,7 @@ public partial class ChargingAction : Action
 {
     [SerializeReference] public BlackboardVariable<GameObject> Monster;
     [SerializeReference] public BlackboardVariable<GameObject> Player;
-    [SerializeReference] public BlackboardVariable<ChargeMonster> Seconds;
+    [SerializeReference] public BlackboardVariable<MonsterController> Seconds;
     [SerializeReference] public BlackboardVariable<NavMeshAgent> Agent;
     private float _elapsedSeconds;
 
