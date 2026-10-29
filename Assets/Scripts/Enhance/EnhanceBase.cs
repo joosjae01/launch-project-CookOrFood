@@ -17,4 +17,7 @@ public abstract class EnhanceBase : ScriptableObject
 
     [Header("중첩 가능 여부")]
     public bool CanOverlap;
+
+    [Header("상생 가능 여부")]
+    public bool CanCoExist;
 }

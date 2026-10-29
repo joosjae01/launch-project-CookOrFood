@@ -26,7 +26,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
 
-    private void Start() => _projectileData.Fire(this);
     private void FixedUpdate() => _projectileData.Move(this, _projectileData.MoveSpeed);
     private void OnTriggerEnter(Collider other)
     {

@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class BasicLogic : MonoBehaviour
 {
-    public void BasicFire(GameObject projectile)
-    {
-        projectile.transform.SetPositionAndRotation(projectile.transform.position, projectile.transform.rotation);
-    }
-
     public void BasicMove(ProjectileController projectile, float moveSpeed)
     {
         projectile.transform.Translate(projectile.transform.forward * moveSpeed * Time.deltaTime);

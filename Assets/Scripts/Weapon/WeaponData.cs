@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponData : MonoBehaviour
 {
@@ -16,4 +17,7 @@ public class WeaponData : MonoBehaviour
 
     [Header("치명 배율")]
     [field:SerializeField] public float CritDamage { get; set; }
+
+    [Header("사격 시 이벤트")]
+    public UnityEvent<Transform> OnFired;
 }
