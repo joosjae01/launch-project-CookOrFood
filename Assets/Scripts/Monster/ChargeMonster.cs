@@ -8,14 +8,10 @@ public class ChargeMonster : MonsterBase
     
     [field : SerializeField] public float _chargeTime { get; private set; }
 
-    private NavMeshAgent _agent;
+    // private NavMeshAgent _agent;
     private Rigidbody _rigidbody;
 
-    private void Awake()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-        _agent = GetComponent<NavMeshAgent>();
-    }
+    private void Awake() => CacheComponents();
     
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +22,12 @@ public class ChargeMonster : MonsterBase
         }
         _rigidbody.linearVelocity = Vector3.zero;
         _rigidbody.angularVelocity = Vector3.zero;
+    }
+
+    private void CacheComponents()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        _monsterAgent = GetComponent<NavMeshAgent>();
     }
     
     public override void Attack(Transform target)

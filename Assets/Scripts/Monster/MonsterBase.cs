@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
 {
     public MonsterData Data;
+    protected NavMeshAgent _monsterAgent;
+    protected Rigidbody _rigidbody;
     
     public GameObject GameObject { get; set; }
     public ObjectPool Source { get; set; }
@@ -18,4 +21,6 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
     }
     
     public abstract void Attack(Transform target);
+    
+    public abstract void Move(Transform target);
 }
