@@ -24,19 +24,29 @@ public class ChargerController : MonsterBase
     private bool _isAttacking;
     private float _elapsedTime;
     private float _targetDistance;
+    private float _coolCount;
     private void Awake() => CacheComponents();
 
     private void Update()
     {
-        DetectPlayer();
-        
-        Debug.Log($" 차징 중 :{_isCharging}, 공격 중 :  {_isAttacking}");
-        
-        if (_isCharging)
+        // Debug.Log($" 차징 중 :{_isCharging}, 공격 중 :  {_isAttacking}");
+        if (_coolCount > Data.CoolDown)
         {
+            Debug.Log(_coolCount);
+            DetectPlayer();
+        }
+        
+        
+        else if (_isCharging)
+        {
+            Debug.Log(_coolCount);
             transform.LookAt(_monsterAgent.destination);
         }
-        else if (_isAttacking) CheckAttack(); 
+        else if (_isAttacking)
+        {
+            Debug.Log(_coolCount);
+            CheckAttack();
+        } 
         else Move();
         
     }
@@ -113,6 +123,7 @@ public class ChargerController : MonsterBase
         {
             _monsterAgent.isStopped = false;
         }
+        _coolCount += Time.deltaTime;
         _monsterAgent.SetDestination(_player.transform.position);
     }
 
@@ -124,6 +135,8 @@ public class ChargerController : MonsterBase
         
         if (_targetDistance <= Data.AttackRange)
         {
+            _coolCount = 0.0f;
+            Debug.Log("공격 쿨 시작");
             Debug.Log("플레이어 감지");
             StartAttackRoutine();
         }

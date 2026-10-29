@@ -97,8 +97,8 @@ MonoBehaviour:
   Name: "\uCE58\uD0A8\uAD34\uBB3C"
   Damage: 50
   Speed: 3
-  CoolDown: 0
-  AttackRange: 0
+  CoolDown: 2
+  AttackRange: 5
   Health:
     _value: 0
 --- !u!54 &5554050774092287875
@@ -144,9 +144,9 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
-  _attackTime: 0
-  _chargeTime: 0
-  _chargeSpeed: 0
+  _attackTime: 1
+  _chargeTime: 1
+  _chargeSpeed: 8
 --- !u!1001 &616125544245109102
 PrefabInstance:
   m_ObjectHideFlags: 0
