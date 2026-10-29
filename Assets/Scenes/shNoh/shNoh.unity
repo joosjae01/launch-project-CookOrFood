@@ -1181,6 +1181,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5554050774092287875, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
     - target: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: _attackTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: _chargeTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: _chargeSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6118733991790286218, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: _playerLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -1228,6 +1240,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7063331552006466025, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: AttackRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: 'managedReferences[8656994446136049828]'
       value: 'Unity.Behavior Unity.Behavior.BlackboardVariable`1[[ChargeMonster,
@@ -1248,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: m_BlackboardVariableOverridesList.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: managedReferences[8656994446136049828].m_Value
@@ -1264,7 +1280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: 'm_BlackboardVariableOverridesList.Array.data[2]'
-      value: 8656994446136049828
+      value: 8656994449204183263
       objectReference: {fileID: 0}
     - target: {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: 'm_BlackboardVariableOverridesList.Array.data[3]'
@@ -1286,7 +1302,8 @@ PrefabInstance:
       propertyPath: managedReferences[8656994449204183263].GUID.m_Value1
       value: 12385122824241974234
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9142032222376955372, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1467,6 +1484,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NohTestA
   _playerData: {fileID: 1287850283}
   _testAAction: {fileID: -7962046033624909815, guid: 492e65a18d5d1884b8015eb57bcd280a, type: 3}
+--- !u!114 &1287850288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449524913133369028, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
+  m_PrefabInstance: {fileID: 640023693}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287850281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69504d7463901b64c92a9d32565d317f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1441881646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,8 +1525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _isDontDestroyOnLoad: 0
-  MainPlayer: {fileID: 0}
-  MainPlayerData: {fileID: 0}
+  CurrentPlayer: {fileID: 1287850288}
+  CurrentPlayerData: {fileID: 1287850283}
 --- !u!4 &1441881648
 Transform:
   m_ObjectHideFlags: 0
