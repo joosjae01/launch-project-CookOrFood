@@ -22,33 +22,23 @@ public class ChargerController : MonsterBase
     
     private bool _isCharging;
     private bool _isAttacking;
+    private bool _isCoolOn => _coolCount >= Data.CoolDown;
+    
     private float _elapsedTime;
     private float _targetDistance;
     private float _coolCount;
+    // ---------- Event Method ----------
+    
     private void Awake() => CacheComponents();
 
     private void Update()
     {
-        // Debug.Log($" 차징 중 :{_isCharging}, 공격 중 :  {_isAttacking}");
-        if (_coolCount > Data.CoolDown)
-        {
-            Debug.Log(_coolCount);
-            DetectPlayer();
-        }
+        DetectPlayer();
+        Debug.Log($" 돌진 준비 중인가 : {_isCharging}, 공격 중 인가 : {_isAttacking}, 쿨 돌았나 : {_isCoolOn}");
         
-        
-        else if (_isCharging)
-        {
-            Debug.Log(_coolCount);
-            transform.LookAt(_monsterAgent.destination);
-        }
-        else if (_isAttacking)
-        {
-            Debug.Log(_coolCount);
-            CheckAttack();
-        } 
+        if (_isCharging) transform.LookAt(_player.transform);
+        else if (_isAttacking) CheckAttack();
         else Move();
-        
     }
     
     private void OnTriggerEnter(Collider other)
@@ -57,6 +47,8 @@ public class ChargerController : MonsterBase
         
         StopAttackRoutine();
     }
+    
+    // ----------------------------------
 
     private void CacheComponents()
     {
@@ -89,19 +81,19 @@ public class ChargerController : MonsterBase
     private void StartAttackRoutine()
     {
         if(_attackingRoutine != null) return;
-        Debug.Log("공격 시작");
         _attackingRoutine = StartCoroutine(AttackRoutine());
     }
 
     private void StopAttackRoutine()
     {
-        
         if (_attackingRoutine == null) return;
         Debug.Log("공격 종료");
         StopCoroutine(_attackingRoutine);
         Move();
+        _coolCount = 0;
         _elapsedTime = 0;
         _isAttacking = false;
+        _isCharging = false;
         _attackingRoutine = null;
     }
     
@@ -129,15 +121,12 @@ public class ChargerController : MonsterBase
 
     public override void DetectPlayer()
     {
-        if (_isCharging || _isAttacking) return;
+        if (_isCharging || _isAttacking || !_isCoolOn) return;
         
-        _targetDistance = Vector3.Distance(transform.position,  _player.transform.position);
+        _targetDistance = Vector3.Distance(transform.position, _player.transform.position);
         
         if (_targetDistance <= Data.AttackRange)
         {
-            _coolCount = 0.0f;
-            Debug.Log("공격 쿨 시작");
-            Debug.Log("플레이어 감지");
             StartAttackRoutine();
         }
     }

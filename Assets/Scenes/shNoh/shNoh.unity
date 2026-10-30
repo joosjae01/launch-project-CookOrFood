@@ -1200,6 +1200,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChargeMonster_A
       objectReference: {fileID: 0}
+    - target: {fileID: 4638057714733465465, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554050774092287875, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554050774092287875, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6786910406202346259, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3725
@@ -1239,6 +1251,10 @@ PrefabInstance:
     - target: {fileID: 6786910406202346259, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063331552006466025, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+      propertyPath: CoolDown
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7063331552006466025, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
       propertyPath: AttackRange
