@@ -8,8 +8,8 @@ using UnityEngine.InputSystem;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
-    public PlayerController MainPlayer;
-    public PlayerData MainPlayerData;
+    public PlayerController CurrentPlayer;
+    public PlayerData CurrentPlayerData;
 
     private void Awake()
     {

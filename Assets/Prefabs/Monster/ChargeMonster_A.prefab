@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 6786910406202346259}
   - component: {fileID: 7921009865044781226}
   - component: {fileID: 4638057714733465465}
-  - component: {fileID: 9142032222376955372}
   - component: {fileID: 7063331552006466025}
   - component: {fileID: 5554050774092287875}
   - component: {fileID: -6118733991790286218}
   m_Layer: 0
-  m_Name: Monster_A
+  m_Name: ChargeMonster_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,62 +82,6 @@ CapsuleCollider:
   m_Height: 0.79
   m_Direction: 1
   m_Center: {x: 0, y: 0.24, z: 0}
---- !u!114 &9142032222376955372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954119548052175108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
-  m_Graph: {fileID: -6172895504669506553, guid: 003b5e73fef2c874da8eb8ada615c5ec, type: 2}
-  m_BlackboardVariableOverridesList:
-  - rid: 8656994304551026946
-  - rid: 8656994304551026973
-  - rid: 8656994304551027132
-  - rid: 8656994304551027159
-  m_OriginalGraph: {fileID: 0}
-  m_IsInitialised: 0
-  m_IsStarted: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 8656994304551026946
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1
-          m_Value1: 0
-        Name: Self
-        m_Value: {fileID: 1954119548052175108}
-    - rid: 8656994304551026973
-      type: {class: 'BlackboardVariable`1[[MonsterData, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1491749963673548057
-          m_Value1: 14194071757257296044
-        Name: Monster_A_Data
-        m_Value: {fileID: 7063331552006466025}
-    - rid: 8656994304551027132
-      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 10165529905233129649
-          m_Value1: 4251684167812534111
-        Name: Target
-        m_Value: {fileID: 9153765659262836727, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
-    - rid: 8656994304551027159
-      type: {class: 'BlackboardVariable`1[[UnityEngine.AI.NavMeshAgent, UnityEngine.AIModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 16539083693457982189
-          m_Value1: 16518968132008736583
-        Name: Agent
-        m_Value: {fileID: 7921009865044781226}
 --- !u!114 &7063331552006466025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +97,10 @@ MonoBehaviour:
   Name: "\uCE58\uD0A8\uAD34\uBB3C"
   Damage: 50
   Speed: 3
-  CoolDown: 0
+  CoolDown: 2
+  AttackRange: 5
+  Health:
+    _value: 0
 --- !u!54 &5554050774092287875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,7 +141,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterA
   Data: {fileID: 7063331552006466025}
-  Data: {fileID: 7063331552006466025}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _attackTime: 1
+  _chargeTime: 1
+  _chargeSpeed: 8
 --- !u!1001 &616125544245109102
 PrefabInstance:
   m_ObjectHideFlags: 0

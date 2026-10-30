@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        GameManager.Instance.MainPlayer = this;
+        GameManager.Instance.CurrentPlayer = this;
     }
     
     private void OnEnable()

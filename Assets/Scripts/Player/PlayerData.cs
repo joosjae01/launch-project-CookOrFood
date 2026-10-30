@@ -26,6 +26,6 @@ public class PlayerData : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.MainPlayerData = this;
+        GameManager.Instance.CurrentPlayerData = this;
     }
 }
