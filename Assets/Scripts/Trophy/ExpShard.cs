@@ -19,7 +19,7 @@ public class ExpShard : MonoBehaviour, ICollectable, IPoolable
 
     private void Awake()
     {
-        _targetData = GameManager.Instance.MainPlayerData;
+        _targetData = GameManager.Instance.CurrentPlayerData;
     }
 
     private void OnEnable()

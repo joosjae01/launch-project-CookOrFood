@@ -16,7 +16,7 @@ public class HealthShard : MonoBehaviour, ICollectable, IPoolable
 
     private void Awake()
     {
-        _playerData = GameManager.Instance.MainPlayerData;
+        _playerData = GameManager.Instance.CurrentPlayerData;
     }
 
     private void OnEnable()

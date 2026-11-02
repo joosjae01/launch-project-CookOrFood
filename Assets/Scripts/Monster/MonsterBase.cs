@@ -1,21 +1,34 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
 {
-    public MonsterData Data;
+    protected PlayerController _player;
+    protected NavMeshAgent _monsterAgent;
+    protected Rigidbody _rigidbody;
     
-    public GameObject GameObject { get; set; }
+    public MonsterData Data;
+    public GameObject GameObject { get => gameObject; }
     public ObjectPool Source { get; set; }
 
     public void ReturnToPool()
     {
-        
+        Source.Push(this);
     }
 
     public void TakeDamage(float damage)
     {
-        
+        Data.Health.Value -= damage;
     }
     
-    protected abstract void Attack();
+    public abstract void Attack();
+    
+    public abstract void Move();
+
+    public virtual void StopMove()
+    {
+        _monsterAgent.isStopped = true;
+    }
+
+    public abstract void DetectPlayer();
 }
