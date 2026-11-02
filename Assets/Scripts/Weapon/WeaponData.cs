@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,4 +21,7 @@ public class WeaponData : MonoBehaviour
 
     [Header("사격 시 이벤트")]
     public UnityEvent<Transform> OnFired;
+
+    [Header("현재 공격하고 있는 적들")]
+    [SerializeReference] public Dictionary<DamageType, HashSet<IDamageable>> CurrentTargets = new();
 }
