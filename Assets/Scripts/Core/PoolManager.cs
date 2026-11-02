@@ -14,9 +14,8 @@ public class PoolManager : SingletonBehaviour<PoolManager>
     {
         for(int i = 0; i < _poolData.Count; i++)
         {
-            ObjectPool objectPool = new();
-            objectPool.Init(_poolData[i].Size, _poolData[i].Prefab, transform);
-            Pool[_poolData[i].Type] = objectPool;
+            Pool[_poolData[i].Type] = new();
+            Pool[_poolData[i].Type].Init(_poolData[i].Size, _poolData[i].Prefab, transform);
         }
     }
 }

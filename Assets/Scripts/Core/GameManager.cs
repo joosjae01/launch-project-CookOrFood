@@ -10,6 +10,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 {
     public PlayerController MainPlayer;
     public PlayerData MainPlayerData;
+    public WeaponData CurrentWeaponData;
 
     private void Awake()
     {

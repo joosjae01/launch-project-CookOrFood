@@ -26,6 +26,7 @@ public class ProjectileController : MonoBehaviour, IPoolable
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
 
+    private void Start() => Init();
     private void FixedUpdate() => _projectileData.Move(this, _projectileData.MoveSpeed);
     private void OnTriggerEnter(Collider other)
     {
@@ -53,5 +54,10 @@ public class ProjectileController : MonoBehaviour, IPoolable
     public void ReturnToPool()
     {
         Source.Push(this);
+    }
+
+    private void Init()
+    {
+        _weaponData = GameManager.Instance.CurrentWeaponData;
     }
 }
