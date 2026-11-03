@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PoolManager : SingletonBehaviour<PoolManager>
 {
-    [SerializeField] List<PoolData> _poolData = new();
-    
-    public Dictionary<PoolableType, ObjectPool> Pool = new();
+    [SerializeField] private ObjectPool _poolPrefab;
+    [SerializeField] private List<PoolData> _poolData = new();
+
+    public Dictionary<PoolableType, ObjectPool> _pool = new();
 
     private void Awake() => SetSingleton();
     private void Start() => CreatePool();
@@ -14,8 +15,16 @@ public class PoolManager : SingletonBehaviour<PoolManager>
     {
         for(int i = 0; i < _poolData.Count; i++)
         {
-            Pool[_poolData[i].Type] = new();
-            Pool[_poolData[i].Type].Init(_poolData[i].Size, _poolData[i].Prefab, transform);
+            _pool[_poolData[i].Type] = Instantiate(_poolPrefab, transform);
+            _pool[_poolData[i].Type].name = _poolData[i].Type.ToString();
+            _pool[_poolData[i].Type].Init(_poolData[i].Size, _poolData[i].Prefab, _pool[_poolData[i].Type].transform);
         }
+    }
+
+    public IPoolable Take(PoolableType type)
+    {
+        if (!_pool.ContainsKey(type)) return null;
+
+        return _pool[type].Take();
     }
 }
