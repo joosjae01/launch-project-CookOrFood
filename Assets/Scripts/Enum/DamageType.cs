@@ -1,5 +1,7 @@
 public enum DamageType
 {
     FireDamage,
-    PoisionDamage
+    PoisionDamage,
+
+    ChainLightning
 }

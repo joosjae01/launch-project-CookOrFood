@@ -5,10 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DotLogicEnhance", menuName = "Scriptable Objects/Enhance/Attack/DotLogicEnhance")]
 public sealed class DotAttackLogic : AttackLogicEnhance
 {
-    [SerializeField] private float _damage;
+    [Header("대미지 배율")]
+    [SerializeField] private float _damageRate;
+
+    [Header("효과 지속 시간")]
     [SerializeField] private float _duration;
+
+    [Header("대미지 주기")]
     [SerializeField] private float _interval;
+
+    [Header("대미지 종류")]
     [SerializeField] private DamageType _damageType;
+
     private WaitForSeconds _waitForInterval;
 
     public override void Attack(IDamageable damageable, WeaponData weaponData)
@@ -27,7 +35,7 @@ public sealed class DotAttackLogic : AttackLogicEnhance
 
         while (elapsed < _duration)
         {
-            target.TakeDamage(_damage);
+            target.TakeDamage(_damageRate * weaponData.AttackValue);
             yield return _waitForInterval;
             elapsed += _interval;
         }
