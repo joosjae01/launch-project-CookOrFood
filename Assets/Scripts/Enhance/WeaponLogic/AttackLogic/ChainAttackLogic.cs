@@ -4,9 +4,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ChainLightningEnhance", menuName = "Scriptable Objects/Enhance/Attack/ChainLightningEnhance")]
 public class ChainAttackLogic : AttackLogicEnhance
 {
+    [Header("주변 적 탐지 범위")]
     [SerializeField] private float _radius;
+
+    [Header("대미지 배율")]
     [SerializeField] private float _damageRate;
+
+    [Header("적 레이어 마스크")]
     [SerializeField] private LayerMask _enemyLayer;
+
+    [Header("대미지 종류")]
     [SerializeField] private DamageType _damageType;
 
     public override void Attack(IDamageable damageable, WeaponData weaponData)
