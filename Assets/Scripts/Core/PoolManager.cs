@@ -6,7 +6,7 @@ public class PoolManager : SingletonBehaviour<PoolManager>
     [SerializeField] private ObjectPool _poolPrefab;
     [SerializeField] private List<PoolData> _poolData = new();
 
-    public Dictionary<PoolableType, ObjectPool> _pool = new();
+    private Dictionary<PoolableType, ObjectPool> _pool = new();
 
     private void Awake() => SetSingleton();
     private void Start() => CreatePool();
