@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChainAttackLogic : AttackLogicEnhance
 {
     [SerializeField] private float _radius;
-    [SerializeField] private float _interval;
     [SerializeField] private float _damageRate;
     [SerializeField] private LayerMask _enemyLayer;
     [SerializeField] private DamageType _damageType;
