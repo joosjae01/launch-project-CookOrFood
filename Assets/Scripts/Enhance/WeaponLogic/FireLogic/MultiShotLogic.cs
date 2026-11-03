@@ -15,7 +15,7 @@ public sealed class MultiShotLogic : FireLogicEnhance
         
         for(int i = 0; i < _count; i++)
         {
-            _temp = PoolManager.Instance.Pool[PoolableType.Arrow].Take();
+            _temp = PoolManager.Instance.Take(PoolableType.Projectile);
             Vector3 position = muzzlePoint.position + right * (first + _offset * i);
             _temp.GameObject.transform.SetPositionAndRotation(position, muzzlePoint.rotation);
         }

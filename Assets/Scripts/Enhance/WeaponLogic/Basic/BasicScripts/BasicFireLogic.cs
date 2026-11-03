@@ -6,7 +6,7 @@ public class BasicFireLogic : FireLogicEnhance
     private IPoolable _temp;
     public override void Fire(Transform muzzlePoint)
     {
-        _temp = PoolManager.Instance.Pool[PoolableType.Arrow].Take();
+        _temp = PoolManager.Instance.Take(PoolableType.Projectile);
         _temp.GameObject.transform.SetPositionAndRotation(muzzlePoint.position, muzzlePoint.rotation);
     }
 }

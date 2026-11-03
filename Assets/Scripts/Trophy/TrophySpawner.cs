@@ -26,7 +26,7 @@ public class TrophySpawner : MonoBehaviour
         _collectable = trophy.GetComponent<ICollectable>();
         if(_randomRange <= _collectable.DropRate * 10)
         {
-            _temp = PoolManager.Instance.Pool[_collectable.Type].Take();
+            _temp = PoolManager.Instance.Take(_collectable.Type);
 
             if (_temp == null) return;
 
