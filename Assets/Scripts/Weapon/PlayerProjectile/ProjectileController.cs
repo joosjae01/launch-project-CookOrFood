@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour, IPoolable
@@ -31,8 +29,10 @@ public class ProjectileController : MonoBehaviour, IPoolable
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
 
+    private void Awake() => CacheComponents();
     private void Start() => Init();
     private void OnEnable() => StartReturnRoutine();
+    private void OnDisable() => StopReturnRoutine();
     private void FixedUpdate() => _projectileData.Move(this, _projectileData.MoveSpeed);
     private void OnTriggerEnter(Collider other)
     {
@@ -65,12 +65,14 @@ public class ProjectileController : MonoBehaviour, IPoolable
     private void StartReturnRoutine()
     {
         if (_returnRoutine != null) return;
+        Debug.Log($"{name} 활성화");
         _returnRoutine = StartCoroutine(ReturnRoutine());
     }
 
     private void StopReturnRoutine()
     {
         if (_returnRoutine == null) return;
+        Debug.Log($"{name} 비활성화");
         StopCoroutine(_returnRoutine);
         _returnRoutine = null;
     }
@@ -78,7 +80,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
     private IEnumerator ReturnRoutine()
     {
         yield return _waitForReturn;
-        StopReturnRoutine();
         ReturnToPool();
     }
 
@@ -89,15 +90,18 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
     public void ReturnToPool()
     {
+        StopReturnRoutine();
         Source.Push(this);
         _isSecondCreated = false;
-        StopReturnRoutine();
+    }
+
+    private void CacheComponents()
+    {
+        _waitForReturn = new WaitForSeconds(_projectileData.LifeTime);
     }
 
     private void Init()
     {
         _weaponData = GameManager.Instance.CurrentWeaponData;
-        _waitForReturn = new WaitForSeconds(_projectileData.LifeTime);
-        Debug.Log(_projectileData.LifeTime);
     }
 }
