@@ -14,7 +14,7 @@ public sealed class SplitLogic : BlockLogicEnhance
 
     public override void Block(Transform hit)
     {
-        hit.position = hit.position + Vector3.back * _offset;
+        hit.position = hit.position + hit.forward * _offset * -1.0f;
 
         hit.Rotate(Vector3.up, _angle);
         _basicFire.Fire(hit, true);
