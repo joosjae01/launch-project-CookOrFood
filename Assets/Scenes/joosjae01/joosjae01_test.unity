@@ -701,6 +701,7 @@ MonoBehaviour:
   _currentEnhace: []
   _totalEnhance:
   - {fileID: 11400000, guid: 695beb05632fc7549afeb670634247af, type: 2}
+  - {fileID: 11400000, guid: 26c39cd06e24b5e4f95c31a3ee79061d, type: 2}
   _enhanceController: {fileID: 1790612071}
   _basicLogic:
   - {fileID: 11400000, guid: 8997681581a240a40a930b854ef1184b, type: 2}
