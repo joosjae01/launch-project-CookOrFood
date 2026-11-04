@@ -10,11 +10,11 @@ public sealed class SplitLogic : BlockLogicEnhance
     [SerializeField] private float _angle;
 
     [Header("생성 오프셋")]
-    [SerializeField] private float _offSet;
+    [SerializeField] private float _offset;
 
     public override void Block(Transform hit)
     {
-        hit.position = hit.position + Vector3.back * _offSet;
+        hit.position = hit.position + Vector3.back * _offset;
 
         hit.Rotate(Vector3.up, _angle);
         _basicFire.Fire(hit, true);
