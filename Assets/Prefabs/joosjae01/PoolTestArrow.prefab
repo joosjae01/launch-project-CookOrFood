@@ -130,7 +130,7 @@ MonoBehaviour:
     m_Bits: 256
   _wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   _projectileData: {fileID: 11400000, guid: 4d2baf9761697ff4698d039560bede31, type: 2}
   _weaponData: {fileID: 0}
   TargetMonster: {fileID: 0}

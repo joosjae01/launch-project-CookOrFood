@@ -8,7 +8,7 @@ public sealed class MultiShotLogic : FireLogicEnhance
 
     private IPoolable _temp;
 
-    public override void Fire(Transform muzzlePoint)
+    public override void Fire(Transform muzzlePoint, bool isSecond)
     {
         float first = -(_offset * (_count - 1)) * 0.5f;
         Vector3 right = muzzlePoint.right;
@@ -16,6 +16,7 @@ public sealed class MultiShotLogic : FireLogicEnhance
         for(int i = 0; i < _count; i++)
         {
             _temp = PoolManager.Instance.Take(PoolableType.Projectile);
+            if (isSecond) SetSecondCreated(_temp);
             Vector3 position = muzzlePoint.position + right * (first + _offset * i);
             _temp.GameObject.transform.SetPositionAndRotation(position, muzzlePoint.rotation);
         }
