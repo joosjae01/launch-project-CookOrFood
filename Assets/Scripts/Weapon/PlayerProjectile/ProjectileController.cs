@@ -22,6 +22,7 @@ public class ProjectileController : MonoBehaviour, IPoolable
     public MonsterBase TargetMonster;
 
     private IDamageable _target;
+    private bool _isSecondCreated;
 
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
@@ -46,14 +47,25 @@ public class ProjectileController : MonoBehaviour, IPoolable
     private void CheckWall(Collider other)
     {
         if (!_wallMask.Contains(other)) return;
+        if (_isSecondCreated)
+        {
+            ReturnToPool();
+            return;
+        }
 
-        _projectileData.Block();
+        _projectileData.Block(transform);
         ReturnToPool();
+    }
+
+    public void ActiveSecondCreated()
+    {
+        _isSecondCreated = true;
     }
 
     public void ReturnToPool()
     {
         Source.Push(this);
+        _isSecondCreated = false;
     }
 
     private void Init()

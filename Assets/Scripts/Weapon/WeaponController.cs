@@ -38,7 +38,7 @@ public class WeaponController : MonoBehaviour
         while (true)
         {
             yield return _coolDown;
-            _weaponData.OnFired?.Invoke(_muzzlePoint);
+            _weaponData.OnFired?.Invoke(_muzzlePoint, false);
         }
     }
 

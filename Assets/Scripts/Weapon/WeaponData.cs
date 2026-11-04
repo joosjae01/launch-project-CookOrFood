@@ -20,7 +20,7 @@ public class WeaponData : MonoBehaviour
     [field:SerializeField] public float CritDamage { get; set; }
 
     [Header("사격 시 이벤트")]
-    public UnityEvent<Transform> OnFired;
+    public UnityEvent<Transform, bool> OnFired;
 
     [Header("현재 공격하고 있는 적들")]
     [SerializeReference] public Dictionary<DamageType, HashSet<IDamageable>> CurrentTargets = new();
