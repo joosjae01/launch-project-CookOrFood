@@ -19,4 +19,5 @@ MonoBehaviour:
   CanOverlap: 0
   CanCoExist: 1
   _basicFire: {fileID: 11400000, guid: 8997681581a240a40a930b854ef1184b, type: 2}
+  _angle: 90
   _offSet: 0.5
