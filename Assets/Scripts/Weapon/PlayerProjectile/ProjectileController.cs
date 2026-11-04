@@ -79,9 +79,8 @@ public class ProjectileController : MonoBehaviour, IPoolable
     {
         yield return _waitForReturn;
         StopReturnRoutine();
+        ReturnToPool();
     }
-
-
 
     public void ActiveSecondCreated()
     {
@@ -99,5 +98,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
     {
         _weaponData = GameManager.Instance.CurrentWeaponData;
         _waitForReturn = new WaitForSeconds(_projectileData.LifeTime);
+        Debug.Log(_projectileData.LifeTime);
     }
 }
