@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class BlockLogicEnhance : EnhanceBase
 {
-    public abstract void Block();
+    public abstract void Block(Transform hit);
 }

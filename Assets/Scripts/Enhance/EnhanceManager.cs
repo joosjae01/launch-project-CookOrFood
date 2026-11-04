@@ -47,7 +47,6 @@ public class EnhanceManager : SingletonBehaviour<EnhanceManager>
 
         foreach (T logic in _currentEnhace.OfType<T>())
         {
-            Debug.Log("?");
             if (!logic.CanCoExist)
             {
                 target = logic;

@@ -14,12 +14,12 @@ public class ProjectileData : ScriptableObject
     [Header("이동")]
     public UnityEvent<ProjectileController, float> OnMoved;
     [Header("벽과 충돌")]
-    public UnityEvent OnBlocked;
+    public UnityEvent<Transform> OnBlocked;
     [Header("적과 충돌")]
     public UnityEvent<IDamageable, WeaponData> OnAttacked;
 
     public void Move(ProjectileController projectile, float speed) => OnMoved?.Invoke(projectile, speed);
-    public void Block() => OnBlocked?.Invoke();
+    public void Block(Transform hit) => OnBlocked?.Invoke(hit);
     public void Attack(IDamageable damageable, WeaponData weaponData) => OnAttacked?.Invoke(damageable, weaponData);
     
     public void Init()
