@@ -11,10 +11,7 @@ public class TutorialStage : CombatStageBase
     {
         ExitPortal.gameObject.SetActive(false);
         
-        for (int i = 0; i < 3; i++)
-        {
-            SpawnMonster();
-        }
+        SpawnMonster();
     }
 
     protected override void CombatStageExit()
@@ -24,7 +21,14 @@ public class TutorialStage : CombatStageBase
 
     protected override void SpawnMonster()
     {
-        //._monster = PoolManager.Instance.Take(Type);
+        for (int i = 0; i < MonsterSpawnPoints.Length; i++)
+        {
+            GameObject obj = Instantiate(
+                MonsterList[0],
+                MonsterSpawnPoints[i].position,
+                MonsterList[0].transform.rotation);
+            obj.SetActive(true);
+        }
         
     }
 }

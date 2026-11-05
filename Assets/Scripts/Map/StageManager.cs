@@ -9,13 +9,16 @@ public class StageManager : SingletonBehaviour<StageManager>
     [SerializeField] private InputActionReference _changeStageAction;
     [SerializeField] private GameObject _player;
     [SerializeField] private List<StageBase> _stages;
+    [SerializeField] private List<SO_ChapterMonster> _chapterMonsters;
     
+    private Dictionary<int, SO_ChapterMonster> _chapterMonsterDic = new();
     private StageBase _tutorialStage;
     private StageBase _bossStage;
     private List<StageBase> _combatStageList = new();
     private List<StageBase> _eventStageList = new();
     private int _stageIndex;
     private int _shuffleIndex;
+    private int _currentChapterIndex;
     private StageBase _currentStage;
     private GameObject _stagePrefab;
     private Vector3 _mapPosition;
@@ -28,7 +31,6 @@ public class StageManager : SingletonBehaviour<StageManager>
         
         InitStages();
         _stageIndex = 0;
-        StartStage();
     }
 
     private void OnEnable()
@@ -38,6 +40,12 @@ public class StageManager : SingletonBehaviour<StageManager>
         _changeStageAction.action.performed += ActionExit;
     }
 
+    private void Start()
+    {
+        StartStage();
+        SetMonsterList();
+    }
+    
     // ----------------------------------
 
     private void InitStages()
@@ -143,5 +151,18 @@ public class StageManager : SingletonBehaviour<StageManager>
         // TODO 페이드인
         
         StartStage();
+    }
+
+    private void SetMonsterList()
+    {
+        for (int i = 0; i < _chapterMonsters.Count; i++)
+        {
+            _chapterMonsterDic[i] = _chapterMonsters[i];
+        }
+    }
+
+    public SO_ChapterMonster GetMonsterList()
+    {
+        return _chapterMonsters[0];
     }
 }

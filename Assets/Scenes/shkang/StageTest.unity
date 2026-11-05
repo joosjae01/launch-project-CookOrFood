@@ -331,6 +331,8 @@ MonoBehaviour:
   - {fileID: 1492095049163173961, guid: 52ea83d6346870a4192e62f56eac135d, type: 3}
   - {fileID: -7410520432553284462, guid: e4fefaa6001e33748ab459cf86ac548b, type: 3}
   - {fileID: 892559027576110275, guid: 7aeec957d8003e64c9ab0dd47c972bc7, type: 3}
+  _chapterMonsters:
+  - {fileID: 11400000, guid: f75402f49ee6f5e448ec27417e804c45, type: 2}
 --- !u!4 &883849380
 Transform:
   m_ObjectHideFlags: 0
@@ -914,6 +916,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23feb4990e9a31345906afc00fdbae56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+--- !u!114 &1972146388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449524913133369028, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
+  m_PrefabInstance: {fileID: 286749177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972146383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69504d7463901b64c92a9d32565d317f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &2032127758
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _isDontDestroyOnLoad: 0
-  CurrentPlayer: {fileID: 0}
+  CurrentPlayer: {fileID: 1972146388}
   CurrentPlayerData: {fileID: 0}
   CurrentWeaponData: {fileID: 0}
 --- !u!4 &2032127760
