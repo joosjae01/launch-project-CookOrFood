@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class TutorialStage : CombatStageBase
 {
-    private GameObject _monster;
+    private IPoolable _monster;
     
     public override StageType StageType { get => StageType.Tutorial; }
-
+    
     protected override void CombatStageEnter()
     {
-        ExitPortal.gameObject.SetActive(false);   
+        ExitPortal.gameObject.SetActive(false);
+        
+        for (int i = 0; i < 3; i++)
+        {
+            SpawnMonster();
+        }
     }
 
     protected override void CombatStageExit()
@@ -19,6 +24,7 @@ public class TutorialStage : CombatStageBase
 
     protected override void SpawnMonster()
     {
-        //_monsterSpawnData.MonsterList
+        //._monster = PoolManager.Instance.Take(Type);
+        
     }
 }

@@ -8,7 +8,7 @@ public class PoolManager : SingletonBehaviour<PoolManager>
     [SerializeField] private List<MonsterPoolData> _monsterPoolData = new();
 
     private Dictionary<PoolableType, ObjectPool> _pool = new();
-    private Dictionary<PoolableType, Dictionary<MonsterType, ObjectPool>> _monsterPool = new();
+    private Dictionary<MonsterType, ObjectPool> _monsterPool = new();
 
     private void Awake() => SetSingleton();
     private void Start() => CreatePool();
@@ -24,13 +24,13 @@ public class PoolManager : SingletonBehaviour<PoolManager>
 
         for (int i = 0; i < _monsterPoolData.Count; i++)
         {
-            _monsterPool[PoolableType.Monster][_monsterPoolData[i].Type] = Instantiate(_poolPrefab, transform);
-            _monsterPool[PoolableType.Monster][_monsterPoolData[i].Type].name = _monsterPoolData[i].Type.ToString();
-            _monsterPool[PoolableType.Monster][_monsterPoolData[i].Type].
-                Init(_monsterPoolData[i].Size,
-                    _monsterPoolData[i].Prefab,
-                    _monsterPool[PoolableType.Monster][_monsterPoolData[i].Type].transform
-                    );
+            _monsterPool[_monsterPoolData[i].Type] = Instantiate(_poolPrefab, transform);
+            _monsterPool[_monsterPoolData[i].Type].name = _poolData[i].Type.ToString();
+            _monsterPool[_monsterPoolData[i].Type].Init(
+                _monsterPoolData[i].Size,
+                _monsterPoolData[i].Prefab,
+                _monsterPool[_monsterPoolData[i].Type].transform
+                );
         }
     }
 
@@ -41,10 +41,10 @@ public class PoolManager : SingletonBehaviour<PoolManager>
         return _pool[type].Take();
     }
 
-    public IPoolable Take(MonsterType type)
-    {
-        if (!_monsterPool[PoolableType.Monster].ContainsKey(type)) return null;
-        
-        return _monsterPool[PoolableType.Monster][type].Take();
-    }
+    //public IPoolable Take(MonsterType type)
+    //{
+    //    if (!_monsterPool[PoolableType.Monster].ContainsKey(type)) return null;
+    //    
+    //    return _monsterPool[PoolableType.Monster][type].Take();
+    //}
 }
