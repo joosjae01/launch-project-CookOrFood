@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutorialStage
   PlayerSpawnPoint: {fileID: 3645906360639916372}
   ExitPortal: {fileID: 6555446357907734776}
+  _monsterSpawnData: {fileID: 11400000, guid: 7fee530795b7c824e956fd2dcfbeb77a, type: 2}
+  MonsterSpawnPoints: []
 --- !u!1 &3103726341968379467
 GameObject:
   m_ObjectHideFlags: 0

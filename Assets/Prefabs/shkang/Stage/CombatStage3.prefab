@@ -437,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatStage
   PlayerSpawnPoint: {fileID: 1453332496708434723}
   ExitPortal: {fileID: 4988452877074117216}
+  _monsterSpawnData: {fileID: 11400000, guid: 19238ba35d6a5964c9b0a394064172eb, type: 2}
   MonsterSpawnPoints:
   - {fileID: 7056150470455993537}
   - {fileID: 4443816426478778955}
