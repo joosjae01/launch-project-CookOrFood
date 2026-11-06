@@ -1,12 +1,12 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CombatStageBase : StageBase
 {
-    [field: SerializeField] public MonsterType Type { get; set; }
-
-    [SerializeField] protected List<GameObject> MonsterList = new();
+    protected IPoolable Monster;
+    protected List<GameObject> MonsterList = new();
+    [SerializeField] protected List<MonsterBase> RemainMonsterList = new();
+    
     public Transform[] MonsterSpawnPoints;
     public override StageType StageType { get; }
 

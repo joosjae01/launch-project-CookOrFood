@@ -9,6 +9,7 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
     
     public MonsterData Data;
     public GameObject GameObject { get => gameObject; }
+    public Transform Transform { get => transform; }
     public ObjectPool Source { get; set; }
 
     public void ReturnToPool()

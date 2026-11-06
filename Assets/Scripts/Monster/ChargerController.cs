@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +15,9 @@ public class ChargerController : MonsterBase
     
     [Header("돌진 속도")]
     [SerializeField] private float _chargeSpeed;
+
+    [field: Header("몬스터 타입")] 
+    [field: SerializeField] public MonsterType Type { get; set; }
     
     private Coroutine _attackingRoutine;
     private WaitForSeconds _chargingWait;
@@ -27,6 +29,7 @@ public class ChargerController : MonsterBase
     private float _elapsedTime;
     private float _targetDistance;
     private float _coolCount;
+    
     // ---------- Event Method ----------
     
     private void Awake() => CacheComponents();

@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990000731189363396, guid: 265d0f3022863384980334a2e8ffd23e, type: 3}
       propertyPath: _monsterPoolData.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4990000731189363396, guid: 265d0f3022863384980334a2e8ffd23e, type: 3}
       propertyPath: _poolData.Array.data[0].Size
@@ -273,12 +273,12 @@ PrefabInstance:
       objectReference: {fileID: 8163741608181358528, guid: 6727e92d53256a84cb3fb24b7ce7bb3e, type: 3}
     - target: {fileID: 4990000731189363396, guid: 265d0f3022863384980334a2e8ffd23e, type: 3}
       propertyPath: _monsterPoolData.Array.data[0].Size
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4990000731189363396, guid: 265d0f3022863384980334a2e8ffd23e, type: 3}
       propertyPath: _monsterPoolData.Array.data[0].Prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1954119548052175108, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

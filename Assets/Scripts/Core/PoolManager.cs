@@ -25,7 +25,7 @@ public class PoolManager : SingletonBehaviour<PoolManager>
         for (int i = 0; i < _monsterPoolData.Count; i++)
         {
             _monsterPool[_monsterPoolData[i].Type] = Instantiate(_poolPrefab, transform);
-            _monsterPool[_monsterPoolData[i].Type].name = _poolData[i].Type.ToString();
+            _monsterPool[_monsterPoolData[i].Type].name = _monsterPoolData[i].Type.ToString();
             _monsterPool[_monsterPoolData[i].Type].Init(
                 _monsterPoolData[i].Size,
                 _monsterPoolData[i].Prefab,
@@ -41,10 +41,10 @@ public class PoolManager : SingletonBehaviour<PoolManager>
         return _pool[type].Take();
     }
 
-    //public IPoolable Take(MonsterType type)
-    //{
-    //    if (!_monsterPool[PoolableType.Monster].ContainsKey(type)) return null;
-    //    
-    //    return _monsterPool[PoolableType.Monster][type].Take();
-    //}
+    public IPoolable Take(MonsterType type)
+    {
+        if (!_monsterPool.ContainsKey(type)) return null;
+        
+        return _monsterPool[type].Take();
+    }
 }
