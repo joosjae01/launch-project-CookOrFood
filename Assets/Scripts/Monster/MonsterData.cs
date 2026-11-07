@@ -8,7 +8,9 @@ public class MonsterData : MonoBehaviour
     public float Speed;
     public float CoolDown;
     public float AttackRange;
+    public bool IsDead;
     
-    public ObservableProperty<float> Health;
-    public Action<MonsterData> OnKilled;
+    public float MaxHealth { get; private set; }
+    public ObservableProperty<float> CurrentHealth;
+    public Action<MonsterBase> OnKilled;
 }

@@ -9,17 +9,20 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
     
     public MonsterData Data;
     public GameObject GameObject { get => gameObject; }
+    public Transform Transform { get => transform; }
     public ObjectPool Source { get; set; }
-
-    public void ReturnToPool()
-    {
-        Source.Push(this);
-    }
 
     public void TakeDamage(float damage)
     {
-        Data.Health.Value -= damage;
+        Data.CurrentHealth.Value -= damage;
+
+        if (Data.CurrentHealth.Value <= 0)
+        {
+            Dead();
+        }
     }
+    
+    public abstract void DetectPlayer();
     
     public abstract void Attack();
     
@@ -30,5 +33,25 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
         _monsterAgent.isStopped = true;
     }
 
-    public abstract void DetectPlayer();
+    public void Dead()
+    {
+        Data.OnKilled.Invoke(this);
+        Data.IsDead = true;
+        
+        // TODO 죽는 애니메이션 실행
+        
+        DataReset();
+        ReturnToPool();
+    }
+
+    public void DataReset()
+    {
+        Data.CurrentHealth.Value = Data.MaxHealth;
+        Data.IsDead = false;
+    }
+    
+    public void ReturnToPool()
+    {
+        Source.Push(this);
+    }
 }

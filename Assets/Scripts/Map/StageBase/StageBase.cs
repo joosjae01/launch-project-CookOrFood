@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class StageBase : MonoBehaviour
@@ -7,18 +7,16 @@ public abstract class StageBase : MonoBehaviour
     public Transform PlayerSpawnPoint;
     public ExitPortal ExitPortal;
     
-    public bool IsClear { get; protected set; }
+    // TODO 몬스터 킬 테스트를 위해 현재 StageBase에 선언, 추후 몬스터 킬 가능시 변수 삭제
+    public List<MonsterBase> RemainMonsterList = new();
     
     public void ResetStage()
     {
-        IsClear = false;
+        ExitPortal.gameObject.SetActive(false);
     }
 
     public void ClearStage()
     {
-        if (IsClear) return;
-
-        IsClear = true;
         ExitPortal.gameObject.SetActive(true);
     }
 

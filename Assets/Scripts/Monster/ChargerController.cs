@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +15,9 @@ public class ChargerController : MonsterBase
     
     [Header("돌진 속도")]
     [SerializeField] private float _chargeSpeed;
+
+    [field: Header("몬스터 타입")] 
+    [field: SerializeField] public MonsterType Type { get; set; }
     
     private Coroutine _attackingRoutine;
     private WaitForSeconds _chargingWait;
@@ -27,6 +29,7 @@ public class ChargerController : MonsterBase
     private float _elapsedTime;
     private float _targetDistance;
     private float _coolCount;
+    
     // ---------- Event Method ----------
     
     private void Awake() => CacheComponents();
@@ -34,7 +37,6 @@ public class ChargerController : MonsterBase
     private void Update()
     {
         DetectPlayer();
-        Debug.Log($" 돌진 준비 중인가 : {_isCharging}, 공격 중 인가 : {_isAttacking}, 쿨 돌았나 : {_isCoolOn}");
         
         if (_isCharging) transform.LookAt(_player.transform);
         else if (_isAttacking) CheckAttack();
@@ -87,7 +89,6 @@ public class ChargerController : MonsterBase
     private void StopAttackRoutine()
     {
         if (_attackingRoutine == null) return;
-        Debug.Log("공격 종료");
         StopCoroutine(_attackingRoutine);
         Move();
         _coolCount = 0;
