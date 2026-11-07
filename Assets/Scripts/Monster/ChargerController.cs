@@ -37,7 +37,6 @@ public class ChargerController : MonsterBase
     private void Update()
     {
         DetectPlayer();
-        Debug.Log($" 돌진 준비 중인가 : {_isCharging}, 공격 중 인가 : {_isAttacking}, 쿨 돌았나 : {_isCoolOn}");
         
         if (_isCharging) transform.LookAt(_player.transform);
         else if (_isAttacking) CheckAttack();
@@ -90,7 +89,6 @@ public class ChargerController : MonsterBase
     private void StopAttackRoutine()
     {
         if (_attackingRoutine == null) return;
-        Debug.Log("공격 종료");
         StopCoroutine(_attackingRoutine);
         Move();
         _coolCount = 0;

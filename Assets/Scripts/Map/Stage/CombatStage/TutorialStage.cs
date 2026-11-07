@@ -1,18 +1,11 @@
-using System;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class TutorialStage : CombatStageBase
-{
-    private int _remainMonsterCount; 
-        
+{ 
     public override StageType StageType { get => StageType.Tutorial; }
-    
     
     protected override void CombatStageEnter()
     {
-        ExitPortal.gameObject.SetActive(false);
-        
         SpawnMonster();
     }
 
@@ -25,31 +18,27 @@ public class TutorialStage : CombatStageBase
     {
         for (int i = 0; i < MonsterSpawnPoints.Length; i++)
         {
-            int rand = Random.Range(0, Enum.GetValues(typeof(MonsterType)).Length);
+            int rand = Random.Range(0, MonsterList.Count);
             MonsterType type = (MonsterType)rand;
             
             Monster = PoolManager.Instance.Take(type);
 
-            if (!Monster.GameObject.TryGetComponent(out MonsterBase monsterBase))
-            {
-                Debug.Log("MonsterBase 없음");
-                return;
-            }
+            if (!Monster.GameObject.TryGetComponent(out MonsterBase monsterBase)) return;
 
             monsterBase.transform.position = MonsterSpawnPoints[i].position;
             monsterBase.gameObject.SetActive(true);
+            monsterBase.Data.OnKilled += MonsterDead;
             RemainMonsterList.Add(monsterBase);
-            _remainMonsterCount++;
         }
     }
 
-    protected override void BindMonsterDeadEvent()
+    protected override void MonsterDead(MonsterBase monsterBase)
     {
-        
-    }
+        RemainMonsterList.Remove(monsterBase);
 
-    protected override void UnBindMonsterDeadEvent()
-    {
-        
+        if (RemainMonsterList.Count == 0)
+        {
+            ClearStage();
+        }
     }
 }

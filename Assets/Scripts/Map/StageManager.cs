@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -80,10 +79,10 @@ public class StageManager : SingletonBehaviour<StageManager>
     {
         _currentStage = SetStage();
         _currentStage.gameObject.SetActive(true);
+        _currentStage.ResetStage();
         
         _currentStage.transform.position = Vector3.zero;
         
-        _currentStage.ResetStage();
         _currentStage.Enter();
         
         _player.transform.position = _currentStage.PlayerSpawnPoint.position;
@@ -134,12 +133,19 @@ public class StageManager : SingletonBehaviour<StageManager>
         }
     }
     
-    // 맵 변경 테스트용 InputSystem 
+    // 몬스터 킬 테스트용 InputSystem 
     private void ActionExit(InputAction.CallbackContext context)
     {
+        if (_currentStage is TutorialStage || _currentStage is CombatStage)
+        {
+            if (_currentStage.RemainMonsterList.Count == 0) return;
+            _currentStage.RemainMonsterList[0].Dead();
+            return;
+        }
+
         _currentStage.ClearStage();
     }
-    
+
     public void ExitStage()
     {
         // TODO 페이드아웃
@@ -161,6 +167,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         }
     }
 
+    // 챕터별 MonsterList 반환해주는 함수
     public SO_ChapterMonster GetMonsterList()
     {
         return _chapterMonsters[0];

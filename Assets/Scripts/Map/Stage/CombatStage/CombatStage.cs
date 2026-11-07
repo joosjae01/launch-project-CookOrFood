@@ -1,5 +1,3 @@
-using System;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CombatStage : CombatStageBase
@@ -8,44 +6,39 @@ public class CombatStage : CombatStageBase
     
     protected override void CombatStageEnter()
     {
-        ExitPortal.gameObject.SetActive(false);
-
         SpawnMonster();
     }
 
     protected override void CombatStageExit()
     {
-        // TODO 추후 최종 몬스터 컨트롤러 or 최상위 스크립트 참조하여 몬스터 데이터 초기화
+        
     }
 
     protected override void SpawnMonster()
     {
         for (int i = 0; i < MonsterSpawnPoints.Length; i++)
         {
-            int rand = Random.Range(0, Enum.GetValues(typeof(MonsterType)).Length);
+            int rand = Random.Range(0, MonsterList.Count);
             MonsterType type = (MonsterType)rand;
             
             Monster = PoolManager.Instance.Take(type);
 
-            if (!Monster.GameObject.TryGetComponent(out MonsterBase monsterBase))
-            {
-                Debug.Log("MonsterBase 없음");
-                return;
-            }
+            if (!Monster.GameObject.TryGetComponent(out MonsterBase monsterBase)) return;
 
             monsterBase.transform.position = MonsterSpawnPoints[i].position;
             monsterBase.gameObject.SetActive(true);
+            monsterBase.Data.OnKilled += MonsterDead;
             RemainMonsterList.Add(monsterBase);
         }
     }
 
-    protected override void BindMonsterDeadEvent()
+    protected override void MonsterDead(MonsterBase monsterBase)
     {
-        
-    }
+        RemainMonsterList.Remove(monsterBase);
 
-    protected override void UnBindMonsterDeadEvent()
-    {
-        
+        if (RemainMonsterList.Count == 0)
+        {
+            ClearStage();
+        }
     }
 }

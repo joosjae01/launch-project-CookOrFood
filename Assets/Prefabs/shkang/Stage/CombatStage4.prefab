@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 2911274676889152977}
   - component: {fileID: 8585811467201110745}
   - component: {fileID: 3306110168290997798}
+  - component: {fileID: 160346193763831319}
   - component: {fileID: -9199236633790138149}
   m_Layer: 0
   m_Name: CombatStage4
@@ -289,6 +290,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &160346193763831319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285308443556670653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 503
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: bf9c991889afa9441b113d52a968f4c4, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!114 &-9199236633790138149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatStage
   PlayerSpawnPoint: {fileID: 7261984669739163886}
   ExitPortal: {fileID: 2290556089600601251}
-  _monsterSpawnData: {fileID: 11400000, guid: c1d244560886ab4499d5ff8ae25044d7, type: 2}
+  RemainMonsterList: []
   MonsterSpawnPoints:
   - {fileID: 1244273538543516336}
   - {fileID: 1354019914833733490}

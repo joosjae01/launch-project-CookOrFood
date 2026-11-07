@@ -35,7 +35,7 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
 
     public void Dead()
     {
-        Data.OnKilled.Invoke(Data);
+        Data.OnKilled.Invoke(this);
         Data.IsDead = true;
         
         // TODO 죽는 애니메이션 실행
@@ -48,7 +48,6 @@ public abstract class MonsterBase : MonoBehaviour, IPoolable, IDamageable
     {
         Data.CurrentHealth.Value = Data.MaxHealth;
         Data.IsDead = false;
-        _monsterAgent.isStopped = false;
     }
     
     public void ReturnToPool()

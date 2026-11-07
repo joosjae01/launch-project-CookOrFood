@@ -19,7 +19,7 @@ public class MonsterKillInvoker : MonoBehaviour
 
     private void OnKillMonster(InputAction.CallbackContext ctx)
     {
-        _monsterData.OnKilled?.Invoke(_monsterData);
+        //_monsterData.OnKilled?.Invoke(_monsterData);
         Debug.Log("kill");
     }
 }

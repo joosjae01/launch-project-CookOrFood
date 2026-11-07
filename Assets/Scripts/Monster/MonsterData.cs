@@ -12,5 +12,5 @@ public class MonsterData : MonoBehaviour
     
     public float MaxHealth { get; private set; }
     public ObservableProperty<float> CurrentHealth;
-    public Action<MonsterData> OnKilled;
+    public Action<MonsterBase> OnKilled;
 }
