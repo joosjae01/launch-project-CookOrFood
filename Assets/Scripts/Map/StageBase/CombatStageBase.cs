@@ -18,7 +18,9 @@ public abstract class CombatStageBase : StageBase
     protected abstract void CombatStageEnter();
     protected abstract void CombatStageExit();
     protected abstract void SpawnMonster();
-
+    protected abstract void BindMonsterDeadEvent();
+    protected abstract void UnBindMonsterDeadEvent();
+    
     public override void Enter() => CombatStageEnter();
 
     public override void Exit() => CombatStageExit();

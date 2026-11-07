@@ -4,7 +4,10 @@ using Random = UnityEngine.Random;
 
 public class TutorialStage : CombatStageBase
 {
+    private int _remainMonsterCount; 
+        
     public override StageType StageType { get => StageType.Tutorial; }
+    
     
     protected override void CombatStageEnter()
     {
@@ -15,7 +18,7 @@ public class TutorialStage : CombatStageBase
 
     protected override void CombatStageExit()
     {
-        // TODO 추후 최종 몬스터 컨트롤러 or 최상위 스크립트 참조하여 몬스터 데이터 초기화
+       
     }
 
     protected override void SpawnMonster()
@@ -36,6 +39,17 @@ public class TutorialStage : CombatStageBase
             monsterBase.transform.position = MonsterSpawnPoints[i].position;
             monsterBase.gameObject.SetActive(true);
             RemainMonsterList.Add(monsterBase);
+            _remainMonsterCount++;
         }
+    }
+
+    protected override void BindMonsterDeadEvent()
+    {
+        
+    }
+
+    protected override void UnBindMonsterDeadEvent()
+    {
+        
     }
 }

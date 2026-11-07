@@ -38,4 +38,14 @@ public class CombatStage : CombatStageBase
             RemainMonsterList.Add(monsterBase);
         }
     }
+
+    protected override void BindMonsterDeadEvent()
+    {
+        
+    }
+
+    protected override void UnBindMonsterDeadEvent()
+    {
+        
+    }
 }
