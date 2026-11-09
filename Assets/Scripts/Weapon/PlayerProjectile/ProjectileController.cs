@@ -12,9 +12,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
     [Header("스크립터블 데이터")]
     [SerializeField] private ProjectileData _projectileData;
 
-    [Header("테스트용 무기 데이터")]
-    [SerializeField] private WeaponData _weaponData;
-
     private Coroutine _returnRoutine;
     private WaitForSeconds _waitForReturn;
 
@@ -23,6 +20,8 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
+    public MonsterBase Target;
+    public WeaponData WeaponData;
 
     private void Awake() => CacheComponents();
     private void Start() => Init();
@@ -40,7 +39,7 @@ public class ProjectileController : MonoBehaviour, IPoolable
         if (!_enemyMask.Contains(other)) return;
 
         other.TryGetComponent<IDamageable>(out _target);
-        _projectileData.Attack(_target, _weaponData);
+        _projectileData.Attack(_target, WeaponData);
         ReturnToPool();
     }
 
@@ -95,6 +94,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
     private void Init()
     {
-        _weaponData = GameManager.Instance.CurrentWeaponData;
+        WeaponData = GameManager.Instance.CurrentWeaponData;
     }
 }

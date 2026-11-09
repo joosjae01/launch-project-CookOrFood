@@ -7,8 +7,6 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private WeaponData _weaponData;
     [SerializeField] private Transform _muzzlePoint;
-
-    private MonsterBase _target;
     private MonsterScanner _scanner;
 
     private Coroutine _fireRoutine;
@@ -42,10 +40,10 @@ public class WeaponController : MonoBehaviour
         while (true)
         {
             yield return _coolDown;
-            _target = _scanner.GetTarget();
-            if (_target != null)
+            _weaponData.CurrentTarget = _scanner.GetTarget();
+            if (_weaponData.CurrentTarget != null)
             {
-                _muzzlePoint.LookAt(_target.transform);
+                _muzzlePoint.LookAt(_weaponData.CurrentTarget.transform);
                 _weaponData.OnFired?.Invoke(_muzzlePoint, false);
             }
         }
