@@ -18,11 +18,6 @@ public class ProjectileController : MonoBehaviour, IPoolable
     private Coroutine _returnRoutine;
     private WaitForSeconds _waitForReturn;
 
-
-    // TODO : 추후, 가장 근처의 적을 받을 필요 있음.
-    [Header("테스트용 적 참조")]
-    public MonsterBase TargetMonster;
-
     private IDamageable _target;
     private bool _isSecondCreated;
 
@@ -65,14 +60,12 @@ public class ProjectileController : MonoBehaviour, IPoolable
     private void StartReturnRoutine()
     {
         if (_returnRoutine != null) return;
-        Debug.Log($"{name} 활성화");
         _returnRoutine = StartCoroutine(ReturnRoutine());
     }
 
     private void StopReturnRoutine()
     {
         if (_returnRoutine == null) return;
-        Debug.Log($"{name} 비활성화");
         StopCoroutine(_returnRoutine);
         _returnRoutine = null;
     }

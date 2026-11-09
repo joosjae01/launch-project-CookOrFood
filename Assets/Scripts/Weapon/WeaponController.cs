@@ -8,9 +8,10 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private WeaponData _weaponData;
     [SerializeField] private Transform _muzzlePoint;
 
-    //TODO : 나중에 타겟 몬스터가 있을 때에만 공격하도록 해야 함.
     private Coroutine _fireRoutine;
+    private MonsterScanner _scanner;
     private WaitForSeconds _coolDown;
+    private MonsterBase _target;
 
     private void Awake() => CacheComponenet();
     private void OnEnable() => BindInput();
@@ -38,12 +39,18 @@ public class WeaponController : MonoBehaviour
         while (true)
         {
             yield return _coolDown;
-            _weaponData.OnFired?.Invoke(_muzzlePoint, false);
+            _target = _scanner.GetTarget();
+            if (_target != null)
+            {
+                _muzzlePoint.LookAt(_target.transform);
+                _weaponData.OnFired?.Invoke(_muzzlePoint, false);
+            }
         }
     }
 
     private void CacheComponenet()
     {
+        _scanner = GetComponent<MonsterScanner>();
         _coolDown = new WaitForSeconds(1 / _weaponData.AttackSpeed);
     }
 

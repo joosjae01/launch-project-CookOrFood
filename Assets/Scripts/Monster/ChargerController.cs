@@ -33,6 +33,8 @@ public class ChargerController : MonsterBase
     // ---------- Event Method ----------
     
     private void Awake() => CacheComponents();
+    private void OnEnable() => _monsterAgent.enabled = true;
+    private void OnDisable() => _monsterAgent.enabled = false;
 
     private void Update()
     {
@@ -112,12 +114,13 @@ public class ChargerController : MonsterBase
 
     public override void Move()
     {
-        if (_monsterAgent !=null && _monsterAgent.isStopped)
+        if (_monsterAgent !=null && _monsterAgent.enabled && _monsterAgent.isStopped)
         {
             _monsterAgent.isStopped = false;
         }
         _coolCount += Time.deltaTime;
-        _monsterAgent.SetDestination(_player.transform.position);
+
+        if(_monsterAgent.enabled) _monsterAgent.SetDestination(_player.transform.position);
     }
 
     public override void DetectPlayer()
