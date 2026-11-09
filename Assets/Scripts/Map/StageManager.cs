@@ -25,7 +25,7 @@ public class StageManager : SingletonBehaviour<StageManager>
 
     public StageBase CurrentStage { get => _currentStage; }
     public event Action OnEntered;
-    public event Action OnExited;
+    //public event Action OnExited;
 
     // ---------- Event Method ----------
     

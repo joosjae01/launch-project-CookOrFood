@@ -8,12 +8,15 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private WeaponData _weaponData;
     [SerializeField] private Transform _muzzlePoint;
 
-    private Coroutine _fireRoutine;
-    private MonsterScanner _scanner;
-    private WaitForSeconds _coolDown;
     private MonsterBase _target;
+    private MonsterScanner _scanner;
+
+    private Coroutine _fireRoutine;
+    private WaitForSeconds _coolDown;
+    
 
     private void Awake() => CacheComponenet();
+    private void Start() => StartFire();
     private void OnEnable() => BindInput();
     private void OnDisable() => UnBindInput();
 

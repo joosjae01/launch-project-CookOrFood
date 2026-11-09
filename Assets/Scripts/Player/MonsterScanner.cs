@@ -5,15 +5,13 @@ public class MonsterScanner : MonoBehaviour
 {
     //TODO : 테스트 환경을 위해 직렬화 함, 추후 제거할 것
     [SerializeField] private MonsterBase _target;
-    private List<MonsterBase> _currentMonster = new();
+    [SerializeField] private List<MonsterBase> _currentMonster = new();
+    private float _minDist;
 
-    private void Start() => BindEnterAction();
+    private void OnEnable() => BindEnterAction();
     private void Update() => SetTarget();
 
-    private void BindEnterAction()
-    {
-        StageManager.Instance.OnEntered += GetCurrentMonster;
-    }
+    private void BindEnterAction() => StageManager.Instance.OnEntered += GetCurrentMonster;
 
     private void GetCurrentMonster()
     {
@@ -23,26 +21,21 @@ public class MonsterScanner : MonoBehaviour
 
     private void SetTarget()
     {
-        if (_currentMonster.Count == 0) _target = null;
+        if (!_currentMonster.Contains(_target)) _target = null;
 
-        float minDist;
-
-        if (_target == null) minDist = int.MaxValue;
-        else minDist = Vector3.Distance(transform.position, _target.transform.position);
+        if (_target == null) _minDist = int.MaxValue;
+        else _minDist = Vector3.Distance(transform.position, _target.transform.position);
 
         foreach (MonsterBase monster in _currentMonster)
         {
             float tempDist = Vector3.Distance(transform.position, monster.transform.position);
-            if (minDist > tempDist)
+            if (_minDist > tempDist)
             {
-                minDist = tempDist;
+                _minDist = tempDist;
                 _target = monster;
             }
         }
     }
 
-    public MonsterBase GetTarget()
-    {
-        return _target;
-    }
+    public MonsterBase GetTarget() => _target;
 }

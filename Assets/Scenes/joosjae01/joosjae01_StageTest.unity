@@ -201,10 +201,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9153765659262836727, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1338533317}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2107472511923916714, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1972146384}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
 --- !u!4 &286749178 stripped
 Transform:
@@ -736,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   <Name>k__BackingField: "\uAE30\uBCF8 \uBB34\uAE30"
-  <AttackValue>k__BackingField: 10
+  <AttackValue>k__BackingField: 1
   <AttackSpeed>k__BackingField: 2
   <CritRate>k__BackingField: 0
   <CritDamage>k__BackingField: 0
@@ -755,6 +752,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  CurrentTarget: {fileID: 0}
 --- !u!114 &1338533319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterScanner
   _target: {fileID: 0}
+  _currentMonster: []
 --- !u!1 &1389284026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,20 +1024,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2107472511923916714, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
   m_PrefabInstance: {fileID: 286749177}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1972146384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972146383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54bb43aadd5bf084fb9b238618103252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NohTestA
-  _playerData: {fileID: 1972146387}
-  _testAAction: {fileID: -7962046033624909815, guid: 492e65a18d5d1884b8015eb57bcd280a, type: 3}
 --- !u!114 &1972146387 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5947981734619388202, guid: 93b6042b732f40240bce3168f85b7e2a, type: 3}
