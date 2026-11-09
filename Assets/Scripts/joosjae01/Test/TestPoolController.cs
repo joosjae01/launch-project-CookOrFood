@@ -20,7 +20,6 @@ public class TestPoolController : MonoBehaviour
 
         if (poolable == null) return;
 
-        poolable.GameObject.GetComponent<ProjectileController>().TargetMonster = _monster;
         poolable.GameObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
     }
 }

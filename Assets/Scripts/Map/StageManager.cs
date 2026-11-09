@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,6 +22,10 @@ public class StageManager : SingletonBehaviour<StageManager>
     private StageBase _currentStage;
     private GameObject _stagePrefab;
     private Vector3 _mapPosition;
+
+    public StageBase CurrentStage { get => _currentStage; }
+    public event Action OnEntered;
+    //public event Action OnExited;
 
     // ---------- Event Method ----------
     
@@ -84,6 +89,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         _currentStage.transform.position = Vector3.zero;
         
         _currentStage.Enter();
+        OnEntered?.Invoke();
         
         _player.transform.position = _currentStage.PlayerSpawnPoint.position;
         
@@ -139,7 +145,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         if (_currentStage is TutorialStage || _currentStage is CombatStage)
         {
             if (_currentStage.RemainMonsterList.Count == 0) return;
-            _currentStage.RemainMonsterList[0].Dead();
+            //_currentStage.RemainMonsterList[0].Dead();
             return;
         }
 
