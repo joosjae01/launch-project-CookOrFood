@@ -25,8 +25,16 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
     private void Awake() => CacheComponents();
     private void Start() => Init();
-    private void OnEnable() => StartReturnRoutine();
-    private void OnDisable() => StopReturnRoutine();
+    private void OnEnable()
+    {
+        StartReturnRoutine();
+        StageManager.Instance.OnExited += ReturnToPool;
+    }
+    private void OnDisable()
+    {
+        StopReturnRoutine();
+        StageManager.Instance.OnExited -= ReturnToPool;
+    }
     private void FixedUpdate() => _projectileData.Move(this, _projectileData.MoveSpeed);
     private void OnTriggerEnter(Collider other)
     {

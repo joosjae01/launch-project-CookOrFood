@@ -157,6 +157,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         // TODO 페이드아웃
         
         _currentStage.Exit();
+        OnExited?.Invoke();
         
         _currentStage.gameObject.SetActive(false);
         
