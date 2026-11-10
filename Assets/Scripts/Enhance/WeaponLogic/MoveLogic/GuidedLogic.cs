@@ -8,6 +8,7 @@ public sealed class GuidedLogic : MoveLogicEnhance
     {
         if (projectile.Target == null) return;
         Vector3 MoveTo = projectile.WeaponData.CurrentTarget.transform.position - projectile.transform.position;
+        MoveTo.y = projectile.transform.position.y;
         projectile.transform.Translate(MoveTo * moveSpeed * Time.deltaTime);
     }
 }

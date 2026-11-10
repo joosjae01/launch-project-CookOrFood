@@ -25,7 +25,7 @@ public class StageManager : SingletonBehaviour<StageManager>
 
     public StageBase CurrentStage { get => _currentStage; }
     public event Action OnEntered;
-    //public event Action OnExited;
+    public event Action OnExited;
 
     // ---------- Event Method ----------
     
@@ -157,6 +157,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         // TODO 페이드아웃
         
         _currentStage.Exit();
+        OnExited?.Invoke();
         
         _currentStage.gameObject.SetActive(false);
         

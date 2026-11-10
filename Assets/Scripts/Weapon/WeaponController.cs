@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private WeaponData _weaponData;
     [SerializeField] private Transform _muzzlePoint;
     private MonsterScanner _scanner;
+    private Vector3 _targetPos;
 
     private Coroutine _fireRoutine;
     private WaitForSeconds _coolDown;
@@ -43,7 +44,9 @@ public class WeaponController : MonoBehaviour
             _weaponData.CurrentTarget = _scanner.GetTarget();
             if (_weaponData.CurrentTarget != null)
             {
-                _muzzlePoint.LookAt(_weaponData.CurrentTarget.transform);
+                _targetPos = _weaponData.CurrentTarget.transform.position;
+                _targetPos.y = _muzzlePoint.position.y;
+                _muzzlePoint.LookAt(_targetPos);
                 _weaponData.OnFired?.Invoke(_muzzlePoint, false);
             }
         }
