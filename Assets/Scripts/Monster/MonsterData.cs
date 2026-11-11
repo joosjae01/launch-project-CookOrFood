@@ -1,19 +1,21 @@
 using UnityEngine;
 using System;
+using Unity.Behavior;
 
 public class MonsterData : MonoBehaviour
 {
-    private string _name;
-    private float _damage;
-    private float _speed;
-    private float _coolDown;
-    private float _attackRange;
-    private float _attackCoolTime;
+    [SerializeField] private string _name;
+    [SerializeField] private float _damage;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _coolDown;
+    [SerializeField] private float _attackRange;
+    [SerializeField] private float _attackCoolTime;
     
     [HideInInspector] public ObservableProperty<float> CurrentHealth;
     public Action<MonsterBase> OnKilled;
     public bool IsDead;
-    public float MaxHealth { get; private set; }
+    
+    [field: SerializeField] public float MaxHealth { get; private set; }
     
     public string Name => _name;
     public float Damage => _damage;
@@ -22,4 +24,16 @@ public class MonsterData : MonoBehaviour
     public float AttackRange => _attackRange;
     public float AttackCoolTime => _attackCoolTime;
 
+
+    private BehaviorGraphAgent agent;
+    private void Awake()
+    {
+        agent = GetComponent<BehaviorGraphAgent>();
+    }
+
+    private void Start()
+    {
+        agent.BlackboardReference.SetVariableValue("attackRange", _attackRange);
+        agent.BlackboardReference.SetVariableValue("moveSpeed", _speed);
+    }
 }
