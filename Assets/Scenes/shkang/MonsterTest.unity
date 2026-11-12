@@ -383,7 +383,7 @@ MonoBehaviour:
   _damage: 10
   _speed: 5
   _coolDown: 2
-  _attackRange: 2
+  _attackRange: 10
   _attackCoolTime: 2
   CurrentHealth:
     _value: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
           m_Value0: 1055899619424154276
           m_Value1: 18399976373161726329
         Name: chaseRange
-        m_Value: 10
+        m_Value: 20
 --- !u!1 &1140878469
 GameObject:
   m_ObjectHideFlags: 0
