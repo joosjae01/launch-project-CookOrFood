@@ -10,7 +10,7 @@ public abstract class EnhanceBase : ScriptableObject
     public string Desc;
 
     [Header("강화 이미지")]
-    public Image EnhanceImage;
+    public Sprite EnhanceImage;
 
     [Header("강화 등급")]
     public EnhanceGrade Grade;
