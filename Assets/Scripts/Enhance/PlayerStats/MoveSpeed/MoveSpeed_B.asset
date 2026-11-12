@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36e5f1d45df9c34fa39486ae9e92d4f, type: 3}
   m_Name: MoveSpeed_B
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatEnhance
-  Name: 
-  Desc: 
-  EnhanceImage: {fileID: 0}
+  Name: Move Speed (B)
+  Desc: Increase Player Move Speed
+  EnhanceImage: {fileID: 21300000, guid: d3fc08ec0d6e31d4b9a259e271eb0961, type: 3}
   Grade: 2
   CanOverlap: 1
+  CanCoExist: 0
   HealthAmount: 0
   SpeedAmount: 2
