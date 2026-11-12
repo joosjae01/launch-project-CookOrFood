@@ -18,8 +18,8 @@ public partial class ChaseAction : Action
 
     protected override Status OnUpdate()
     {
-        Vector3 moveDir = (Player.Value.position - Monster.Value.position).normalized;
-        Monster.Value.Translate(moveDir * MoveSpeed.Value * Time.deltaTime);
+        // Vector3 moveDir = (Player.Value.position - Monster.Value.position).normalized;
+        Monster.Value.Translate( Monster.Value.forward * MoveSpeed.Value * Time.deltaTime, Space.World);
         return Status.Success;
     }
 
