@@ -35,5 +35,6 @@ public class MonsterData : MonoBehaviour
     {
         agent.BlackboardReference.SetVariableValue("attackRange", _attackRange);
         agent.BlackboardReference.SetVariableValue("moveSpeed", _speed);
+        agent.BlackboardReference.SetVariableValue("attackCoolTime", _attackCoolTime);
     }
 }
