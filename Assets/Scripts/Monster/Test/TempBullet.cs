@@ -8,7 +8,7 @@ public class TempBullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(transform.forward * _bulletSpeed * Time.deltaTime,Space.World);
+        transform.Translate(transform.forward * _bulletSpeed * Time.deltaTime, Space.World);
         StartCoroutine(DestroyBullet());
     }
 
