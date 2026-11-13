@@ -226,9 +226,9 @@ GameObject:
   - component: {fileID: 1781073391237940734}
   - component: {fileID: 5279824086434620831}
   - component: {fileID: 5280503431416331654}
+  - component: {fileID: -2256725816766167741}
   - component: {fileID: 2615523084166573352}
   - component: {fileID: 5195263592951300336}
-  - component: {fileID: -2256725816766167741}
   m_Layer: 8
   m_Name: RangeAttackMonster
   m_TagString: Untagged
@@ -371,6 +371,21 @@ MonoBehaviour:
           m_Value1: 17133944997896732686
         Name: attackType
         m_Value: {fileID: 0}
+--- !u!114 &-2256725816766167741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638532714569290031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b86b4d3962db0e44bad8078cbe453d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterController
+  <Type>k__BackingField: 0
+  _attackType: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!114 &2615523084166573352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,18 +424,3 @@ MonoBehaviour:
   _monsterData: {fileID: 0}
   _projectilePrefab: {fileID: 7297656202054044418, guid: 6941f62d5a30ea04e819ee990159d2ef, type: 3}
   _muzzlePoint: {fileID: 497824075227148100}
---- !u!114 &-2256725816766167741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5638532714569290031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b86b4d3962db0e44bad8078cbe453d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonsterController
-  <Type>k__BackingField: 0
-  _attackType: {fileID: 0}
-  _animator: {fileID: 0}
