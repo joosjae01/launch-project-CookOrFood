@@ -1,3 +1,4 @@
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class TutorialStage : CombatStageBase
@@ -23,7 +24,7 @@ public class TutorialStage : CombatStageBase
             
             Monster = PoolManager.Instance.Take(type);
 
-            if (!Monster.GameObject.TryGetComponent(out MonsterBase monsterBase)) return;
+            if (!Monster.GameObject.TryGetComponent(out MonsterController monsterBase)) return;
 
             monsterBase.transform.position = MonsterSpawnPoints[i].position;
             monsterBase.gameObject.SetActive(true);
@@ -32,9 +33,9 @@ public class TutorialStage : CombatStageBase
         }
     }
 
-    protected override void MonsterDead(MonsterBase monsterBase)
+    protected override void MonsterDead(MonsterController monster)
     {
-        RemainMonsterList.Remove(monsterBase);
+        RemainMonsterList.Remove(monster);
 
         if (RemainMonsterList.Count == 0)
         {

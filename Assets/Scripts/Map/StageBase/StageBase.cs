@@ -8,7 +8,7 @@ public abstract class StageBase : MonoBehaviour
     public ExitPortal ExitPortal;
     
     // TODO 몬스터 킬 테스트를 위해 현재 StageBase에 선언, 추후 몬스터 킬 가능시 변수 삭제
-    public List<MonsterBase> RemainMonsterList = new();
+    public List<MonsterController> RemainMonsterList = new();
     
     public void ResetStage()
     {

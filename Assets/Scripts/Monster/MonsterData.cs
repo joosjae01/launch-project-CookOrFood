@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Unity.Behavior;
+using Action = System.Action;
 
 public class MonsterData : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MonsterData : MonoBehaviour
     [SerializeField] private float _attackCoolTime;
     
     [HideInInspector] public ObservableProperty<float> CurrentHealth;
-    public Action<MonsterBase> OnKilled;
+    public Action<MonsterController> OnKilled;
     public bool IsDead;
     
     [field: SerializeField] public float MaxHealth { get; private set; }

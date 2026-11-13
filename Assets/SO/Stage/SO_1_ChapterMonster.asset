@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SO_1_ChapterMonster
   m_EditorClassIdentifier: Assembly-CSharp::SO_ChapterMonster
   monsterList:
-  - {fileID: 1954119548052175108, guid: 0927dffbc3e607e4c802b1f77dbd0a68, type: 3}
+  - {fileID: 5638532714569290031, guid: 08c5ff0dda9da2d41a571c822a92d016, type: 3}

@@ -107,7 +107,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -125,4 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b39e3e79265db46b15ef0ee4847730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterProjectile
+  <PoolableType>k__BackingField: 4
+  _playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   _projectileSpeed: 5
+  _lifeTime: 5
+  Damage: 0

@@ -26,5 +26,5 @@ public class WeaponData : MonoBehaviour
     [SerializeReference] public Dictionary<DamageType, HashSet<IDamageable>> CurrentTargets = new();
 
     [Header("현재 메인 타겟")]
-    [SerializeField] public MonsterBase CurrentTarget;
+    [SerializeField] public MonsterController CurrentTarget;
 }

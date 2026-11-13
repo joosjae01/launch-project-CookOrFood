@@ -20,7 +20,7 @@ public abstract class CombatStageBase : StageBase
     protected abstract void CombatStageEnter();
     protected abstract void CombatStageExit();
     protected abstract void SpawnMonster();
-    protected abstract void MonsterDead(MonsterBase monsterBase);
+    protected abstract void MonsterDead(MonsterController monster);
     
     public override void Enter() => CombatStageEnter();
 

@@ -3,5 +3,6 @@ public enum PoolableType
     Projectile,
     Map,
     ExpShard,
-    HealthShard
+    HealthShard,
+    MonsterProjectile
 }

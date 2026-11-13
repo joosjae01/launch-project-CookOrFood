@@ -5,7 +5,7 @@ public class TestPoolController : MonoBehaviour
 {
     [SerializeField] private InputActionReference _spaceInput;
     [SerializeField] private PlayerData _playerData;
-    [SerializeField] private MonsterBase _monster;
+    [SerializeField] private MonsterController _monster;
 
     private void Awake()
     {

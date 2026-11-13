@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
-        
+        _playerData.CurrentHealth.Value -= damage;
+
+        if (_playerData.CurrentHealth.Value <= 0)
+        {
+            Debug.Log("플레이어 사망");
+        }
     }
 }

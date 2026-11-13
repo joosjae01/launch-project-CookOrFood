@@ -23,6 +23,7 @@ public partial class WaitCoolTimeAction : Action
     protected override Status OnUpdate()
     {
         Monster.Value.LookAt(Player.Value);
+        Monster.Value.rotation = Quaternion.Euler(0,Monster.Value.rotation.eulerAngles.y,0);
         
         elapsedTime += Time.deltaTime;
 

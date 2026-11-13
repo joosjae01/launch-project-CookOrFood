@@ -228,7 +228,8 @@ GameObject:
   - component: {fileID: 5280503431416331654}
   - component: {fileID: 2615523084166573352}
   - component: {fileID: 5195263592951300336}
-  m_Layer: 0
+  - component: {fileID: -2256725816766167741}
+  m_Layer: 8
   m_Name: RangeAttackMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +354,7 @@ MonoBehaviour:
           m_Value0: 1
           m_Value1: 0
         Name: Self
-        m_Value: {fileID: 3832926764443721502}
+        m_Value: {fileID: 5638532714569290031}
     - rid: 8945247526068682967
       type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -405,5 +406,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedAttack
   _targetPlayer: {fileID: 0}
-  _projectilePrefab: {fileID: 2773278780739425490, guid: 6941f62d5a30ea04e819ee990159d2ef, type: 3}
+  _monsterData: {fileID: 0}
+  _projectilePrefab: {fileID: 7297656202054044418, guid: 6941f62d5a30ea04e819ee990159d2ef, type: 3}
   _muzzlePoint: {fileID: 497824075227148100}
+--- !u!114 &-2256725816766167741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638532714569290031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b86b4d3962db0e44bad8078cbe453d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterController
+  <Type>k__BackingField: 0
+  _attackType: {fileID: 0}
+  _animator: {fileID: 0}

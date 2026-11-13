@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5947981734619388202}
   - component: {fileID: 1382602436585262178}
   - component: {fileID: 3449524913133369028}
-  m_Layer: 0
+  - component: {fileID: 3085522077370594332}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -62,7 +63,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &2628568492551486720
 CapsuleCollider:
@@ -99,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23feb4990e9a31345906afc00fdbae56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  _maxHealth: 250
-  <Speed>k__BackingField: 5
+  _maxHealth: 100
+  <Speed>k__BackingField: 10
   <Name>k__BackingField: PlayerA
   MaxHealth:
     _value: 0
@@ -138,6 +139,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _playerData: {fileID: 5947981734619388202}
+--- !u!114 &3085522077370594332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107472511923916714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bb43aadd5bf084fb9b238618103252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NohTestA
+  _playerData: {fileID: 5947981734619388202}
+  _testAAction: {fileID: -7962046033624909815, guid: 492e65a18d5d1884b8015eb57bcd280a, type: 3}
 --- !u!1001 &8682422402796699640
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -145,7 +145,7 @@ public class StageManager : SingletonBehaviour<StageManager>
         if (_currentStage is TutorialStage || _currentStage is CombatStage)
         {
             if (_currentStage.RemainMonsterList.Count == 0) return;
-            //_currentStage.RemainMonsterList[0].Dead();
+            _currentStage.RemainMonsterList[0].Dead();
             return;
         }
 
