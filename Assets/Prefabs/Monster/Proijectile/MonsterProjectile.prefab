@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4264146940973573183}
   - component: {fileID: 6597045986025312483}
   - component: {fileID: 8237306620673566035}
-  - component: {fileID: 2939842327279204250}
+  - component: {fileID: 7297656202054044418}
   m_Layer: 0
   m_Name: MonsterProjectile
   m_TagString: Untagged
@@ -113,7 +113,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2939842327279204250
+--- !u!114 &7297656202054044418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2773278780739425490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5e5f9751d36b044499dbbfb5fcb276d, type: 3}
+  m_Script: {fileID: 11500000, guid: 58b39e3e79265db46b15ef0ee4847730, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TempBullet
-  _bulletSpeed: 3
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterProjectile
+  _projectileSpeed: 5

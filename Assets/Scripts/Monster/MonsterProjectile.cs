@@ -1,14 +1,13 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-public class TempBullet : MonoBehaviour
+public class MonsterProjectile : MonoBehaviour
 {
-    [SerializeField] private float _bulletSpeed;
+    [SerializeField] private float _projectileSpeed;
 
     private void FixedUpdate()
     {
-        transform.Translate(transform.forward * _bulletSpeed * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward * (_projectileSpeed * Time.deltaTime), Space.World);
         StartCoroutine(DestroyBullet());
     }
 
