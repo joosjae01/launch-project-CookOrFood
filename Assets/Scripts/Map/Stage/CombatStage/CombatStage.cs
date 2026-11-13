@@ -23,12 +23,12 @@ public class CombatStage : CombatStageBase
             
             Monster = PoolManager.Instance.Take(type);
 
-            if (!Monster.GameObject.TryGetComponent(out MonsterController monsterBase)) return;
+            if (!Monster.GameObject.TryGetComponent(out MonsterController monster)) return;
 
-            monsterBase.transform.position = MonsterSpawnPoints[i].position;
-            monsterBase.gameObject.SetActive(true);
-            monsterBase.Data.OnKilled += MonsterDead;
-            RemainMonsterList.Add(monsterBase);
+            monster.transform.position = MonsterSpawnPoints[i].position;
+            monster.gameObject.SetActive(true);
+            monster.Data.OnKilled += MonsterDead;
+            RemainMonsterList.Add(monster);
         }
     }
 
