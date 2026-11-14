@@ -20,7 +20,7 @@ public class ProjectileController : MonoBehaviour, IPoolable
 
     public GameObject GameObject { get => gameObject;}
     public ObjectPool Source { get; set; }
-    public MonsterBase Target;
+    public MonsterController Target;
     public WeaponData WeaponData;
 
     private void Awake() => CacheComponents();

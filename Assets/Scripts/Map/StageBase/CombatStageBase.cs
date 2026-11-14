@@ -7,7 +7,7 @@ public abstract class CombatStageBase : StageBase
     protected List<GameObject> MonsterList = new();
     
     // TODO 몬스터 킬 테스트를 위해 현재 StageBase에 선언, 추후 몬스터 킬 가능시 주석해제, StageBase 변수 삭제
-    // public List<MonsterBase> RemainMonsterList = new();
+    // public List<monsterController> RemainMonsterList = new();
     
     public Transform[] MonsterSpawnPoints;
     public override StageType StageType { get; }
@@ -20,7 +20,7 @@ public abstract class CombatStageBase : StageBase
     protected abstract void CombatStageEnter();
     protected abstract void CombatStageExit();
     protected abstract void SpawnMonster();
-    protected abstract void MonsterDead(MonsterBase monsterBase);
+    protected abstract void MonsterDead(MonsterController monster);
     
     public override void Enter() => CombatStageEnter();
 

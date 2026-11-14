@@ -15,7 +15,7 @@ public class TrophySpawner : MonoBehaviour
     private void OnEnable() => BindEvent();
     private void OnDisable() => UnBindEvent();
 
-    private void SpawnTrophies(MonsterBase monsterBase)
+    private void SpawnTrophies(MonsterController monster)
     {
         foreach(GameObject trophy in _trophies) SpawnTrophy(trophy);
     }
