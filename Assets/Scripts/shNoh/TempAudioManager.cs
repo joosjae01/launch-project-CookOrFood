@@ -4,41 +4,35 @@ using UnityEngine.InputSystem; // 삭제
 
 public class TempAudioManager : SingletonBehaviour<TempAudioManager>
 {
-    [SerializeField] private AudioSource _sfxPrefab;
+    [SerializeField] private AudioSource _sfxPrefab; // 효과음 재생 프리팹
+    [SerializeField] private AudioSource _bgmPrefab; // 배경음 재생 프리팹
+    [SerializeField] private List<AudioInfo> _audioInfo = new();
     
     private Dictionary<SFXType, AudioClip> _sfxDict;
+    private Dictionary<BGMType, AudioClip> _bgmDict;
     private AudioSource _sfxPlayer;
-
-    public static TempAudioManager instance;
-    public AudioClip[] SFXList;
+    private AudioSource _bgmPlayer;
 
     private void Awake()
     {
         SetSingleton();
-        _sfxDict = new Dictionary<SFXType, AudioClip>();
+        _sfxDict = new ();
+        _bgmDict = new ();
     }
 
     private void OnEnable()
     {
-        _sfxDict.Add(SFXType.PlayerHit, SFXList[0]);
-        _sfxDict.Add(SFXType.PlayerThrowWeapon, SFXList[1]);
-        _sfxDict.Add(SFXType.MonsterHit, SFXList[2]);
         _sfxPlayer = Instantiate(_sfxPrefab, transform);
+        _bgmPlayer = Instantiate(_bgmPrefab, transform);
     }
 
     private void Start()
     {
-        Debug.Log($"효과음 사전 {0}번에 저장된 사운드: {_sfxDict[SFXType.PlayerHit].name}");
-        Debug.Log($"효과음 사전 {1}번에 저장된 사운드: {_sfxDict[SFXType.PlayerThrowWeapon].name}");
-        Debug.Log($"효과음 사전 {2}번에 저장된 사운드: {_sfxDict[SFXType.MonsterHit].name}");
-        _sfxPlayer.clip = SFXList[0];
-        _sfxPlayer.loop = true;
     }
 
-    public void PlaySFX(InputAction.CallbackContext ctx)
+    public void RequestBGM(BGMType bgmType)
     {
-        _sfxPlayer.PlayOneShot(_sfxDict[SFXType.PlayerHit]);
-        _sfxPlayer.PlayOneShot(_sfxDict[SFXType.PlayerThrowWeapon]);
-        // _sfxPlayer.PlayOneShot(_sfxDict[SFXType.MonsterHit]);
+        _bgmPrefab.clip = _bgmDict[bgmType];
+        _bgmPrefab.Play();
     }
 }

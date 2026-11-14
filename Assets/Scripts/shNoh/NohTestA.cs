@@ -8,6 +8,10 @@ public class NohTestA : MonoBehaviour
     private void OnEnable()
     {
         _testInput.action.Enable();
-        _testInput.action.performed += TempAudioManager.Instance.PlaySFX;
+    }
+
+    private void TempPlayBGM(InputAction.CallbackContext ctx)
+    {
+        TempAudioManager.Instance.RequestBGM(BGMType.Title);
     }
 }
