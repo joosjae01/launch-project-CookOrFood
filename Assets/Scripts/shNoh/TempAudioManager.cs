@@ -6,7 +6,8 @@ public class TempAudioManager : SingletonBehaviour<TempAudioManager>
 {
     [SerializeField] private AudioSource _sfxPrefab; // 효과음 재생 프리팹
     [SerializeField] private AudioSource _bgmPrefab; // 배경음 재생 프리팹
-    [SerializeField] private List<AudioInfo> _audioInfo = new();
+    [SerializeField] private List<BGMData> _bgmList;
+    [SerializeField] private List<SFXData> _sfxList;
     
     private Dictionary<SFXType, AudioClip> _sfxDict;
     private Dictionary<BGMType, AudioClip> _bgmDict;
@@ -15,9 +16,9 @@ public class TempAudioManager : SingletonBehaviour<TempAudioManager>
 
     private void Awake()
     {
+        InitFields();
+        SetAudioDict();
         SetSingleton();
-        _sfxDict = new ();
-        _bgmDict = new ();
     }
 
     private void OnEnable()
@@ -26,8 +27,24 @@ public class TempAudioManager : SingletonBehaviour<TempAudioManager>
         _bgmPlayer = Instantiate(_bgmPrefab, transform);
     }
 
-    private void Start()
+    private void InitFields()
     {
+        _bgmList = new();
+        _sfxList = new();
+        _sfxDict = new ();
+        _bgmDict = new ();
+    }
+
+    private void SetAudioDict()
+    {
+        foreach (var sfx in _sfxList)
+        {
+            _sfxDict.Add(sfx.Type, sfx.Clip);
+        }
+        foreach (var bgm in _bgmList)
+        {
+            _bgmDict.Add(bgm.Type, bgm.Clip);
+        }
     }
 
     public void RequestBGM(BGMType bgmType)
